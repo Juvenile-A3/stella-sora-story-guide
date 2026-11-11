@@ -620,7 +620,7 @@
         encodeURIComponent("角色羁绊") + '">查看全部 ' + icon("next") + '</a></div><div class="traveller-shortcuts">' +
         featuredTravelers.map(([name, image]) => '<a href="#catalog?' +
           new URLSearchParams({type:"角色羁绊",person:name}).toString().replace(/&/g,"&amp;") +
-          '"><img src="assets/characters/' + image + '.webp" width="52" height="52" alt=""/><span>' +
+          '"><img src="assets/characters/' + image + '.png" width="52" height="52" alt=""/><span>' +
           name + '</span>' + icon("next") + '</a>').join("") + '</div>';
     }
   }
@@ -1693,10 +1693,10 @@
         '</p><p><a href="' + (location.hostname === "juvenile-a3.github.io" ?
           "https://github.com/Juvenile-A3/stella-sora-story-guide/blob/main/research-notes.md" : "research-notes.md") +
           '" target="_blank" rel="noopener">详细考据与未决问题</a></p></section>' +
-        '<section class="dialog-section"><h3>美术与模型</h3><p>首页街景与内页旅人插画选自《星塔旅人》官方壁纸库，画面与标识按完整比例展示。旅人头像使用官方模型自行渲染。Model: Stella Sora / 久远丶酱。游戏美术与角色 © Yostar。</p><p>' +
+        '<section class="dialog-section"><h3>游戏原画</h3><p>首页街景和万送屋插画取自官方壁纸库。四位旅人的圆形头像来自游戏界面，BWIKI 收录了对应的原图和基础造型立绘。游戏美术与角色 © Yostar。</p><p>' +
         external("https://stellasora.global/wallpaper", "国际服官方壁纸") + " · " +
         external("https://stellasora.jp/fankit?type=0", "日服官方 Fan Kit") + " · " +
-        external("https://stellasora.global/news/2545", "官方模型与使用说明") +
+        '<a href="intro.html#art-sources">四位旅人的头像与立绘出处</a>' +
         "</p></section>",
     );
   }

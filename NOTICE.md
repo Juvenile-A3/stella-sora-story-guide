@@ -14,4 +14,4 @@
 
 - **首页街景**来自国际服官方壁纸库，是第一版首页所用的同一幅画。指南使用官方发布的完整壁纸版，保留左上角游戏标识。[官方壁纸库](https://stellasora.global/wallpaper) · [原始 PNG](https://webusstatic.yo-star.com/web-cms-prod/upload/content/2026/04/14/rnS5lwnT.png)
 - **内页插图**来自日服 Fan Kit 的「ヨロズ配達」PC 壁紙（万送屋活动奖励秘纹插图，编号 2831）。三位旅人围着地图商量行程。两幅图都只做等比缩放和 JPEG 压缩，保留原图构图、标识与署名。游戏美术 © Yostar。[官方 Fan Kit](https://stellasora.jp/fankit?type=0) · [原始 PNG](https://webusstatic.yo-star.com/web-cms-prod/upload/content/2026/03/19/x1lwgRwq.png) · [Fan Kit 使用说明](https://stellasora.jp/Precautions)
-- **赤霞、科洛妮丝、璟麟、师渺头像**由本指南使用官方非商业同人模型重新取景渲染。Model: Stella Sora / 久远丶酱。原作角色与模型 © Yostar。[官方模型与使用说明](https://stellasora.global/news/2545)
+- **赤霞、科洛妮丝、璟麟、师渺**使用 BWIKI 收录的游戏二维美术。首页的四枚 140 × 140 圆形头像保留原文件字节，短片使用四位旅人的基础造型立绘。游戏角色与美术 © Yostar 及相关权利人。每幅图的文件页、原始 PNG 地址均可查阅。[四位角色的原图](intro.html#art-sources) · [逐图来源与配音署名](media/素材来源.md)

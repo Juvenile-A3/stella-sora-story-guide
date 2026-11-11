@@ -1495,8 +1495,7 @@ footer button {
   font-size: 14px; font-weight: 650; color: #24455b;
 }
 .traveller-shortcuts img {
-  width: 42px; height: 42px; border-radius: 50%; object-fit: contain;
-  background: linear-gradient(145deg,#f5efd9,#e2edf1); border: 1px solid #cbdce3;
+  width: 44px; height: 44px; object-fit: contain;
 }
 .traveller-shortcuts a:hover { background: #e2edf1; }
 .traveller-caption a:hover, footer a:hover { text-decoration: underline; }
