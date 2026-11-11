@@ -206,6 +206,7 @@
     modal = "",
     modalId = "",
     lastFocus = null,
+    returnFocusSelector = "",
     toastTimer;
   const pageSize = 24;
   let stage = "*",
@@ -1454,6 +1455,9 @@
   function showModal(type, body, id = "") {
     if (!sheet.open) {
       lastFocus = document.activeElement;
+      const trigger = lastFocus?.closest("a[href], button[data-act]");
+      returnFocusSelector = trigger?.matches("a") ? 'a[href="' + CSS.escape(trigger.getAttribute("href")) + '"]' :
+        trigger?.dataset.act ? 'button[data-act="' + CSS.escape(trigger.dataset.act) + '"]' : "";
       sheet.showModal();
     }
     modal = type;
@@ -1486,6 +1490,16 @@
     const mainLinkLabel = s.released === false ? "查看开放资料" :
       s.availability === "无独立对白" ? "查看关卡资料" : "阅读本篇原文";
     body += '<div class="primary-source">' + external(s.source, mainLinkLabel) + '</div>';
+    const branches = knownIds(s.branches);
+    if (branches.length) {
+      body += '<section class="dialog-section"><h3>可选分支（依所选路线进入）</h3>' +
+        '<p>从这里可走 ' + branches.length + ' 条路线。选一条继续，另外的可以留到回看时读。</p><div class="ref-list">' +
+        branches.map((id, i) => {
+          const next = stories.get(id);
+          const label = visible(next) ? next.title : "路线 " + (i+1) + (next.code ? " · " + next.code : "");
+          return button("open", esc(label), "", 'data-key="' + esc(id) + '"');
+        }).join("") + "</div></section>";
+    }
     if (!shown) {
       body +=
         '<div class="access-note"><div>' +
@@ -1538,7 +1552,7 @@
           "</blockquote></section>";
       if (s.unlock) body += para("解锁条件", s.unlock);
       if (s.aliases?.length) body += para("地区名与别称", series(s.aliases));
-      const relations = relationItems(s),
+      const relations = relationItems(s).filter((relation) => !branches.includes(relation.id)),
         relGroups = by(
           relations,
           (n) => n.label + " · " + (n.dir === "in" ? "上游节点" : "关联后继"),
@@ -1745,9 +1759,11 @@
     closeDialog();
   });
   sheet.addEventListener("close", () => {
+    if (sheet.open) return;
     modal = "";
     modalId = "";
-    if (lastFocus?.isConnected) lastFocus.focus({ preventScroll: true });
+    const origin = lastFocus?.isConnected ? lastFocus : returnFocusSelector && $(returnFocusSelector);
+    if (origin) origin.focus({ preventScroll: true });
   });
   sheet.addEventListener("click", (ev) => {
     if (ev.target === sheet) {
