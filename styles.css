@@ -1532,6 +1532,8 @@ footer button {
 #book { display: inline-flex; align-items: center; gap: 5px; width: auto; padding: 0 9px; font-size: 12px; }
 .hero:not(.sub) h1 { font-size: clamp(38px, 5vw, 70px); letter-spacing: .07em; }
 .hero .hero-secondary { border: 1px solid #dce7edb5; }
+.hero .hero-film { padding-inline: 5px; color: #fff; text-shadow: 0 1px 4px #15293c; }
+.hero .hero-film:hover { text-decoration: underline; }
 .primary-source { margin: 18px 0 10px; }
 .primary-source a {
   display: inline-flex; align-items: center; gap: 8px; min-height: 42px;

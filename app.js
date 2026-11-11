@@ -27,6 +27,7 @@
     mark: '<path d="M6 3h12v18l-6-4-6 4z"/>',
     list: '<path d="M8 6h12M8 12h12M8 18h12M4 6h0m0 6h0m0 6h0"/>',
     search: '<circle cx="10" cy="10" r="6"/><path d="m15 15 6 6"/>',
+    play: '<circle cx="12" cy="12" r="9"/><path d="m10 8 6 4-6 4z"/>',
     close: '<path d="M5 5l14 14M19 5 5 19"/>',
     ext: '<path d="M13 4h7v7m0-7L10 14M10 5H5v14h14v-5"/>',
     info: '<circle cx="12" cy="12" r="9"/><path d="M12 11v5m0-9v.1"/>',
@@ -605,7 +606,8 @@
             "hero-cta",
           ) +
           button("search", icon("search") + " 查找剧情", "hero-secondary",
-            'aria-label="查找剧情，快捷键斜杠"') + "</div>"
+            'aria-label="查找剧情，快捷键斜杠"') +
+          '<a href="intro.html" class="hero-film">' + icon("play") + ' 介绍短片</a></div>'
         : "") +
       "</div>";
     const travelerIndex = $("#traveller-index");
