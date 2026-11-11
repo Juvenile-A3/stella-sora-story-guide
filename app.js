@@ -273,7 +273,17 @@
         )?.[1] || "";
   const namedArchives = new Set(["角色羁绊", "心链", "邀约", "NPC羁绊", "旅人档案"]);
   const archiveOwner = (s) => namedArchives.has(s.type) ? s.group.split(" · ")[0] : "";
-  const featuredTravelers = [["赤霞","chixia"], ["科洛妮丝","coronis"], ["璟麟","jinglin"], ["师渺","shimiao"]];
+  const featuredTravelers = ["尘沙","琥珀","鸢尾","格芮","千都世"];
+  const travelerArt = window.TRAVELER_ART || {};
+  const listedTravelers = Object.keys(travelerArt).sort(cmp);
+  const featuredSeries = [
+    { no: "#02", title: "仍未知晓，你的名字", label: "先后顺序", image: "02", alt: "异闻 #02 的导读插图" },
+    { no: "#12", title: "眼眸中的彼此", label: "人物初遇", image: "12", alt: "异闻 #12 的导读插图" },
+    { no: "#01", title: "刀尖之寒，掌心之暖", label: "往事回看", image: "01", alt: "异闻 #01 的导读插图" }
+  ];
+  const bondsByOwner = by(all.filter(s => s.type === "角色羁绊"), archiveOwner);
+  let compactCover = false;
+  try { compactCover = localStorage.getItem("stella-sora.compact-cover") === "yes"; } catch {}
   const chapterNames = [
     "序章",
     "第一章",
@@ -356,18 +366,50 @@
   function routeTitle() {
     return stage === "*" ? (includeOptional ? "完整阅读路线" : "首读路线") : stageLabel(stage);
   }
+  function nextReading() {
+    return routeStories.find(s => s.released !== false && status(s) === "reading") ||
+      routeStories.find(s => s.released !== false && !s.optional && status(s) === "unread") ||
+      routeStories.find(s => s.released !== false && status(s) === "unread");
+  }
+  function catalogLink(params) {
+    return "#catalog?" + esc(new URLSearchParams(params).toString());
+  }
+  // A period may contain an identity or a future event in its source title.
+  // An actual story in that period gives shared URLs a stable, spoiler-safe key.
+  const periodToken = value => timeBuckets.has(value) ? "@" + timeBuckets.get(value)[0].id : value;
+  const periodFromToken = value => value?.startsWith("@") ? stories.get(value.slice(1))?.phase || "" : value;
+  let locatedId = "";
+  function viewAddress(id = "") {
+    const params = new URLSearchParams();
+    if (view === "catalog") {
+      for (const [key, value] of Object.entries(filters)) {
+        if (value) params.set(key, key === "phase" ? periodToken(value) : value);
+      }
+    } else if (view === "route") {
+      if (stage !== "*") params.set("stage", stage);
+      if (includeOptional) params.set("optional", "1");
+      if (hideRead) params.set("unread", "1");
+    } else if (view === "time") {
+      if (phase !== "*") params.set("phase", periodToken(phase));
+      if (zoom !== "篇目") params.set("zoom", zoom);
+      if (timePerson) params.set("person", timePerson);
+    } else if (view === "graph") {
+      if (graphMode !== "people") params.set("mode", graphMode);
+      if (graphQuery) params.set("q", graphQuery);
+      if (graphKey) params.set("node", graphKey);
+    }
+    if (pageNo > 1) params.set("page", pageNo);
+    if (locatedId && (view === "route" || view === "time")) params.set("at", locatedId);
+    if (id) params.set("story", id);
+    return "#" + view + (params.size ? "?" + params : "");
+  }
   function storyHref(id) {
-    const params = new URLSearchParams({story:id});
-    if (view === "catalog")
-      for (const [key, value] of Object.entries(filters)) if (value) params.set(key, value);
-    return "#" + view + "?" + params.toString();
+    return viewAddress(id);
   }
-  function catalogHash() {
-    const params = new URLSearchParams(Object.entries(filters).filter(([, value]) => value));
-    return params.size ? "#catalog?" + params : "#catalog";
-  }
-  function syncCatalogAddress() {
-    if (view === "catalog" && !sheet.open) history.replaceState(null, "", catalogHash());
+  function syncViewAddress(push = false) {
+    if (sheet.open) return;
+    const hash = viewAddress();
+    if (hash !== location.hash) history[push ? "pushState" : "replaceState"](null, "", hash);
   }
   function focusSearch() {
     if (view !== "catalog") {
@@ -449,7 +491,8 @@
           ? "时间待考"
           : "故事时间受保护";
     return (
-      '<article class="story-row" data-kind="' +
+      '<article class="story-row" data-entry="' + esc(s.id) + '"' +
+      (s.id === locatedId ? ' data-located="true"' : "") + ' data-kind="' +
       typesOf(s.type) +
       '">' +
       (bulk
@@ -504,6 +547,8 @@
             "btn",
             pageNo === count ? "disabled" : "",
           ) +
+          (count > 2 ? '<label class="page-jump">跳页<select id="page-jump" aria-label="跳到指定页">' +
+            options(Array.from({length:count},(_,i) => [i+1,"第 " + (i+1) + " 页"]),pageNo) + '</select></label>' : "") +
           "</div>";
   }
   function sliceStories(items) {
@@ -576,7 +621,7 @@
     sb.title = guard ? "点击显示所有篇目的剧透" : "点击保护未读篇目";
     $("#book").innerHTML = icon("book") + "<span>进度</span>";
     const hero = $("#hero");
-    hero.className = view === "route" ? "hero" : "hero sub";
+    hero.className = view === "route" ? "hero notebook-cover" + (compactCover ? " is-compact" : "") : "hero sub";
     const titles = {
       route: "诺瓦剧情手记",
       time: "故事内时间线",
@@ -584,16 +629,16 @@
       graph: "人物与剧情关系图",
     };
     const intros = {
-      route: "跟着主线遇见每一位旅人。读过之后，再回时间线拼起同一天的故事。",
+      route: "把主线、异闻与角色羁绊串成一条首读路线。重读时，再沿诺瓦历追踪旅人的相遇。",
       time: "在相对时期与可考日期之间，追踪人物经历。",
       catalog: "按篇目、所属故事、人物或证据等级查找档案。",
       graph: "从一次初遇、一场事件或一个分歧点，找到相连的篇目。",
     };
-    const hasHistory = all.some((s) => status(s) !== "unread");
-    const artwork = view === "route" ? "assets/nova-city-official.jpg" : "assets/nova-field-notes.jpg";
+    const hasHistory = Object.keys(progress).length > 0;
+    const resume = nextReading();
     hero.innerHTML =
       '<div class="hero-inner"><div class="hero-kicker">星塔旅人 · ' +
-      (view === "route" ? "非官方剧情阅读指南" : tabNames[view]) +
+      (view === "route" ? "剧情阅读指南" : tabNames[view]) +
       '</div><h1 id="hero-title">' +
       titles[view] +
       "</h1><p>" +
@@ -601,26 +646,29 @@
       "</p>" +
       (view === "route"
         ? '<div class="hero-actions">' +
-          button(
-            "resume",
-            icon("book") + (hasHistory ? "继续阅读" : "从序章开始"),
-            "hero-cta",
-          ) +
-          button("search", icon("search") + " 查找剧情", "hero-secondary",
-            'aria-label="查找剧情，快捷键斜杠"') +
-          '<a href="intro.html" class="hero-film">' + icon("play") + ' 介绍短片</a></div>'
+          button("resume", icon("book") + (hasHistory ? "继续阅读" : "从序章开始"), "hero-cta") +
+          button("chapters", "按章定位 " + icon("next"), "hero-secondary") +
+          '<a href="intro.html" class="hero-film">' + icon("play") + ' 介绍短片</a></div>' +
+          (hasHistory && resume ? '<div class="resume-hint">' + icon("mark") + '下次阅读　' + esc(safeTitle(resume)) + '</div>' : '')
         : "") +
-      '</div><div class="hero-illustration"><img src="' + artwork + '" alt="' +
-      (view === "route" ? "《星塔旅人》官方插画，旅人们走过诺瓦街头" : "《星塔旅人》官方插画，三位旅人围着地图商量行程") +
-      '" decoding="async"></div>';
+      '</div>' + (view === "route" ?
+        '<button type="button" data-act="cover-art" class="hero-illustration cover-print" aria-label="查看空白旅团的完整合影和出处"><img src="assets/field/cover.webp" alt="游戏秘纹中的合影，尘沙、琥珀和鸢尾在蓝天映衬下看向镜头" fetchpriority="high"><span>空白旅团的合影　' + icon("ext") + '</span></button>' +
+        button("compact-cover", compactCover ? "展开封面" : "收起封面", "compact-toggle", 'aria-expanded="' + !compactCover + '"') :
+        '<div class="hero-illustration"><img src="assets/nova-field-notes.jpg" alt="《星塔旅人》官方插画，三位旅人围着地图商量行程"></div>');
+    const picks = $("#story-picks");
+    picks.hidden = view !== "route" || compactCover;
+    if (!picks.hidden && !picks.childElementCount) {
+      picks.innerHTML = '<div class="picks-heading"><h2>异闻选读</h2><a href="' + catalogLink({type:"诺瓦异闻"}) + '">全部异闻 ' + icon("next") + '</a></div><div class="pick-grid">' +
+        featuredSeries.map(f => '<a class="story-pick" href="' + catalogLink({type:"诺瓦异闻",q:f.no}) + '"><img src="assets/field/preview-' + f.image + '.webp" alt=""><div><small>' + f.no + '　' + f.label + '</small><strong>' + f.title + '</strong></div>' + icon("arrow") + '</a>').join("") + '</div>';
+    }
     const travelerIndex = $("#traveller-index");
-    travelerIndex.hidden = view !== "route";
+    travelerIndex.hidden = view !== "route" || compactCover;
     if (!travelerIndex.hidden && !travelerIndex.childElementCount) {
-      travelerIndex.innerHTML = '<div class="traveller-caption"><h2>旅人羁绊</h2><a href="#catalog?type=' +
-        encodeURIComponent("角色羁绊") + '">查看全部 ' + icon("next") + '</a></div><div class="traveller-shortcuts">' +
-        featuredTravelers.map(([name, image]) => '<a href="#catalog?' +
+      travelerIndex.innerHTML = '<div class="traveller-caption"><h2>旅人羁绊</h2>' +
+        button("roster", '全部 ' + listedTravelers.length + ' 位 ' + icon("next"), "roster-link") + '</div><div class="traveller-shortcuts">' +
+        featuredTravelers.filter(name => travelerArt[name]).map(name => '<a href="#catalog?' +
           new URLSearchParams({type:"角色羁绊",person:name}).toString().replace(/&/g,"&amp;") +
-          '"><img src="assets/characters/' + image + '.png" width="52" height="52" alt=""/><span>' +
+          '"><img src="assets/field/heads/' + travelerArt[name].file + '" width="52" height="52" alt=""/><span>' +
           name + '</span>' + icon("next") + '</a>').join("") + '</div>';
     }
   }
@@ -728,7 +776,7 @@
   }
   function renderRoute() {
     const pool = stage === "*" ? routeStories : routeBuckets.get(stage) || [],
-      items = includeOptional ? pool : pool.filter((s) => !s.optional),
+      items = pool.filter(s => (includeOptional || !s.optional) && (!hideRead || status(s) !== "read")),
       chunk = sliceStories(items);
     return (
       titleBlock(
@@ -743,17 +791,18 @@
       (includeOptional ? " checked" : "") +
       " >显示可选补完（" +
       fmt(pool.filter((s) => s.optional).length) +
-      "）</label>" +
+      '）</label><label class="toggle-extra"><input type="checkbox" id="hide-read"' +
+      (hideRead ? " checked" : "") + '>隐藏已读</label>' +
       button("about", "证据等级 " + icon("info"), "link-btn") +
       "</div>" +
       bulkControls() +
       (chunk.length
         ? splitRows(chunk, stageKey, stageLabel)
-        : empty("这个阶段尚未收录篇目。")) +
+        : empty(hideRead ? "这个范围里没有待阅读的篇目，可取消「隐藏已读」查看。" : "这个阶段尚未收录篇目。")) +
       pager(items.length)
     );
   }
-  function catalogMatches(s) {
+  function catalogMatches(s, terms) {
     if (
       (filters.type && filters.type !== s.type) ||
       (filters.phase && filters.phase !== (s.phase || "未知")) ||
@@ -767,7 +816,7 @@
       archiveOwner(s) !== filters.person && (!visible(s) || !list(s.cast).includes(filters.person))
     )
       return false;
-    if (!filters.q.trim()) return true;
+    if (!terms.length) return true;
     const fields = [
       safeTitle(s),
       safeGroup(s),
@@ -790,9 +839,11 @@
         s.id,
       );
     const haystack = strip(fields.join(" "));
-    return strip(filters.q.trim())
-      .split(/\s+/)
-      .every((q) => haystack.includes(q));
+    return terms.every(q => haystack.includes(q));
+  }
+  function normalizeSearch(value) {
+    return strip(value.normalize("NFKC").trim()).replace(/^(?:异闻\s*#?\s*|#\s*)(\d{1,2})(?=\s|$)/u,
+      (_, n) => "#" + n.padStart(2, "0"));
   }
   function field(label, id, values, choice, emptyText) {
     return (
@@ -808,10 +859,19 @@
   const visibleCast = () =>
     unique(all.filter(visible).flatMap((s) => list(s.cast))).sort(cmp);
   function renderCatalog() {
-    const items = routeStories.filter(catalogMatches),
+    const terms = normalizeSearch(filters.q).split(/\s+/).filter(Boolean);
+    const items = routeStories.filter(s => catalogMatches(s,terms)),
       chunk = sliceStories(items);
     const hasFilters = Object.values(filters).some(Boolean);
     const activeCount = Object.entries(filters).filter(([key, value]) => key !== "q" && value).length;
+    const f = featuredSeries.find(item => item.no === normalizeSearch(filters.q));
+    const filterLabels = {type:"分类",person:"人物",phase:"时期",grade:"证据",position:"定位",status:"进度"};
+    const pills = Object.entries(filters).filter(([k,v]) => k!=="q" && v).map(([k,v]) => {
+      const display = k === "status" ? stateText[v] : k === "phase" ? phaseLabel(v) : v;
+      const text = filterLabels[k] + " · " + display;
+      return button("remove-filter",esc(text) + icon("close"),"filter-pill",
+        'data-key="' + esc(k) + '" aria-label="移除' + esc(text) + '"');
+    }).join("");
     return (
       titleBlock(
         "检索与筛选",
@@ -875,7 +935,8 @@
         "link-btn",
         !hasFilters ? "disabled" : "",
       ) +
-      "</div></div>" +
+      "</div></div>" + (pills ? '<div class="filter-pills">' + pills + '</div>' : '') +
+      (f && items.some(s => s.seriesNo === f.no) ? seriesBar(f) : "") +
       (guard
         ? '<p class="section-note">' +
           icon("shield") +
@@ -1092,6 +1153,7 @@
         .filter(
           (p) =>
             !guard ||
+            bondsByOwner.has(p.name) ||
             knownIds(p.stories).some((id) => visible(stories.get(id))),
         )
         .map((p) => [p.name, p.name]);
@@ -1170,7 +1232,7 @@
       if (!p) return null;
       ids = knownIds(p.stories);
       center = "人物";
-      caption = firstNote(p);
+      caption = !guard || knownIds(p.first).some(id => visible(stories.get(id))) ? firstNote(p) : "";
       const first = knownIds(p.first).filter((id) => visible(stories.get(id)));
       first.slice(0, 3).forEach((id) => left.push(storyNode(id, "与魔王初遇")));
       const earliest = knownIds(p.firstIndexed).find((id) =>
@@ -1322,6 +1384,18 @@
       );
     }
     const col = (ns) => '<div class="net-col">' + ns.join("") + "</div>";
+    const bonds = graphMode === "people" ? bondsByOwner.get(graphKey) : null;
+    const art = graphMode === "people" && Object.hasOwn(window.TRAVELER_ART || {}, graphKey) ? window.TRAVELER_ART[graphKey] : null;
+    const portrait = art ? '<img src="assets/field/heads/' + esc(art.file) + '" width="64" height="64" alt="">' : "";
+    const profile = bonds?.length ? '<section class="public-person">' + portrait +
+      '<div><h3>' + esc(d.label) + '</h3><p>' +
+      (d.shown.length ? '可从羁绊或下方的出场记录进入剧情。' : '读过相关篇目后，这里会连起初遇与出场记录。') +
+      '</p></div><div class="public-links"><a href="' + catalogLink({type:"角色羁绊",person:graphKey}) + '">查看人物羁绊 ' + icon("next") + '</a>' +
+      (art && art.gamekee ? external(art.gamekee, "GameKee 角色资料（含剧透）") : "") + '</div></section>' : "";
+    if (profile && !d.shown.length && !d.left.length && !d.right.length) {
+      currentList = [];
+      return head + profile;
+    }
     const c = node(
       d.label,
       d.center + (d.caption ? " · " + d.caption : ""),
@@ -1331,7 +1405,7 @@
     );
     const chunk = sliceStories(d.shown);
     return (
-      head +
+      head + profile +
       '<div class="graph-panel"><svg aria-hidden="true" class="graph-lines"></svg><div class="net">' +
       col(d.left) +
       col([c]) +
@@ -1451,6 +1525,67 @@
         "</p></section>"
       : "";
   const sheet = $("#sheet");
+  function seriesBar(f) {
+    const parts = routeStories.filter(s => s.seriesNo === f.no && s.type === "诺瓦异闻");
+    const done = parts.filter(s => status(s) === "read").length;
+    const next = parts.find(s => status(s) !== "read") || parts[0];
+    return '<section class="series-bar"><img src="assets/field/preview-' + f.image + '.webp" alt=""><div><span>' + f.no +
+      ' · 诺瓦异闻</span><h3>' + f.title + '</h3><small>已读 ' + done + ' / ' + parts.length +
+      ' 话</small></div><div class="series-actions">' +
+      button("open", icon("book") + (done && done < parts.length ? " 继续读" : " 打开第一话"), "btn primary", 'data-key="' + esc(next.id) + '"') +
+      button("series-art", '查看剧情原画', "btn", 'data-key="' + f.image + '"') + '</div></section>';
+  }
+  function artModal(key, reveal = false) {
+    const f = featuredSeries.find(item => item.image === key);
+    if (!f && key !== "cover") return;
+    const parts = f ? routeStories.filter(s => s.type === "诺瓦异闻" && s.seriesNo === f.no) : [];
+    const artEpisode = key === "02" ? 4 : 3;
+    const unlockStory = parts.find(s => s.order === artEpisode);
+    const unlocked = !f || !guard || reveal || (unlockStory && status(unlockStory) === "read");
+    const files = { "01":"Story_tales_01_001.png", "02":"Story_tales_02_001.png", "12":"Story_tales_12_001.png", cover:"Disc_New_Star_Prelude.png" };
+    const paths = { "01":"8/80","02":"7/7a","12":"7/7d",cover:"0/03" };
+    const source = "https://stellasora.miraheze.org/wiki/File:" + files[key];
+    const original = "https://static.wikitide.net/stellasorawiki/" + paths[key] + "/" + files[key];
+    const title = f ? f.title : "“空白”的序章";
+    const art = unlocked ? (f ? "cg-" + key : "cover") : "preview-" + key;
+    let body = dialogHead(title, f ? f.no + " · 诺瓦异闻原画" : "秘纹 · 空白旅团");
+    body += '<figure class="art-sheet"><img src="assets/field/' + art + '.webp" alt="' +
+      esc(unlocked ? title + " · 游戏原画" : "无剧透导读图") + '"><figcaption>' +
+      (unlocked ? '游戏美术 © Yostar　' + external(source,"查看原图出处") + ' · ' + external(original,"原尺寸 PNG") : '当前为无剧透预览') + '</figcaption></figure>';
+    if (!unlocked) body += '<div class="access-note"><div>' + icon("shield") + ' 原画出自第 ' + artEpisode + ' 话。将这一话标为已读后会自动显示。</div>' +
+      button("reveal-art", "仅查看这张原画", "btn", 'data-key="' + key + '"') + '</div>';
+    showModal("art",body);
+    sheet.scrollTop = 0;
+  }
+  function updateRoster(query = "") {
+    const term = strip(query.trim());
+    const names = listedTravelers.filter(n => strip(n + " " + travelerArt[n].nameEn).includes(term));
+    $("#roster-count").textContent = names.length + " 位";
+    $("#roster-items").innerHTML = names.length ? names.map(n => {
+      const a = travelerArt[n];
+      return '<a class="roster-entry" href="' + catalogLink({type:"角色羁绊",person:n}) + '"><img src="assets/field/heads/' +
+        a.file + '" alt="" loading="lazy"><span><b>' + esc(n) + '</b><small>' + (bondsByOwner.get(n)?.length || 0) + ' 篇羁绊</small></span></a>';
+    }).join("") : empty("没有找到这位旅人，试试本名或英文名。");
+  }
+  function rosterModal() {
+    showModal("roster", dialogHead("选择旅人","角色羁绊 · 含独立形态") +
+      '<label class="search-field roster-query">' + icon("search") + '<input id="roster-query" type="search" aria-label="搜索旅人" placeholder="搜索中文名或英文名"></label>' +
+      '<p id="roster-count" class="roster-count" aria-live="polite"></p><div id="roster-items" class="roster-grid"></div>');
+    updateRoster(); sheet.scrollTop = 0;
+    $("#roster-query").focus({preventScroll:true});
+  }
+  function chapterModal() {
+    const choices = [...routeBuckets].filter(([key, group]) => /^c\d+$/.test(key) && group.some(s => !s.optional));
+    showModal("chapters", dialogHead("按章定位","推荐阅读路线") +
+      '<p class="chapter-help">选一章，查看穿插在这一阶段的主线与支线。</p><div class="chapter-grid">' +
+      choices.map(([key, group]) => {
+        const main = group.filter(s => !s.optional);
+        const done = main.filter(s => status(s) === "read").length;
+        return button("pick-stage",'<strong>' + stageLabel(key) + '</strong><small>已读 ' + done + ' / ' + main.length + '</small>' + icon("arrow"),
+          'chapter-ticket', 'data-key="' + key + '"');
+      }).join("") + '</div>');
+    sheet.scrollTop = 0;
+  }
   document.addEventListener("keydown", (event) => {
     if (event.key !== "/" || event.altKey || event.ctrlKey || event.metaKey || event.isComposing ||
         sheet.open || event.target.closest("input,textarea,select,[contenteditable=true]")) return;
@@ -1601,7 +1736,9 @@
             .join("") +
           "</div></section>";
     }
-    body +=
+    body += '<nav class="story-locations" aria-label="定位本篇"><a href="#route?at=' +
+      encodeURIComponent(s.id) + '">' + icon("route") + ' 在推荐路线中定位</a><a href="#time?at=' +
+      encodeURIComponent(s.id) + '">' + icon("time") + ' 在时间线上定位</a></nav>' +
       '<div class="dialog-actions"><label class="quiet">阅读状态　' +
       selectState(s) +
       '</label><div class="inline-actions">' +
@@ -1693,34 +1830,36 @@
         '</p><p><a href="' + (location.hostname === "juvenile-a3.github.io" ?
           "https://github.com/Juvenile-A3/stella-sora-story-guide/blob/main/research-notes.md" : "research-notes.md") +
           '" target="_blank" rel="noopener">详细考据与未决问题</a></p></section>' +
-        '<section class="dialog-section"><h3>游戏原画</h3><p>首页街景和万送屋插画取自官方壁纸库。四位旅人的圆形头像来自游戏界面，BWIKI 收录了对应的原图和基础造型立绘。游戏美术与角色 © Yostar。</p><p>' +
-        external("https://stellasora.global/wallpaper", "国际服官方壁纸") + " · " +
+        '<section class="dialog-section"><h3>游戏原画</h3><p>首页合影出自秘纹《“空白”的序章》。异闻导读取材于对应分话，完整 CG 按出现话数保护。41 张角色头像按游戏 ID 对照两站资料。游戏美术与角色 © Yostar。</p><p>' +
+        external("https://stellasora.miraheze.org/wiki/New_Star_Prelude", "Miraheze 图鉴") + " · " +
+        external("https://www.gamekee.com/stellasora/second/211502", "GameKee 人物资料") + " · " +
         external("https://stellasora.jp/fankit?type=0", "日服官方 Fan Kit") + " · " +
-        '<a href="intro.html#art-sources">四位旅人的头像与立绘出处</a>' +
+        '<a href="' + (location.hostname === "juvenile-a3.github.io" ?
+          "https://github.com/Juvenile-A3/stella-sora-story-guide/blob/main/research/game-art.md" : "research/game-art.md") +
+          '" target="_blank" rel="noopener">三幅异闻原画与分话出处</a> · <a href="intro.html#art-sources">短片逐镜素材</a>' +
         "</p></section>",
     );
   }
   let availablePhases = new Set();
   let includeOptional = false;
+  let hideRead = false;
   function render(focusId = "") {
     const focusInput = focusId ? $("#" + focusId) : null;
     const start = focusInput?.selectionStart,
       end = focusInput?.selectionEnd;
-    availablePhases = new Set(
-      all.filter(visible).map((s) => s.phase || "未知"),
-    );
-    renderNav();
     const renderers = {
       route: renderRoute,
       time: renderTime,
       catalog: renderCatalog,
       graph: renderGraph,
     };
-    $("#workspace").innerHTML =
-      side() +
-      '<div class="view-main" id="view-main">' +
-      renderers[view]() +
-      "</div>";
+    if (focusInput && $("#view-main")) {
+      $("#view-main").innerHTML = renderers[view]();
+    } else {
+      availablePhases = new Set(all.filter(visible).map(s => s.phase || "未知"));
+      renderNav();
+      $("#workspace").innerHTML = side() + '<div class="view-main" id="view-main">' + renderers[view]() + "</div>";
+    }
     if (focusId) {
       const el = $("#" + focusId);
       if (el) {
@@ -1733,6 +1872,7 @@
   }
   function resetPage() {
     pageNo = 1;
+    locatedId = "";
     selected.clear();
   }
   function applyMenu(action, key) {
@@ -1753,11 +1893,15 @@
     }
     resetPage();
     render();
-    if (action === "side-type") syncCatalogAddress();
+    syncViewAddress(true);
   }
   function closeDialog() {
     if (modal === "story") {
-      history.replaceState(null, "", view === "catalog" ? catalogHash() : "#" + view);
+      if (history.state?.guideReturn === viewAddress()) {
+        history.back();
+        return;
+      }
+      history.replaceState(null, "", viewAddress());
     }
     sheet.close();
   }
@@ -1789,33 +1933,88 @@
     if (location.hash === storyHref(id)) storyModal(stories.get(id));
     else location.hash = storyHref(id);
   }
-  function readHash(initial = false) {
-    const parts = location.hash.slice(1).split("?"),
+  function locateStory(s) {
+    if (view === "route") {
+      stage = stageKey(s);
+      if (s.optional) includeOptional = true;
+      if (hideRead && status(s) === "read") hideRead = false;
+      const list = routeBuckets.get(stage).filter(story =>
+        (includeOptional || !story.optional) && (!hideRead || status(story) !== "read"));
+      pageNo = Math.floor(list.indexOf(s) / pageSize) + 1;
+    } else {
+      phase = s.phase || "未知";
+      if (zoom === "时期") zoom = "篇目";
+      if (timePerson && (!visible(s) || !list(s.cast).includes(timePerson))) timePerson = "";
+      const items = timeBuckets.get(phase).filter(story =>
+        !timePerson || (visible(story) && list(story.cast).includes(timePerson))).sort(timeSort);
+      pageNo = 1 + timePages(items).findIndex(groups => groups.some(group => group.includes(s)));
+    }
+  }
+  function readHash(initial = false, previousHash = "") {
+    const previous = viewAddress(),
+      parts = location.hash.slice(1).split("?"),
       next = Object.hasOwn(tabNames, parts[0]) ? parts[0] : "route",
       params = new URLSearchParams(parts[1] || ""),
-      id = params.get("story");
-    let changedFilters = false;
-    if (next === "catalog" && Object.keys(defaultFilter()).some((key) => params.has(key))) {
-      const fromUrl = defaultFilter();
-      for (const key of Object.keys(fromUrl)) fromUrl[key] = params.get(key) || "";
-      changedFilters = Object.keys(fromUrl).some((key) => filters[key] !== fromUrl[key]);
-      filters = fromUrl;
+      id = params.get("story"),
+      addressPeriod = periodFromToken(params.get("phase"));
+    view = next;
+    pageNo = /^[1-9]\d{0,5}$/.test(params.get("page") || "") ? Number(params.get("page")) : 1;
+    locatedId = "";
+    if (view === "catalog") {
+      filters = defaultFilter();
+      for (const key of Object.keys(filters)) filters[key] = params.get(key) || "";
+      filters.phase = timeBuckets.has(addressPeriod) ? addressPeriod : "";
+      if (guard && filters.person && !bondsByOwner.has(filters.person) &&
+          !all.some(s => archiveOwner(s) === filters.person) && !visibleCast().includes(filters.person)) filters.person = "";
+    } else if (view === "route") {
+      stage = routeBuckets.has(params.get("stage")) ? params.get("stage") : "*";
+      includeOptional = params.get("optional") === "1" || !!routeBuckets.get(stage)?.every(s => s.optional);
+      hideRead = params.get("unread") === "1";
+    } else if (view === "time") {
+      phase = timeBuckets.has(addressPeriod) ? addressPeriod : "*";
+      zoom = ["日期","时期"].includes(params.get("zoom")) ? params.get("zoom") : "篇目";
+      const queryPerson = params.get("person");
+      timePerson = queryPerson && visibleCast().includes(queryPerson) ? queryPerson : "";
+    } else {
+      graphMode = Object.hasOwn(graphTabs, params.get("mode")) ? params.get("mode") : "people";
+      graphQuery = params.get("q") || "";
+      graphKey = params.get("node") || "";
     }
-    if (view !== next || initial || changedFilters) {
-      view = next;
-      resetPage();
+    if ((view === "route" || view === "time") && stories.has(params.get("at"))) {
+      locatedId = params.get("at");
+      locateStory(stories.get(locatedId));
+    }
+    const changed = previous !== viewAddress() || initial;
+    if (changed) {
+      selected.clear();
       bulk = false;
-      if (sheet.open) sheet.close();
       render();
-      if (!initial) window.scrollTo({ top: 0, behavior: "instant" });
+      if (!initial && !locatedId) window.scrollTo({ top: 0, behavior: "instant" });
     }
-    if (id && stories.has(id)) storyModal(stories.get(id));
-    else if (sheet.open && modal === "story") sheet.close();
+    if (id && stories.has(id)) {
+      if (previousHash && !changed && !history.state?.guideReturn &&
+          !new URLSearchParams(previousHash.split("?")[1] || "").has("story")) {
+        history.replaceState({guideReturn:viewAddress()}, "", location.href);
+      }
+      storyModal(stories.get(id));
+    }
+    else if (sheet.open) {
+      if (changed) { lastFocus = null; returnFocusSelector = ""; }
+      sheet.close();
+    }
+    if (!id && locatedId) {
+      const row = $('.story-row[data-entry="' + CSS.escape(locatedId) + '"]');
+      requestAnimationFrame(() => {
+        if (!row?.isConnected || sheet.open) return;
+        row.querySelector(".row-open")?.focus({preventScroll:true});
+        row.scrollIntoView({block:"center"});
+      });
+    }
     if (id && !stories.has(id)) showNotice("这个篇目未收入当前资料版本。");
-    if (!id) syncCatalogAddress();
+    if (!id && (view !== "graph" || params.size)) syncViewAddress();
     document.title = tabNames[view] + " · 诺瓦剧情手记";
   }
-  window.addEventListener("hashchange", () => readHash());
+  window.addEventListener("hashchange", event => readHash(false, new URL(event.oldURL).hash));
   window.addEventListener("storage", (ev) => {
     if (ev.key !== storageKey) return;
     try {
@@ -1836,17 +2035,23 @@
     graphKey = key;
     resetPage();
     render();
+    syncViewAddress(true);
   }
   function changeGuard() {
     guard = !guard;
     revealed.clear();
-    filters.person = "";
-    timePerson = "";
-    graphKey = "";
+    if (guard) {
+      const availableNames = new Set(visibleCast());
+      if (filters.person && !availableNames.has(filters.person) &&
+          !all.some(s => archiveOwner(s) === filters.person)) filters.person = "";
+      if (timePerson && !availableNames.has(timePerson)) timePerson = "";
+      if (graphKey && !graphOptions().some(([key]) => key === graphKey)) graphKey = "";
+    }
     resetPage();
     store();
     render();
     if (modal === "story") storyModal(stories.get(modalId), true);
+    else syncViewAddress();
     showNotice(
       guard
         ? "未读篇目的剧透保护已开启。"
@@ -1934,6 +2139,32 @@
     if (!b || b.disabled) return;
     const { act, key } = b.dataset;
     switch (act) {
+      case "remove-filter":
+        if (!Object.hasOwn(defaultFilter(),key)) break;
+        filters[key] = "";
+        resetPage(); render(); syncViewAddress(true);
+        break;
+      case "roster": rosterModal(); break;
+      case "chapters": chapterModal(); break;
+      case "pick-stage":
+        lastFocus = null;
+        returnFocusSelector = "#view-main .view-heading h2";
+        closeDialog(); applyMenu("stage",key);
+        $("#view-main .view-heading h2").setAttribute("tabindex","-1");
+        $("#view-main .view-heading h2").focus({preventScroll:true});
+        $("#view-main").scrollIntoView({block:"start"});
+        break;
+      case "cover-art": artModal("cover"); break;
+      case "series-art": artModal(key); break;
+      case "reveal-art":
+        artModal(key,true);
+        $("#sheet .art-sheet a")?.focus({preventScroll:true});
+        break;
+      case "compact-cover":
+        compactCover = !compactCover;
+        try { localStorage.setItem("stella-sora.compact-cover",compactCover ? "yes" : "no"); } catch {}
+        renderNav(); $('[data-act="compact-cover"]').focus({preventScroll:true});
+        break;
       case "guard":
         changeGuard();
         break;
@@ -1969,11 +2200,7 @@
         openStory(key);
         break;
       case "resume": {
-        const s =
-          routeStories.find((s) => s.released !== false && status(s) === "reading") ||
-          routeStories.find((s) => s.released !== false && !s.optional && status(s) === "unread") ||
-          routeStories.find((s) => s.released !== false && status(s) === "unread") ||
-          routeStories[0];
+        const s = nextReading() || routeStories[0];
         if (s) openStory(s.id);
         break;
       }
@@ -1995,8 +2222,10 @@
         break;
       case "prev":
       case "next":
+        locatedId = "";
         pageNo += act === "prev" ? -1 : 1;
         render();
+        syncViewAddress(true);
         $("#view-main").scrollIntoView({ block: "start" });
         break;
       case "bulk":
@@ -2032,18 +2261,20 @@
         filters = defaultFilter();
         resetPage();
         render();
-        syncCatalogAddress();
+        syncViewAddress(true);
         break;
       case "expand-period":
         phase = key;
         zoom = "篇目";
         resetPage();
         render();
+        syncViewAddress(true);
         break;
       case "zoom":
         zoom = key;
         resetPage();
         render();
+        syncViewAddress(true);
         break;
       case "graph-org":
         focusGraph("orgs", key);
@@ -2061,6 +2292,13 @@
   });
   document.addEventListener("change", (ev) => {
     const el = ev.target;
+    if (el.id === "page-jump") {
+      locatedId = ""; pageNo = Number(el.value); render(); syncViewAddress(true);
+      const heading = $("#view-main h2");
+      heading.tabIndex = -1; heading.focus({preventScroll:true});
+      $("#view-main").scrollIntoView({block:"start"});
+      return;
+    }
     if (el.dataset.status) {
       writeStatus(el.dataset.status, el.value);
       store();
@@ -2083,24 +2321,31 @@
       filters[el.dataset.filter] = el.value;
       resetPage();
       render();
-      syncCatalogAddress();
+      syncViewAddress(true);
       return;
     }
     if (el.id === "time-person") {
       timePerson = el.value;
       resetPage();
       render();
+      syncViewAddress(true);
     }
     if (el.id === "graph-pick") {
       graphKey = el.value;
       resetPage();
       render();
+      syncViewAddress(true);
     }
     if (el.id === "optional") {
       includeOptional = el.checked;
       if (!includeOptional && stage !== "*" && routeBuckets.get(stage)?.every((s) => s.optional)) stage = "*";
       resetPage();
       render();
+      syncViewAddress(true);
+    }
+    if (el.id === "hide-read") {
+      hideRead = el.checked;
+      resetPage(); render(); syncViewAddress(true);
     }
     if (el.id === "import") importProgress(el.files?.[0]);
   });
@@ -2109,17 +2354,19 @@
       ev.target.dispatchEvent(new Event("input", { bubbles: true }));
   });
   document.addEventListener("input", (ev) => {
+    if (ev.target.id === "roster-query") { updateRoster(ev.target.value); return; }
     if (ev.isComposing) return;
     if (ev.target.id === "query") {
       filters.q = ev.target.value;
       resetPage();
       render("query");
-      syncCatalogAddress();
+      syncViewAddress();
     }
     if (ev.target.id === "graph-query") {
       graphQuery = ev.target.value;
       resetPage();
       render("graph-query");
+      syncViewAddress();
     }
   });
   readHash(true);

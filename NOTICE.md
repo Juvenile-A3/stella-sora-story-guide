@@ -12,6 +12,10 @@
 
 ## 页面插图
 
-- **首页街景**来自国际服官方壁纸库，是第一版首页所用的同一幅画。指南使用官方发布的完整壁纸版，保留左上角游戏标识。[官方壁纸库](https://stellasora.global/wallpaper) · [原始 PNG](https://webusstatic.yo-star.com/web-cms-prod/upload/content/2026/04/14/rnS5lwnT.png)
-- **内页插图**来自日服 Fan Kit 的「ヨロズ配達」PC 壁紙（万送屋活动奖励秘纹插图，编号 2831）。三位旅人围着地图商量行程。两幅图都只做等比缩放和 JPEG 压缩，保留原图构图、标识与署名。游戏美术 © Yostar。[官方 Fan Kit](https://stellasora.jp/fankit?type=0) · [原始 PNG](https://webusstatic.yo-star.com/web-cms-prod/upload/content/2026/03/19/x1lwgRwq.png) · [Fan Kit 使用说明](https://stellasora.jp/Precautions)
-- **赤霞、科洛妮丝、璟麟、师渺**使用 BWIKI 收录的游戏二维美术。首页的四枚 140 × 140 圆形头像保留原文件字节，短片使用四位旅人的基础造型立绘。游戏角色与美术 © Yostar 及相关权利人。每幅图的文件页、原始 PNG 地址均可查阅。[四位角色的原图](intro.html#art-sources) · [逐图来源与配音署名](media/素材来源.md)
+首页使用秘纹《“空白”的序章》。异闻 #02 的导览使用第一话游戏 CG，#01、#12 采用分话原有的立绘和背景重新排版。三篇的剧情原画按实际出现话数设置未读保护。原图、分话与素材库文件页均有记录。[逐图来源与分话核对](research/game-art.md)
+
+41 张可选旅人头像按游戏 ID 区分角色与独立形态。每项资料包括 Miraheze 文件页、游戏原始图链和 GameKee 对应角色档案。[头像与链接清单](assets/field/travelers.js) · [Miraheze 人物索引](https://stellasora.miraheze.org/wiki/Characters) · [GameKee 旅人图鉴](https://www.gamekee.com/stellasora/second/211502)
+
+内页的万送屋插图为日服 Fan Kit「ヨロズ配達」PC 壁紙，保留完整画幅和版权标识。游戏美术与角色 © Yostar 及相关权利人。[日服 Fan Kit](https://stellasora.jp/fankit?type=0) · [原始 PNG](https://webusstatic.yo-star.com/web-cms-prod/upload/content/2026/03/19/x1lwgRwq.png) · [Fan Kit 使用注意事项](https://stellasora.jp/Precautions)
+
+项目保留旧版使用过的空白旅团街景壁纸与四枚游戏 UI 头像，供已有链接访问。[官方街景壁纸](https://webusstatic.yo-star.com/web-cms-prod/upload/content/2026/04/14/rnS5lwnT.png) · [赤霞](https://wiki.biligame.com/stellasora/index.php?curid=842) · [科洛妮丝](https://wiki.biligame.com/stellasora/index.php?curid=851) · [璟麟](https://wiki.biligame.com/stellasora/index.php?curid=847) · [师渺](https://wiki.biligame.com/stellasora/index.php?curid=855)
