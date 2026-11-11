@@ -1537,6 +1537,12 @@ footer button {
   .dialog-actions { flex-wrap: wrap; gap: 8px; }
 }
 
+@media (max-width: 380px) {
+  .traveller-shortcuts a { flex-direction: column; justify-content: center; padding: 4px 0; gap: 3px; }
+  .traveller-shortcuts img { width: 36px; height: 36px; }
+  .traveller-shortcuts span { white-space: nowrap; }
+}
+
 /* Keep the entire game illustration and its original marks visible on every screen. */
 .hero, .hero.sub {
   padding: 0;
