@@ -1,0 +1,2735 @@
+{
+ "upstreamCommit": "a7ba98f95592b13c1290613b305a6b6a688f5fd0",
+ "eventPeriods": {
+  "20101": {
+   "time": "星塔历996年 霜月",
+   "title": "闪耀的使者与圣夜的精灵",
+   "key": "ActivityStoryChapter.2010102.2",
+   "unlockChapterTableId": 2
+  },
+  "10104": {
+   "time": "星塔历997年 雪月",
+   "title": "烟火绮丽寻春意",
+   "key": "ActivityStoryChapter.1010402.2",
+   "unlockChapterTableId": 2
+  },
+  "10105": {
+   "time": "星塔历997年 清月",
+   "title": "冬夜镇魂曲与破晓扳机",
+   "key": "ActivityStoryChapter.1010502.2",
+   "unlockChapterTableId": 2
+  },
+  "10106": {
+   "time": "星塔历997年 雨月",
+   "title": "敬启，致珍重的你",
+   "key": "ActivityStoryChapter.1010602.2",
+   "unlockChapterTableId": 2
+  },
+  "10107": {
+   "time": "星塔历997年 鸣月",
+   "title": "穿透心壁的取景框",
+   "key": "ActivityStoryChapter.1010702.2",
+   "unlockChapterTableId": 2
+  },
+  "10108": {
+   "time": "星塔历997年 雨月",
+   "title": "心跳！柔光狂想曲",
+   "key": "ActivityStoryChapter.1010802.2",
+   "unlockChapterTableId": 4
+  },
+  "11100": {
+   "time": "星塔历997年 雨月",
+   "title": "惊奇冒险！渊海幽灵船传说！",
+   "key": "ActivityStoryChapter.1110002.2",
+   "unlockChapterTableId": 6
+  },
+  "10109": {
+   "time": "星塔历996年 谷月",
+   "title": "枪林弹雨覆黄沙",
+   "key": "ActivityStoryChapter.1010902.2",
+   "unlockChapterTableId": 7
+  },
+  "20103": {
+   "time": "星塔历997年 热月",
+   "title": "晴风碧海 · 悠哉盛夏依然打卡~",
+   "key": "ActivityStoryChapter.2010302.2",
+   "unlockChapterTableId": 7
+  },
+  "10110": {
+   "time": "星塔历997年 热月",
+   "title": "欢歌劲浪 · 闪耀假日惊涛探险！",
+   "key": "ActivityStoryChapter.1011002.2",
+   "unlockChapterTableId": 7
+  },
+  "10111": {
+   "time": "星塔历997年 清月",
+   "title": "奋斗吧！大小姐的旅人修炼手册！",
+   "key": "ActivityStoryChapter.1011102.2",
+   "unlockChapterTableId": 4
+  }
+ },
+ "eventNodes": [
+  {
+   "id": 111000201,
+   "group": 11100,
+   "code": "第一话",
+   "title": "闪烁的微光",
+   "script": true,
+   "parents": []
+  },
+  {
+   "id": 111000202,
+   "group": 11100,
+   "code": "第二话",
+   "title": "来自幽灵船",
+   "script": true,
+   "parents": [
+    111000201
+   ]
+  },
+  {
+   "id": 111000203,
+   "group": 11100,
+   "code": "第三话",
+   "title": "谜团与气味",
+   "script": true,
+   "parents": [
+    111000202
+   ]
+  },
+  {
+   "id": 111000204,
+   "group": 11100,
+   "code": "第四话",
+   "title": "声音的指示",
+   "script": true,
+   "parents": [
+    111000203
+   ]
+  },
+  {
+   "id": 111000205,
+   "group": 11100,
+   "code": "第五话",
+   "title": "眼见非实",
+   "script": true,
+   "parents": [
+    111000204
+   ]
+  },
+  {
+   "id": 111000206,
+   "group": 11100,
+   "code": "第六话",
+   "title": "相似之人",
+   "script": true,
+   "parents": [
+    111000205
+   ]
+  },
+  {
+   "id": 111000207,
+   "group": 11100,
+   "code": "第七话",
+   "title": "阴影之下",
+   "script": true,
+   "parents": [
+    111000206
+   ]
+  },
+  {
+   "id": 111000208,
+   "group": 11100,
+   "code": "第八话",
+   "title": "回响之地",
+   "script": true,
+   "parents": [
+    111000207
+   ]
+  },
+  {
+   "id": 111000209,
+   "group": 11100,
+   "code": "第九话",
+   "title": "光的原点",
+   "script": true,
+   "parents": [
+    111000208
+   ]
+  },
+  {
+   "id": 111000210,
+   "group": 11100,
+   "code": "第十话",
+   "title": "海水的秘密",
+   "script": true,
+   "parents": [
+    111000209
+   ]
+  },
+  {
+   "id": 111000211,
+   "group": 11100,
+   "code": "尾声",
+   "title": "漫无止境的夏天",
+   "script": true,
+   "parents": [
+    111000210
+   ]
+  },
+  {
+   "id": 201010201,
+   "group": 20101,
+   "code": "01",
+   "title": "雪愿节的使者",
+   "script": true,
+   "parents": []
+  },
+  {
+   "id": 201010202,
+   "group": 20101,
+   "code": "02",
+   "title": "送礼大作战",
+   "script": true,
+   "parents": [
+    201010201
+   ]
+  },
+  {
+   "id": 201010203,
+   "group": 20101,
+   "code": "03",
+   "title": "精灵的踪迹",
+   "script": true,
+   "parents": [
+    201010202
+   ]
+  },
+  {
+   "id": 201010204,
+   "group": 20101,
+   "code": "04A",
+   "title": "热情的焰红",
+   "script": true,
+   "parents": [
+    201010203
+   ]
+  },
+  {
+   "id": 201010205,
+   "group": 20101,
+   "code": "04B",
+   "title": "巧合的灰白",
+   "script": true,
+   "parents": [
+    201010203
+   ]
+  },
+  {
+   "id": 201010206,
+   "group": 20101,
+   "code": "04C",
+   "title": "漫雪的蓝调",
+   "script": true,
+   "parents": [
+    201010203
+   ]
+  },
+  {
+   "id": 201010207,
+   "group": 20101,
+   "code": "05",
+   "title": "相似的闪光",
+   "script": true,
+   "parents": [
+    201010204,
+    201010205,
+    201010206
+   ]
+  },
+  {
+   "id": 201010208,
+   "group": 20101,
+   "code": "06",
+   "title": "寂寞的许愿",
+   "script": true,
+   "parents": [
+    201010207
+   ]
+  },
+  {
+   "id": 201010209,
+   "group": 20101,
+   "code": "07",
+   "title": "友谊的魔法",
+   "script": true,
+   "parents": [
+    201010208
+   ]
+  },
+  {
+   "id": 201010210,
+   "group": 20101,
+   "code": "08",
+   "title": "更宽广的世界",
+   "script": true,
+   "parents": [
+    201010209
+   ]
+  },
+  {
+   "id": 201010211,
+   "group": 20101,
+   "code": "09",
+   "title": "庆典时分，盛大登场",
+   "script": true,
+   "parents": [
+    201010210
+   ]
+  },
+  {
+   "id": 201010212,
+   "group": 20101,
+   "code": "10",
+   "title": "危险的“游戏”",
+   "script": true,
+   "parents": [
+    201010211
+   ]
+  },
+  {
+   "id": 201010213,
+   "group": 20101,
+   "code": "BT01",
+   "title": "节日余兴",
+   "script": false,
+   "parents": [
+    201010212
+   ]
+  },
+  {
+   "id": 201010214,
+   "group": 20101,
+   "code": "尾声",
+   "title": "为你准备的礼物",
+   "script": true,
+   "parents": [
+    201010213
+   ]
+  },
+  {
+   "id": 101040201,
+   "group": 10104,
+   "code": "01",
+   "title": "苍茫人海逢故人",
+   "script": true,
+   "parents": []
+  },
+  {
+   "id": 101040202,
+   "group": 10104,
+   "code": "02",
+   "title": "问津市井",
+   "script": true,
+   "parents": [
+    101040201
+   ]
+  },
+  {
+   "id": 101040203,
+   "group": 10104,
+   "code": "03",
+   "title": "柳暗花明",
+   "script": true,
+   "parents": [
+    101040202
+   ]
+  },
+  {
+   "id": 101040204,
+   "group": 10104,
+   "code": "04",
+   "title": "请君入瓮",
+   "script": true,
+   "parents": [
+    101040203
+   ]
+  },
+  {
+   "id": 101040205,
+   "group": 10104,
+   "code": "BT",
+   "title": "一网打尽",
+   "script": false,
+   "parents": [
+    101040204
+   ]
+  },
+  {
+   "id": 101040206,
+   "group": 10104,
+   "code": "05",
+   "title": "好事多磨",
+   "script": true,
+   "parents": [
+    101040205
+   ]
+  },
+  {
+   "id": 101040207,
+   "group": 10104,
+   "code": "06",
+   "title": "寻幽探奇",
+   "script": true,
+   "parents": [
+    101040206
+   ]
+  },
+  {
+   "id": 101040208,
+   "group": 10104,
+   "code": "07",
+   "title": "拨云见日",
+   "script": true,
+   "parents": [
+    101040207
+   ]
+  },
+  {
+   "id": 101040209,
+   "group": 10104,
+   "code": "BT",
+   "title": "医者仁心",
+   "script": false,
+   "parents": [
+    101040208
+   ]
+  },
+  {
+   "id": 101040210,
+   "group": 10104,
+   "code": "08",
+   "title": "此去经年",
+   "script": true,
+   "parents": [
+    101040209
+   ]
+  },
+  {
+   "id": 101040211,
+   "group": 10104,
+   "code": "09",
+   "title": "人间万象更新时",
+   "script": true,
+   "parents": [
+    101040210
+   ]
+  },
+  {
+   "id": 101050201,
+   "group": 10105,
+   "code": "01",
+   "title": "前往北境之城",
+   "script": true,
+   "parents": []
+  },
+  {
+   "id": 101050202,
+   "group": 10105,
+   "code": "BT",
+   "title": "踏入寒夜",
+   "script": false,
+   "parents": [
+    101050201
+   ]
+  },
+  {
+   "id": 101050203,
+   "group": 10105,
+   "code": "02",
+   "title": "被冰封的废都",
+   "script": true,
+   "parents": [
+    101050202
+   ]
+  },
+  {
+   "id": 101050204,
+   "group": 10105,
+   "code": "03",
+   "title": "故乡的记忆",
+   "script": true,
+   "parents": [
+    101050203
+   ]
+  },
+  {
+   "id": 101050205,
+   "group": 10105,
+   "code": "04",
+   "title": "古老秘密",
+   "script": true,
+   "parents": [
+    101050204
+   ]
+  },
+  {
+   "id": 101050206,
+   "group": 10105,
+   "code": "05",
+   "title": "黎明前夜",
+   "script": true,
+   "parents": [
+    101050205
+   ]
+  },
+  {
+   "id": 101050207,
+   "group": 10105,
+   "code": "06",
+   "title": "恶意浮现",
+   "script": true,
+   "parents": [
+    101050206
+   ]
+  },
+  {
+   "id": 101050208,
+   "group": 10105,
+   "code": "07",
+   "title": "尊者",
+   "script": true,
+   "parents": [
+    101050207
+   ]
+  },
+  {
+   "id": 101050209,
+   "group": 10105,
+   "code": "08",
+   "title": "破晓扳机",
+   "script": true,
+   "parents": [
+    101050208
+   ]
+  },
+  {
+   "id": 101050210,
+   "group": 10105,
+   "code": "BT",
+   "title": "鱼死网破",
+   "script": false,
+   "parents": [
+    101050209
+   ]
+  },
+  {
+   "id": 101050211,
+   "group": 10105,
+   "code": "09",
+   "title": "何为强大",
+   "script": true,
+   "parents": [
+    101050210
+   ]
+  },
+  {
+   "id": 101050212,
+   "group": 10105,
+   "code": "10",
+   "title": "告别风雪",
+   "script": true,
+   "parents": [
+    101050211
+   ]
+  },
+  {
+   "id": 101060201,
+   "group": 10106,
+   "code": "01",
+   "title": "万送屋的委托",
+   "script": true,
+   "parents": []
+  },
+  {
+   "id": 101060202,
+   "group": 10106,
+   "code": "02A",
+   "title": "道听途说",
+   "script": true,
+   "parents": [
+    101060201
+   ]
+  },
+  {
+   "id": 101060203,
+   "group": 10106,
+   "code": "02B",
+   "title": "识字知书",
+   "script": true,
+   "parents": [
+    101060201
+   ]
+  },
+  {
+   "id": 101060204,
+   "group": 10106,
+   "code": "02C",
+   "title": "按图索籍",
+   "script": true,
+   "parents": [
+    101060201
+   ]
+  },
+  {
+   "id": 101060205,
+   "group": 10106,
+   "code": "03",
+   "title": "未敞开的心扉",
+   "script": true,
+   "parents": [
+    101060202,
+    101060203,
+    101060204
+   ]
+  },
+  {
+   "id": 101060206,
+   "group": 10106,
+   "code": "04",
+   "title": "路遇偷信大盗",
+   "script": true,
+   "parents": [
+    101060205
+   ]
+  },
+  {
+   "id": 101060207,
+   "group": 10106,
+   "code": "BT01",
+   "title": "以理服人",
+   "script": false,
+   "parents": [
+    101060206
+   ]
+  },
+  {
+   "id": 101060208,
+   "group": 10106,
+   "code": "05",
+   "title": "竟是魔物所为",
+   "script": true,
+   "parents": [
+    101060207
+   ]
+  },
+  {
+   "id": 101060209,
+   "group": 10106,
+   "code": "06",
+   "title": "玉米粒大作战",
+   "script": true,
+   "parents": [
+    101060208
+   ]
+  },
+  {
+   "id": 101060210,
+   "group": 10106,
+   "code": "BT02",
+   "title": "直面狂风",
+   "script": false,
+   "parents": [
+    101060209
+   ]
+  },
+  {
+   "id": 101060211,
+   "group": 10106,
+   "code": "07",
+   "title": "跨越时空的问候",
+   "script": true,
+   "parents": [
+    101060210
+   ]
+  },
+  {
+   "id": 101060212,
+   "group": 10106,
+   "code": "08",
+   "title": "敬启，致珍重的你",
+   "script": true,
+   "parents": [
+    101060211
+   ]
+  },
+  {
+   "id": 101070201,
+   "group": 10107,
+   "code": "01",
+   "title": "再遇",
+   "script": true,
+   "parents": []
+  },
+  {
+   "id": 101070202,
+   "group": 10107,
+   "code": "02",
+   "title": "胶卷",
+   "script": true,
+   "parents": [
+    101070201
+   ]
+  },
+  {
+   "id": 101070203,
+   "group": 10107,
+   "code": "03",
+   "title": "监护人",
+   "script": true,
+   "parents": [
+    101070202
+   ]
+  },
+  {
+   "id": 101070204,
+   "group": 10107,
+   "code": "04",
+   "title": "实验体",
+   "script": true,
+   "parents": [
+    101070203
+   ]
+  },
+  {
+   "id": 101070205,
+   "group": 10107,
+   "code": "05",
+   "title": "朋友",
+   "script": true,
+   "parents": [
+    101070204
+   ]
+  },
+  {
+   "id": 101070206,
+   "group": 10107,
+   "code": "BT01",
+   "title": "伸出援手",
+   "script": false,
+   "parents": [
+    101070205
+   ]
+  },
+  {
+   "id": 101070207,
+   "group": 10107,
+   "code": "06",
+   "title": "第一次的风景",
+   "script": true,
+   "parents": [
+    101070206
+   ]
+  },
+  {
+   "id": 101070208,
+   "group": 10107,
+   "code": "07",
+   "title": "觉悟",
+   "script": true,
+   "parents": [
+    101070207
+   ]
+  },
+  {
+   "id": 101070209,
+   "group": 10107,
+   "code": "BT02",
+   "title": "保护大家",
+   "script": false,
+   "parents": [
+    101070208
+   ]
+  },
+  {
+   "id": 101070210,
+   "group": 10107,
+   "code": "08",
+   "title": "笑颜",
+   "script": true,
+   "parents": [
+    101070209
+   ]
+  },
+  {
+   "id": 101070211,
+   "group": 10107,
+   "code": "09",
+   "title": "普通女孩",
+   "script": true,
+   "parents": [
+    101070210
+   ]
+  },
+  {
+   "id": 101080201,
+   "group": 10108,
+   "code": "01",
+   "title": "能源危机",
+   "script": true,
+   "parents": []
+  },
+  {
+   "id": 101080202,
+   "group": 10108,
+   "code": "02",
+   "title": "天才工匠的下落",
+   "script": true,
+   "parents": [
+    101080201
+   ]
+  },
+  {
+   "id": 101080203,
+   "group": 10108,
+   "code": "BT01",
+   "title": "脱逃大作战",
+   "script": false,
+   "parents": [
+    101080202
+   ]
+  },
+  {
+   "id": 101080204,
+   "group": 10108,
+   "code": "03",
+   "title": "欢迎来到地下市场",
+   "script": true,
+   "parents": [
+    101080203
+   ]
+  },
+  {
+   "id": 101080205,
+   "group": 10108,
+   "code": "04",
+   "title": "斯帕克拉的移动工坊",
+   "script": true,
+   "parents": [
+    101080204
+   ]
+  },
+  {
+   "id": 101080206,
+   "group": 10108,
+   "code": "05",
+   "title": "好戏开场",
+   "script": true,
+   "parents": [
+    101080205
+   ]
+  },
+  {
+   "id": 101080207,
+   "group": 10108,
+   "code": "06",
+   "title": "收网之刻已至",
+   "script": true,
+   "parents": [
+    101080206
+   ]
+  },
+  {
+   "id": 101080208,
+   "group": 10108,
+   "code": "BT02",
+   "title": "全速前进",
+   "script": false,
+   "parents": [
+    101080207
+   ]
+  },
+  {
+   "id": 101080209,
+   "group": 10108,
+   "code": "07",
+   "title": "虎口脱险",
+   "script": true,
+   "parents": [
+    101080208
+   ]
+  },
+  {
+   "id": 101080210,
+   "group": 10108,
+   "code": "EX",
+   "title": "一份新的订单",
+   "script": true,
+   "parents": [
+    101080209
+   ]
+  },
+  {
+   "id": 101090201,
+   "group": 10109,
+   "code": "01",
+   "title": "远征凯旋……黑暗之力的缺席",
+   "script": true,
+   "parents": []
+  },
+  {
+   "id": 101090202,
+   "group": 10109,
+   "code": "02",
+   "title": "苍梧之战……黑暗之力的证明",
+   "script": true,
+   "parents": [
+    101090201
+   ]
+  },
+  {
+   "id": 101090203,
+   "group": 10109,
+   "code": "03",
+   "title": "千塔演出……黑暗之力的显现",
+   "script": true,
+   "parents": [
+    101090202
+   ]
+  },
+  {
+   "id": 101090204,
+   "group": 10109,
+   "code": "04",
+   "title": "出发……猫眼大人的调查军团",
+   "script": true,
+   "parents": [
+    101090203
+   ]
+  },
+  {
+   "id": 101090205,
+   "group": 10109,
+   "code": "05",
+   "title": "深入……黑暗侵蚀的地下巢穴",
+   "script": true,
+   "parents": [
+    101090204
+   ]
+  },
+  {
+   "id": 101090206,
+   "group": 10109,
+   "code": "BT01",
+   "title": "交火……米拉什大街的大混战",
+   "script": false,
+   "parents": [
+    101090205
+   ]
+  },
+  {
+   "id": 101090207,
+   "group": 10109,
+   "code": "06",
+   "title": "矿洞突袭……黑暗巢穴的陷阱",
+   "script": true,
+   "parents": [
+    101090206
+   ]
+  },
+  {
+   "id": 101090208,
+   "group": 10109,
+   "code": "BT02",
+   "title": "魔物对决……拯救被困的旅人",
+   "script": false,
+   "parents": [
+    101090207
+   ]
+  },
+  {
+   "id": 101090209,
+   "group": 10109,
+   "code": "07",
+   "title": "冲出重围……黑暗之力的重生",
+   "script": true,
+   "parents": [
+    101090208
+   ]
+  },
+  {
+   "id": 101090210,
+   "group": 10109,
+   "code": "08",
+   "title": "干杯……敬最强大的猫眼大人",
+   "script": true,
+   "parents": [
+    101090209
+   ]
+  },
+  {
+   "id": 201030201,
+   "group": 20103,
+   "code": "01",
+   "title": "是时候休个假了！",
+   "script": true,
+   "parents": []
+  },
+  {
+   "id": 201030202,
+   "group": 20103,
+   "code": "02",
+   "title": "穿上泳装，拿起扫帚",
+   "script": true,
+   "parents": [
+    201030201
+   ]
+  },
+  {
+   "id": 201030203,
+   "group": 20103,
+   "code": "03",
+   "title": "沙滩、大海、捉迷藏",
+   "script": true,
+   "parents": [
+    201030202
+   ]
+  },
+  {
+   "id": 201030204,
+   "group": 20103,
+   "code": "04",
+   "title": "自动售货神器怪谈",
+   "script": true,
+   "parents": [
+    201030203
+   ]
+  },
+  {
+   "id": 201030205,
+   "group": 20103,
+   "code": "BT01",
+   "title": "怎么又是你！",
+   "script": false,
+   "parents": [
+    201030204
+   ]
+  },
+  {
+   "id": 201030206,
+   "group": 20103,
+   "code": "05",
+   "title": "身负秘宝的巨影",
+   "script": true,
+   "parents": [
+    201030205
+   ]
+  },
+  {
+   "id": 201030207,
+   "group": 20103,
+   "code": "06",
+   "title": "出师不利",
+   "script": true,
+   "parents": [
+    201030206
+   ]
+  },
+  {
+   "id": 201030208,
+   "group": 20103,
+   "code": "07",
+   "title": "成为你的手",
+   "script": true,
+   "parents": [
+    201030207
+   ]
+  },
+  {
+   "id": 201030209,
+   "group": 20103,
+   "code": "08",
+   "title": "拨云见日",
+   "script": true,
+   "parents": [
+    201030208
+   ]
+  },
+  {
+   "id": 201030210,
+   "group": 20103,
+   "code": "BT02",
+   "title": "挥舞大钳的不速之客",
+   "script": false,
+   "parents": [
+    201030209
+   ]
+  },
+  {
+   "id": 201030211,
+   "group": 20103,
+   "code": "09",
+   "title": "晴风碧海，悠哉游哉",
+   "script": true,
+   "parents": [
+    201030210
+   ]
+  },
+  {
+   "id": 101100201,
+   "group": 10110,
+   "code": "01",
+   "title": "海风吹来的委托",
+   "script": true,
+   "parents": []
+  },
+  {
+   "id": 101100202,
+   "group": 10110,
+   "code": "02",
+   "title": "梦想在甲板上摇晃",
+   "script": true,
+   "parents": [
+    101100201
+   ]
+  },
+  {
+   "id": 101100203,
+   "group": 10110,
+   "code": "03",
+   "title": "空白旅团漂流记",
+   "script": true,
+   "parents": [
+    101100202
+   ]
+  },
+  {
+   "id": 101100204,
+   "group": 10110,
+   "code": "04",
+   "title": "海上幻影",
+   "script": true,
+   "parents": [
+    101100203
+   ]
+  },
+  {
+   "id": 101100205,
+   "group": 10110,
+   "code": "BT01",
+   "title": "深海星塔",
+   "script": false,
+   "parents": [
+    101100204
+   ]
+  },
+  {
+   "id": 101100206,
+   "group": 10110,
+   "code": "05",
+   "title": "漩涡深处的收藏家",
+   "script": true,
+   "parents": [
+    101100205
+   ]
+  },
+  {
+   "id": 101100207,
+   "group": 10110,
+   "code": "06",
+   "title": "海螺壳争夺战",
+   "script": true,
+   "parents": [
+    101100206
+   ]
+  },
+  {
+   "id": 101100208,
+   "group": 10110,
+   "code": "07",
+   "title": "镜框里的海",
+   "script": true,
+   "parents": [
+    101100207
+   ]
+  },
+  {
+   "id": 101100209,
+   "group": 10110,
+   "code": "BT02",
+   "title": "品德教育",
+   "script": false,
+   "parents": [
+    101100208
+   ]
+  },
+  {
+   "id": 101100210,
+   "group": 10110,
+   "code": "08",
+   "title": "裂痕与归处",
+   "script": true,
+   "parents": [
+    101100209
+   ]
+  },
+  {
+   "id": 101100211,
+   "group": 10110,
+   "code": "09",
+   "title": "夏天仍未结束",
+   "script": true,
+   "parents": [
+    101100210
+   ]
+  },
+  {
+   "id": 101110201,
+   "group": 10111,
+   "code": "01",
+   "title": "大小姐们的茶会",
+   "script": true,
+   "parents": []
+  },
+  {
+   "id": 101110202,
+   "group": 10111,
+   "code": "02",
+   "title": "脚踏实地，谦逊努力",
+   "script": true,
+   "parents": [
+    101110201
+   ]
+  },
+  {
+   "id": 101110203,
+   "group": 10111,
+   "code": "03",
+   "title": "进步",
+   "script": true,
+   "parents": [
+    101110202
+   ]
+  },
+  {
+   "id": 101110204,
+   "group": 10111,
+   "code": "BT01",
+   "title": "第一份委托",
+   "script": false,
+   "parents": [
+    101110203
+   ]
+  },
+  {
+   "id": 101110205,
+   "group": 10111,
+   "code": "04",
+   "title": "新生活",
+   "script": true,
+   "parents": [
+    101110204
+   ]
+  },
+  {
+   "id": 101110206,
+   "group": 10111,
+   "code": "05",
+   "title": "失踪",
+   "script": true,
+   "parents": [
+    101110205
+   ]
+  },
+  {
+   "id": 101110207,
+   "group": 10111,
+   "code": "06",
+   "title": "伪装",
+   "script": true,
+   "parents": [
+    101110206
+   ]
+  },
+  {
+   "id": 101110208,
+   "group": 10111,
+   "code": "07",
+   "title": "突围",
+   "script": true,
+   "parents": [
+    101110207
+   ]
+  },
+  {
+   "id": 101110209,
+   "group": 10111,
+   "code": "BT02",
+   "title": "直捣黄龙",
+   "script": false,
+   "parents": [
+    101110208
+   ]
+  },
+  {
+   "id": 101110210,
+   "group": 10111,
+   "code": "08",
+   "title": "荣誉之夜",
+   "script": true,
+   "parents": [
+    101110209
+   ]
+  },
+  {
+   "id": 101110211,
+   "group": 10111,
+   "code": "09",
+   "title": "新的梦想",
+   "script": true,
+   "parents": [
+    101110210
+   ]
+  }
+ ],
+ "mainConditions": {
+  "CBA01_05": {
+   "parents": [
+    "BAm01_05"
+   ],
+   "evidence": []
+  },
+  "C01_01": {
+   "parents": [
+    "STm01_01"
+   ],
+   "evidence": []
+  },
+  "C01_02": {
+   "parents": [
+    "STm01_02"
+   ],
+   "evidence": []
+  },
+  "C01_03": {
+   "parents": [
+    "STm01_03"
+   ],
+   "evidence": []
+  },
+  "C01_04": {
+   "parents": [
+    "STm01_04"
+   ],
+   "evidence": []
+  },
+  "C01_05": {
+   "parents": [
+    "STm01_05"
+   ],
+   "evidence": []
+  },
+  "C01_06": {
+   "parents": [
+    "STm01_06"
+   ],
+   "evidence": []
+  },
+  "C01_07_a": {
+   "parents": [
+    "STm01_07"
+   ],
+   "evidence": [
+    "E101"
+   ]
+  },
+  "C01_07_b": {
+   "parents": [
+    "STm01_07"
+   ],
+   "evidence": [
+    "E102"
+   ]
+  },
+  "C01_07_c": {
+   "parents": [
+    "STm01_07"
+   ],
+   "evidence": [
+    "E103"
+   ]
+  },
+  "C01_08": {
+   "parents": [
+    "STm01_08_a",
+    "STm01_08_c"
+   ],
+   "evidence": []
+  },
+  "C01_09": {
+   "parents": [
+    "STm01_09"
+   ],
+   "evidence": []
+  },
+  "C01_10": {
+   "parents": [
+    "STm01_10"
+   ],
+   "evidence": []
+  },
+  "C02_02_a": {
+   "parents": [
+    "STm02_01"
+   ],
+   "evidence": [
+    "E201"
+   ]
+  },
+  "C02_02_b": {
+   "parents": [
+    "STm02_01"
+   ],
+   "evidence": [
+    "E202"
+   ]
+  },
+  "C02_02_c": {
+   "parents": [
+    "STm02_01"
+   ],
+   "evidence": [
+    "E203"
+   ]
+  },
+  "C02_03_a": {
+   "parents": [
+    "STm02_02_a"
+   ],
+   "evidence": []
+  },
+  "C02_03_b": {
+   "parents": [
+    "STm02_02_b"
+   ],
+   "evidence": []
+  },
+  "C02_03": {
+   "parents": [
+    "STm02_03_a",
+    "STm02_03_b"
+   ],
+   "evidence": []
+  },
+  "C02_04": {
+   "parents": [
+    "STm02_04"
+   ],
+   "evidence": []
+  },
+  "C02_05": {
+   "parents": [
+    "STm02_05"
+   ],
+   "evidence": []
+  },
+  "C02_06": {
+   "parents": [
+    "STm02_06"
+   ],
+   "evidence": []
+  },
+  "C02_07": {
+   "parents": [
+    "STm02_07"
+   ],
+   "evidence": []
+  },
+  "C02_08": {
+   "parents": [
+    "STm02_08"
+   ],
+   "evidence": []
+  },
+  "C02_09": {
+   "parents": [
+    "STm02_09"
+   ],
+   "evidence": []
+  },
+  "C02_10": {
+   "parents": [
+    "STm02_10"
+   ],
+   "evidence": []
+  },
+  "C02_11": {
+   "parents": [
+    "STm02_11"
+   ],
+   "evidence": []
+  },
+  "CBA02_03": {
+   "parents": [
+    "BAm02_03"
+   ],
+   "evidence": []
+  },
+  "CBA02_09": {
+   "parents": [
+    "BAm02_09"
+   ],
+   "evidence": []
+  },
+  "CBA02_10": {
+   "parents": [
+    "BAm02_10"
+   ],
+   "evidence": []
+  },
+  "C03_00_a": {
+   "parents": [
+    "STm03_00_a"
+   ],
+   "evidence": []
+  },
+  "C03_00_b": {
+   "parents": [
+    "STm03_00_b"
+   ],
+   "evidence": []
+  },
+  "C03_01": {
+   "parents": [
+    "STm03_01"
+   ],
+   "evidence": []
+  },
+  "C03_02": {
+   "parents": [
+    "STm03_02"
+   ],
+   "evidence": []
+  },
+  "C03_03": {
+   "parents": [
+    "STm03_03"
+   ],
+   "evidence": []
+  },
+  "C03_04": {
+   "parents": [
+    "STm03_04"
+   ],
+   "evidence": []
+  },
+  "C03_05_a": {
+   "parents": [
+    "STm03_05"
+   ],
+   "evidence": [
+    "E301"
+   ]
+  },
+  "C03_05_b": {
+   "parents": [
+    "STm03_05"
+   ],
+   "evidence": [
+    "E302"
+   ]
+  },
+  "C03_05_c": {
+   "parents": [
+    "STm03_05"
+   ],
+   "evidence": [
+    "E303"
+   ]
+  },
+  "C03_06": {
+   "parents": [
+    "STm03_06_a",
+    "STm03_06_b"
+   ],
+   "evidence": []
+  },
+  "C03_07": {
+   "parents": [
+    "STm03_07"
+   ],
+   "evidence": []
+  },
+  "C03_08": {
+   "parents": [
+    "STm03_08"
+   ],
+   "evidence": []
+  },
+  "C03_09": {
+   "parents": [
+    "STm03_09"
+   ],
+   "evidence": []
+  },
+  "C03_10": {
+   "parents": [
+    "STm03_10"
+   ],
+   "evidence": []
+  },
+  "CBA03_04": {
+   "parents": [
+    "BAm03_04"
+   ],
+   "evidence": []
+  },
+  "CBA03_09": {
+   "parents": [
+    "BAm03_09"
+   ],
+   "evidence": []
+  },
+  "CE3_00_b": {
+   "parents": [
+    "STm01_08_b",
+    "STm02_02_c"
+   ],
+   "evidence": []
+  },
+  "C04_01": {
+   "parents": [
+    "STm04_01"
+   ],
+   "evidence": []
+  },
+  "C04_02": {
+   "parents": [
+    "STm04_02"
+   ],
+   "evidence": []
+  },
+  "C04_03_a": {
+   "parents": [
+    "STm04_02"
+   ],
+   "evidence": [
+    "E401"
+   ]
+  },
+  "C04_03_b": {
+   "parents": [
+    "STm04_02"
+   ],
+   "evidence": [
+    "E402"
+   ]
+  },
+  "C04_03_c": {
+   "parents": [
+    "STm04_02"
+   ],
+   "evidence": [
+    "E403"
+   ]
+  },
+  "C04_04_a": {
+   "parents": [
+    "STm04_03_b",
+    "STm04_03_c"
+   ],
+   "evidence": [
+    "E404"
+   ]
+  },
+  "C04_04_b": {
+   "parents": [
+    "STm04_03_b",
+    "STm04_03_c"
+   ],
+   "evidence": [
+    "E405"
+   ]
+  },
+  "C04_04_c": {
+   "parents": [
+    "STm04_03_b",
+    "STm04_03_c"
+   ],
+   "evidence": [
+    "E406"
+   ]
+  },
+  "C04_04": {
+   "parents": [
+    "STm04_04_a",
+    "STm04_04_b",
+    "STm04_04_c"
+   ],
+   "evidence": []
+  },
+  "C04_05": {
+   "parents": [
+    "STm04_05"
+   ],
+   "evidence": []
+  },
+  "C04_06": {
+   "parents": [
+    "STm04_06"
+   ],
+   "evidence": []
+  },
+  "C04_07": {
+   "parents": [
+    "STm04_07"
+   ],
+   "evidence": []
+  },
+  "C04_08": {
+   "parents": [
+    "STm04_08"
+   ],
+   "evidence": []
+  },
+  "C04_09": {
+   "parents": [
+    "STm04_09"
+   ],
+   "evidence": []
+  },
+  "C04_10": {
+   "parents": [
+    "STm04_10"
+   ],
+   "evidence": []
+  },
+  "C04_11": {
+   "parents": [
+    "STm04_11"
+   ],
+   "evidence": []
+  },
+  "CBA04_04": {
+   "parents": [
+    "BAm04_04"
+   ],
+   "evidence": []
+  },
+  "CBA04_09": {
+   "parents": [
+    "BAm04_09"
+   ],
+   "evidence": []
+  },
+  "C05_00": {
+   "parents": [
+    "STm05_00"
+   ],
+   "evidence": []
+  },
+  "C05_01": {
+   "parents": [
+    "STm05_01"
+   ],
+   "evidence": []
+  },
+  "C05_02": {
+   "parents": [
+    "STm05_02"
+   ],
+   "evidence": []
+  },
+  "C05_02_a": {
+   "parents": [
+    "STm05_02"
+   ],
+   "evidence": [
+    "E501"
+   ]
+  },
+  "C05_02_b": {
+   "parents": [
+    "STm05_02"
+   ],
+   "evidence": [
+    "E502"
+   ]
+  },
+  "C05_02_c": {
+   "parents": [
+    "STm05_02"
+   ],
+   "evidence": [
+    "E503"
+   ]
+  },
+  "C05_03": {
+   "parents": [
+    "STm05_03_c",
+    "STm05_03_a",
+    "STm05_03_b",
+    "STm05_03_c"
+   ],
+   "evidence": [
+    "E504"
+   ]
+  },
+  "C05_04": {
+   "parents": [
+    "STm05_04"
+   ],
+   "evidence": []
+  },
+  "C05_05": {
+   "parents": [
+    "STm05_05"
+   ],
+   "evidence": []
+  },
+  "C05_06": {
+   "parents": [
+    "STm05_06"
+   ],
+   "evidence": []
+  },
+  "C05_07": {
+   "parents": [
+    "STm05_07"
+   ],
+   "evidence": []
+  },
+  "C05_08_a": {
+   "parents": [
+    "STm05_08"
+   ],
+   "evidence": [
+    "E505"
+   ]
+  },
+  "C05_08_b": {
+   "parents": [
+    "STm05_08"
+   ],
+   "evidence": [
+    "E506"
+   ]
+  },
+  "C05_08_c": {
+   "parents": [
+    "STm05_08"
+   ],
+   "evidence": [
+    "E507"
+   ]
+  },
+  "C05_09": {
+   "parents": [
+    "STm05_09_b"
+   ],
+   "evidence": []
+  },
+  "C05_10": {
+   "parents": [
+    "STm05_10"
+   ],
+   "evidence": []
+  },
+  "CBA05_05": {
+   "parents": [
+    "BAm05_05"
+   ],
+   "evidence": []
+  },
+  "CBA05_08": {
+   "parents": [
+    "BAm05_08"
+   ],
+   "evidence": []
+  },
+  "CBA05_10": {
+   "parents": [
+    "BAm05_10"
+   ],
+   "evidence": []
+  },
+  "CBA06_01": {
+   "parents": [
+    "STm06_02_b",
+    "STm06_02_c"
+   ],
+   "evidence": []
+  },
+  "CBA06_02": {
+   "parents": [
+    "STm06_09"
+   ],
+   "evidence": []
+  },
+  "CBA06_03": {
+   "parents": [
+    "STm06_11"
+   ],
+   "evidence": []
+  },
+  "C06_01": {
+   "parents": [
+    "STm06_00"
+   ],
+   "evidence": []
+  },
+  "C06_02_a": {
+   "parents": [
+    "STm06_01"
+   ],
+   "evidence": [
+    "E601"
+   ]
+  },
+  "C06_02_b": {
+   "parents": [
+    "STm06_01"
+   ],
+   "evidence": [
+    "E602"
+   ]
+  },
+  "C06_02_c": {
+   "parents": [
+    "STm06_01"
+   ],
+   "evidence": [
+    "E603"
+   ]
+  },
+  "C06_03_a": {
+   "parents": [
+    "STm06_02_a"
+   ],
+   "evidence": []
+  },
+  "C06_03_b": {
+   "parents": [
+    "BAm06_01"
+   ],
+   "evidence": []
+  },
+  "C06_04_a": {
+   "parents": [
+    "STm06_03_a"
+   ],
+   "evidence": []
+  },
+  "C06_04_b": {
+   "parents": [
+    "STm06_03_b"
+   ],
+   "evidence": []
+  },
+  "C06_05_a": {
+   "parents": [
+    "STm06_04_a"
+   ],
+   "evidence": []
+  },
+  "C06_05_b": {
+   "parents": [
+    "STm06_04_b"
+   ],
+   "evidence": []
+  },
+  "C06_06": {
+   "parents": [
+    "STm06_05_b"
+   ],
+   "evidence": []
+  },
+  "C06_07": {
+   "parents": [
+    "STm06_06"
+   ],
+   "evidence": []
+  },
+  "C06_08": {
+   "parents": [
+    "STm06_07"
+   ],
+   "evidence": []
+  },
+  "C06_09": {
+   "parents": [
+    "STm06_08"
+   ],
+   "evidence": []
+  },
+  "C06_10": {
+   "parents": [
+    "BAm06_02"
+   ],
+   "evidence": []
+  },
+  "C06_11": {
+   "parents": [
+    "STm06_10"
+   ],
+   "evidence": []
+  },
+  "C06_12": {
+   "parents": [
+    "BAm06_03"
+   ],
+   "evidence": []
+  },
+  "C06_13": {
+   "parents": [
+    "STm06_12"
+   ],
+   "evidence": []
+  },
+  "C06_14": {
+   "parents": [
+    "STm06_05_a"
+   ],
+   "evidence": []
+  },
+  "CBA07_01": {
+   "parents": [
+    "STm07_01"
+   ],
+   "evidence": []
+  },
+  "CBA07_02": {
+   "parents": [
+    "STm07_07"
+   ],
+   "evidence": []
+  },
+  "CBA07_03": {
+   "parents": [
+    "STm07_15"
+   ],
+   "evidence": []
+  },
+  "C07_01": {
+   "parents": [
+    "STm07_00"
+   ],
+   "evidence": []
+  },
+  "C07_02": {
+   "parents": [
+    "BAm07_01"
+   ],
+   "evidence": []
+  },
+  "C07_03": {
+   "parents": [
+    "STm07_02"
+   ],
+   "evidence": []
+  },
+  "C07_04": {
+   "parents": [
+    "STm07_03"
+   ],
+   "evidence": []
+  },
+  "C07_05_c": {
+   "parents": [
+    "STm07_04"
+   ],
+   "evidence": [
+    "E803"
+   ]
+  },
+  "C07_05_a": {
+   "parents": [
+    "STm07_04"
+   ],
+   "evidence": [
+    "E801"
+   ]
+  },
+  "C07_05_b": {
+   "parents": [
+    "STm07_04"
+   ],
+   "evidence": [
+    "E802"
+   ]
+  },
+  "C07_06_ba": {
+   "parents": [
+    "STm07_05_b"
+   ],
+   "evidence": [
+    "E804"
+   ]
+  },
+  "C07_06_bb": {
+   "parents": [
+    "STm07_05_b"
+   ],
+   "evidence": [
+    "E805"
+   ]
+  },
+  "C07_06_bc": {
+   "parents": [
+    "STm07_05_b"
+   ],
+   "evidence": [
+    "E806"
+   ]
+  },
+  "C07_06_a": {
+   "parents": [
+    "STm07_05_a"
+   ],
+   "evidence": []
+  },
+  "C07_07": {
+   "parents": [
+    "STm07_06_a"
+   ],
+   "evidence": []
+  },
+  "C07_08": {
+   "parents": [
+    "BAm07_02"
+   ],
+   "evidence": []
+  },
+  "C07_09": {
+   "parents": [
+    "STm07_08"
+   ],
+   "evidence": []
+  },
+  "C07_12": {
+   "parents": [
+    "STm07_11"
+   ],
+   "evidence": []
+  },
+  "C07_10": {
+   "parents": [
+    "STm07_09"
+   ],
+   "evidence": []
+  },
+  "C07_11": {
+   "parents": [
+    "STm07_10"
+   ],
+   "evidence": []
+  },
+  "C07_13": {
+   "parents": [
+    "STm07_12"
+   ],
+   "evidence": []
+  },
+  "C07_14": {
+   "parents": [
+    "STm07_13"
+   ],
+   "evidence": []
+  },
+  "C07_15": {
+   "parents": [
+    "STm07_14"
+   ],
+   "evidence": []
+  },
+  "C07_16": {
+   "parents": [
+    "BAm07_03"
+   ],
+   "evidence": []
+  },
+  "C07_17": {
+   "parents": [
+    "STm07_06_ba",
+    "STm07_06_bb",
+    "STm07_06_bc"
+   ],
+   "evidence": []
+  },
+  "C08_BT01": {
+   "parents": [
+    "STm08_01"
+   ],
+   "evidence": []
+  },
+  "C08_02": {
+   "parents": [
+    "BAm08_01"
+   ],
+   "evidence": []
+  },
+  "C08_03": {
+   "parents": [
+    "STm08_02"
+   ],
+   "evidence": []
+  },
+  "C08_04": {
+   "parents": [
+    "STm08_03"
+   ],
+   "evidence": []
+  },
+  "C08_05": {
+   "parents": [
+    "STm08_04"
+   ],
+   "evidence": []
+  },
+  "C08_06": {
+   "parents": [
+    "STm08_05"
+   ],
+   "evidence": []
+  },
+  "C08_07": {
+   "parents": [
+    "STm08_06"
+   ],
+   "evidence": []
+  },
+  "C08_08": {
+   "parents": [
+    "STm08_07"
+   ],
+   "evidence": []
+  },
+  "C08_09": {
+   "parents": [
+    "STm08_08"
+   ],
+   "evidence": []
+  },
+  "C08_10": {
+   "parents": [
+    "STm08_09"
+   ],
+   "evidence": []
+  },
+  "C08_BT02": {
+   "parents": [
+    "STm08_10"
+   ],
+   "evidence": []
+  },
+  "C08_11": {
+   "parents": [
+    "BAm08_02"
+   ],
+   "evidence": []
+  },
+  "C08_12": {
+   "parents": [
+    "STm08_11"
+   ],
+   "evidence": []
+  },
+  "C08_13": {
+   "parents": [
+    "STm08_12"
+   ],
+   "evidence": []
+  },
+  "C08_14": {
+   "parents": [
+    "STm08_13"
+   ],
+   "evidence": []
+  },
+  "C08_15": {
+   "parents": [
+    "STm08_14"
+   ],
+   "evidence": []
+  },
+  "C08_16_a": {
+   "parents": [
+    "STm08_15"
+   ],
+   "evidence": [
+    "E901"
+   ]
+  },
+  "C08_16_b": {
+   "parents": [
+    "STm08_15"
+   ],
+   "evidence": [
+    "E902"
+   ]
+  },
+  "C08_17_a": {
+   "parents": [
+    "STm08_16_a"
+   ],
+   "evidence": []
+  },
+  "C08_18_a": {
+   "parents": [
+    "STm08_17_a"
+   ],
+   "evidence": []
+  },
+  "C08_19_a": {
+   "parents": [
+    "STm08_18_a"
+   ],
+   "evidence": []
+  },
+  "C08_20": {
+   "parents": [
+    "STm08_19_a"
+   ],
+   "evidence": []
+  },
+  "C08_17_b": {
+   "parents": [
+    "STm08_16_b"
+   ],
+   "evidence": []
+  },
+  "C08_18_b": {
+   "parents": [
+    "STm08_17_b"
+   ],
+   "evidence": []
+  },
+  "C08_19_b": {
+   "parents": [
+    "STm08_18_b"
+   ],
+   "evidence": []
+  },
+  "C08_BT03": {
+   "parents": [
+    "STm08_20"
+   ],
+   "evidence": []
+  },
+  "C08_21": {
+   "parents": [
+    "BAm08_03"
+   ],
+   "evidence": []
+  },
+  "C08_BE": {
+   "parents": [
+    "STm08_19_b"
+   ],
+   "evidence": []
+  },
+  "C09_00_a": {
+   "parents": [],
+   "evidence": []
+  },
+  "C09_00_b": {
+   "parents": [
+    "STm09_00_a"
+   ],
+   "evidence": []
+  },
+  "C09_01_a": {
+   "parents": [
+    "STm09_00_b"
+   ],
+   "evidence": [
+    "E1001"
+   ]
+  },
+  "C09_BT01": {
+   "parents": [
+    "STm09_01_a"
+   ],
+   "evidence": []
+  },
+  "C09_02_a": {
+   "parents": [
+    "BAm09_BT01"
+   ],
+   "evidence": []
+  },
+  "C09_03_a": {
+   "parents": [
+    "STm09_02_a"
+   ],
+   "evidence": []
+  },
+  "C09_04_a": {
+   "parents": [
+    "STm09_03_a"
+   ],
+   "evidence": []
+  },
+  "C09_05_a": {
+   "parents": [
+    "STm09_04_a"
+   ],
+   "evidence": []
+  },
+  "C09_06_a": {
+   "parents": [
+    "STm09_05_a"
+   ],
+   "evidence": []
+  },
+  "C09_BT03": {
+   "parents": [
+    "STm09_06_a"
+   ],
+   "evidence": []
+  },
+  "C09_07_a": {
+   "parents": [
+    "BAm09_BT03"
+   ],
+   "evidence": []
+  },
+  "C09_01_b": {
+   "parents": [
+    "STm09_00_b"
+   ],
+   "evidence": [
+    "E1002"
+   ]
+  },
+  "C09_BT02": {
+   "parents": [
+    "STm09_01_b"
+   ],
+   "evidence": []
+  },
+  "C09_02_b": {
+   "parents": [
+    "BAm09_BT02"
+   ],
+   "evidence": []
+  },
+  "C09_03_b": {
+   "parents": [
+    "STm09_02_b"
+   ],
+   "evidence": []
+  },
+  "C09_04_b": {
+   "parents": [
+    "STm09_03_b"
+   ],
+   "evidence": []
+  },
+  "C09_05_b": {
+   "parents": [
+    "STm09_04_b"
+   ],
+   "evidence": []
+  },
+  "C09_06_b": {
+   "parents": [
+    "STm09_05_b"
+   ],
+   "evidence": []
+  },
+  "C09_01_c": {
+   "parents": [
+    "STm09_00_b"
+   ],
+   "evidence": [
+    "E1003"
+   ]
+  },
+  "C09_BT04": {
+   "parents": [
+    "STm09_01_c"
+   ],
+   "evidence": []
+  },
+  "C09_02_c": {
+   "parents": [
+    "BAm09_BT04"
+   ],
+   "evidence": []
+  },
+  "C09_03_c": {
+   "parents": [
+    "STm09_02_c"
+   ],
+   "evidence": []
+  },
+  "C09_BT05": {
+   "parents": [
+    "STm09_03_c"
+   ],
+   "evidence": []
+  },
+  "C09_04_c": {
+   "parents": [
+    "BAm09_BT05"
+   ],
+   "evidence": []
+  },
+  "C09_05_c": {
+   "parents": [
+    "STm09_04_c"
+   ],
+   "evidence": []
+  },
+  "C09_01_d": {
+   "parents": [
+    "STm09_00_b"
+   ],
+   "evidence": [
+    "E1004"
+   ]
+  },
+  "C09_ED": {
+   "parents": [
+    "STm09_01_d"
+   ],
+   "evidence": []
+  },
+  "C09_routeB": {
+   "parents": [],
+   "evidence": [
+    "E1005"
+   ]
+  },
+  "C09_routeC": {
+   "parents": [],
+   "evidence": [
+    "E1005",
+    "E1006"
+   ]
+  },
+  "C09_routeD": {
+   "parents": [],
+   "evidence": [
+    "E1005",
+    "E1006",
+    "E1007"
+   ]
+  },
+  "Cm10001_01": {
+   "parents": [],
+   "evidence": []
+  },
+  "Cm10001_BT01": {
+   "parents": [
+    "STm10001_01"
+   ],
+   "evidence": []
+  },
+  "Cm10001_02": {
+   "parents": [
+    "BAm10001_BT01"
+   ],
+   "evidence": []
+  },
+  "Cm10001_03": {
+   "parents": [
+    "STm10001_02"
+   ],
+   "evidence": []
+  },
+  "Cm10001_04": {
+   "parents": [
+    "STm10001_03"
+   ],
+   "evidence": []
+  },
+  "Cm10001_05": {
+   "parents": [
+    "STm10001_04"
+   ],
+   "evidence": []
+  },
+  "Cm10001_06": {
+   "parents": [
+    "STm10001_05"
+   ],
+   "evidence": []
+  },
+  "Cm10001_07": {
+   "parents": [
+    "STm10001_06"
+   ],
+   "evidence": []
+  },
+  "Cm10001_08": {
+   "parents": [
+    "STm10001_07"
+   ],
+   "evidence": []
+  },
+  "Cm10001_09": {
+   "parents": [
+    "STm10001_08"
+   ],
+   "evidence": []
+  },
+  "Cm10001_10": {
+   "parents": [
+    "STm10001_09"
+   ],
+   "evidence": []
+  },
+  "Cm10001_11": {
+   "parents": [
+    "STm10001_10"
+   ],
+   "evidence": []
+  },
+  "Cm10001_12": {
+   "parents": [
+    "STm10001_11"
+   ],
+   "evidence": []
+  },
+  "Cm10001_13": {
+   "parents": [
+    "STm10001_12"
+   ],
+   "evidence": []
+  },
+  "Cm10001_14": {
+   "parents": [
+    "STm10001_13"
+   ],
+   "evidence": []
+  },
+  "Cm10001_15": {
+   "parents": [
+    "STm10001_14"
+   ],
+   "evidence": []
+  },
+  "Cm10001_BT02": {
+   "parents": [
+    "STm10001_15"
+   ],
+   "evidence": []
+  },
+  "Cm10001_16": {
+   "parents": [
+    "BAm10001_BT02"
+   ],
+   "evidence": []
+  },
+  "Cm10001_17": {
+   "parents": [
+    "STm10001_16"
+   ],
+   "evidence": []
+  },
+  "Cm10001_18": {
+   "parents": [
+    "STm10001_17"
+   ],
+   "evidence": []
+  },
+  "Cm10001_19": {
+   "parents": [
+    "STm10001_18"
+   ],
+   "evidence": []
+  },
+  "Cm10001_BT03": {
+   "parents": [
+    "STm10001_19"
+   ],
+   "evidence": []
+  },
+  "Cm10001_20": {
+   "parents": [
+    "BAm10001_BT03"
+   ],
+   "evidence": []
+  },
+  "Cm10001_21": {
+   "parents": [
+    "STm10001_20"
+   ],
+   "evidence": []
+  },
+  "Cm10001_ED": {
+   "parents": [
+    "STm10001_21"
+   ],
+   "evidence": []
+  },
+  "CBA06x5_01": {
+   "parents": [
+    "STm06x5_06"
+   ],
+   "evidence": []
+  },
+  "CBA06x5_02": {
+   "parents": [
+    "STm06x5_07"
+   ],
+   "evidence": []
+  },
+  "C06x5_01": {
+   "parents": [
+    "STm06x5_01"
+   ],
+   "evidence": []
+  },
+  "C06x5_02": {
+   "parents": [
+    "STm06x5_02"
+   ],
+   "evidence": []
+  },
+  "C06x5_03": {
+   "parents": [
+    "STm06x5_03"
+   ],
+   "evidence": []
+  },
+  "C06x5_04": {
+   "parents": [
+    "STm06x5_04"
+   ],
+   "evidence": []
+  },
+  "C06x5_05": {
+   "parents": [
+    "STm06x5_05"
+   ],
+   "evidence": []
+  },
+  "C06x5_06": {
+   "parents": [
+    "BAm06x5_01"
+   ],
+   "evidence": []
+  },
+  "C06x5_07": {
+   "parents": [
+    "BAm06x5_02"
+   ],
+   "evidence": []
+  },
+  "C06x5_08": {
+   "parents": [
+    "STm06x5_08"
+   ],
+   "evidence": []
+  },
+  "C06x5_09": {
+   "parents": [
+    "STm06x5_09"
+   ],
+   "evidence": []
+  }
+ }
+}
