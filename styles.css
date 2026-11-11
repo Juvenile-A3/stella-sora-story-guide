@@ -249,30 +249,6 @@ main {
   background: var(--slate);
   color: #fff;
 }
-.hero:before,
-.hero:after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-}
-.hero:before {
-  background-image: url("assets/guide-city.jpg");
-  background-position: 68% 51%;
-  background-size: cover;
-  left: 20%;
-}
-.hero:after {
-  background:
-    linear-gradient(
-      90deg,
-      #142941 0%,
-      rgba(20, 41, 65, 0.97) 25%,
-      rgba(19, 40, 62, 0.75) 40%,
-      rgba(26, 49, 69, 0.04) 70%
-    ),
-    linear-gradient(0deg, rgba(15, 28, 41, 0.23), transparent 32%);
-}
 .hero-inner {
   max-width: 570px;
 }
@@ -347,10 +323,6 @@ main {
   min-height: 179px;
   padding-top: 22px;
   padding-bottom: 24px;
-}
-.hero.sub:before {
-  background-image: url("assets/guide-tower.jpg");
-  background-position: center 54%;
 }
 .hero.sub h1 {
   font-size: clamp(28px, 3.2vw, 43px);
@@ -1564,4 +1536,34 @@ footer button {
   .row-sub .time-hint { display: none; }
   .dialog-actions .inline-actions { flex-wrap: wrap; }
   .dialog-actions { flex-wrap: wrap; gap: 8px; }
+}
+
+/* Keep the entire game illustration and its original marks visible on every screen. */
+.hero, .hero.sub {
+  padding: 0;
+  grid-template-columns: minmax(0, .84fr) minmax(0, 1.16fr);
+  min-height: 0;
+  background: linear-gradient(118deg, #142a42 0%, #224661 66%, #335568);
+}
+.hero-inner { padding: clamp(23px, 3.2vw, 48px); }
+.hero-illustration { line-height: 0; align-self: center; }
+.hero-illustration img { display: block; width: 100%; height: auto; }
+.hero.sub { grid-template-columns: minmax(0, 1fr) clamp(160px, 31%, 350px); }
+.hero.sub .hero-inner { padding-block: 21px; }
+@media (min-width: 721px) and (max-width: 1000px) {
+  .hero:not(.sub) h1 { font-size: clamp(35px, 5vw, 49px); }
+  .hero-inner { padding: 22px; }
+}
+@media (max-width: 720px) {
+  .hero:not(.sub) { grid-template-columns: 1fr; min-height: 0; }
+  .hero:not(.sub) .hero-illustration { grid-row: 1; }
+  .hero:not(.sub) .hero-inner { padding: 16px 18px 18px; max-width: none; }
+  .hero:not(.sub) .hero-kicker { margin-bottom: 6px; }
+  .hero:not(.sub) h1 { font-size: clamp(30px, 8.2vw, 42px); }
+  .hero:not(.sub) p { margin-top: 6px; max-width: none; }
+  .hero:not(.sub) .hero-actions { margin-top: 11px; gap: 7px; }
+  .hero.sub { grid-template-columns: minmax(0, 1fr) 30%; }
+  .hero.sub .hero-inner { padding: 13px; }
+  .hero.sub h1 { font-size: clamp(18px,4.6vw,29px); }
+  .hero.sub p { margin-top: 3px; }
 }

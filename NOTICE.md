@@ -12,4 +12,6 @@
 
 ## 页面插图
 
-公开版的城市与观星塔为本指南使用 AI 生成的幻想旅行插画。首页的赤霞、科洛妮丝、璟麟、师渺头像由本指南使用官方非商业同人模型重新取景渲染。Model: Stella Sora / 久远丶酱。原作角色与模型 © Yostar。项目只分发渲染后的画面。[官方模型与使用说明](https://stellasora.global/news/2545)
+- **首页街景**来自国际服官方壁纸库，是第一版首页所用的同一幅画。指南使用官方发布的完整壁纸版，保留左上角游戏标识。[官方壁纸库](https://stellasora.global/wallpaper) · [原始 PNG](https://webusstatic.yo-star.com/web-cms-prod/upload/content/2026/04/14/rnS5lwnT.png)
+- **内页插图**来自日服 Fan Kit 的「ヨロズ配達」PC 壁紙（万送屋活动奖励秘纹插图，编号 2831）。三位旅人围着地图商量行程。两幅图都只做等比缩放和 JPEG 压缩，保留原图构图、标识与署名。游戏美术 © Yostar。[官方 Fan Kit](https://stellasora.jp/fankit?type=0) · [原始 PNG](https://webusstatic.yo-star.com/web-cms-prod/upload/content/2026/03/19/x1lwgRwq.png) · [Fan Kit 使用说明](https://stellasora.jp/Precautions)
+- **赤霞、科洛妮丝、璟麟、师渺头像**由本指南使用官方非商业同人模型重新取景渲染。Model: Stella Sora / 久远丶酱。原作角色与模型 © Yostar。[官方模型与使用说明](https://stellasora.global/news/2545)

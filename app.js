@@ -590,6 +590,7 @@
       graph: "从一次初遇、一场事件或一个分歧点，找到相连的篇目。",
     };
     const hasHistory = all.some((s) => status(s) !== "unread");
+    const artwork = view === "route" ? "assets/nova-city-official.jpg" : "assets/nova-field-notes.jpg";
     hero.innerHTML =
       '<div class="hero-inner"><div class="hero-kicker">星塔旅人 · ' +
       (view === "route" ? "非官方剧情阅读指南" : tabNames[view]) +
@@ -609,7 +610,9 @@
             'aria-label="查找剧情，快捷键斜杠"') +
           '<a href="intro.html" class="hero-film">' + icon("play") + ' 介绍短片</a></div>'
         : "") +
-      "</div>";
+      '</div><div class="hero-illustration"><img src="' + artwork + '" alt="' +
+      (view === "route" ? "《星塔旅人》官方插画，旅人们走过诺瓦街头" : "《星塔旅人》官方插画，三位旅人围着地图商量行程") +
+      '" decoding="async"></div>';
     const travelerIndex = $("#traveller-index");
     travelerIndex.hidden = view !== "route";
     if (!travelerIndex.hidden && !travelerIndex.childElementCount) {
@@ -1690,7 +1693,9 @@
         '</p><p><a href="' + (location.hostname === "juvenile-a3.github.io" ?
           "https://github.com/Juvenile-A3/stella-sora-story-guide/blob/main/research-notes.md" : "research-notes.md") +
           '" target="_blank" rel="noopener">详细考据与未决问题</a></p></section>' +
-        '<section class="dialog-section"><h3>美术与模型</h3><p>城市和塔楼为本指南生成的幻想插画。旅人头像使用官方模型自行渲染。Model: Stella Sora / 久远丶酱。原作角色与模型 © Yostar。</p><p>' +
+        '<section class="dialog-section"><h3>美术与模型</h3><p>首页街景与内页旅人插画选自《星塔旅人》官方壁纸库，画面与标识按完整比例展示。旅人头像使用官方模型自行渲染。Model: Stella Sora / 久远丶酱。游戏美术与角色 © Yostar。</p><p>' +
+        external("https://stellasora.global/wallpaper", "国际服官方壁纸") + " · " +
+        external("https://stellasora.jp/fankit?type=0", "日服官方 Fan Kit") + " · " +
         external("https://stellasora.global/news/2545", "官方模型与使用说明") +
         "</p></section>",
     );

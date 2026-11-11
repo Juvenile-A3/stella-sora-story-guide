@@ -8,10 +8,10 @@
     <meta name="description" content="跟随《星塔旅人》诺瓦异闻的实例，了解如何选择首读路线、核对时间线、避开剧透并保存阅读进度。" />
     <meta property="og:title" content="项目介绍短片 · 诺瓦剧情手记" />
     <meta property="og:description" content="从异闻 #02 看起，了解如何按故事时间重读，或按推荐顺序出发。" />
-    <meta property="og:image" content="https://juvenile-a3.github.io/stella-sora-story-guide/media/nova-guide-cover.jpg" />
+    <meta property="og:image" content="https://juvenile-a3.github.io/stella-sora-story-guide/media/nova-guide-cover.jpg?v=2" />
     <meta property="og:url" content="https://juvenile-a3.github.io/stella-sora-story-guide/intro.html" />
     <link rel="canonical" href="https://juvenile-a3.github.io/stella-sora-story-guide/intro.html" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=2" />
     <style>
       .film-head-inner {
         display: flex;
@@ -56,12 +56,27 @@
         letter-spacing: .045em;
       }
       .film-lede { color: var(--muted); line-height: 1.65; }
+      .film-voices { display: flex; align-items: center; gap: 10px; margin-top: 15px; }
+      .film-voices[hidden] { display: none; }
+      .voice-label { color: var(--muted); font-size: 14px; }
+      .voice-options { display: inline-flex; gap: 3px; padding: 3px; border-radius: 7px; background: #e2eaf0; }
+      .voice-options label { position: relative; cursor: pointer; }
+      .voice-options input {
+        position: absolute; width: 1px; height: 1px; min-height: 0; margin: 0;
+        padding: 0; border: 0; clip-path: inset(50%); overflow: hidden;
+      }
+      .voice-options span {
+        display: grid; place-items: center; min-width: 60px; min-height: 38px;
+        border-radius: 5px; color: #375166; font-weight: 650;
+      }
+      .voice-options input:checked + span { background: #204460; color: white; }
+      .voice-options input:focus-visible + span { outline: 3px solid #1789bf; outline-offset: 2px; }
       .film-player {
         display: block;
         width: 100%;
         aspect-ratio: 16 / 9;
         object-fit: contain;
-        margin-top: clamp(16px, 2.3vw, 25px);
+        margin-top: 12px;
         border-radius: 8px;
         background: #142941;
         box-shadow: 0 6px 24px #14294117;
@@ -95,16 +110,23 @@
       <p class="film-heading">项目介绍短片</p>
       <h1>从哪一篇开始读？</h1>
       <p class="film-lede">跟着诺瓦异闻 #02，看看怎样安排首读顺序，再沿故事时间回看旅途。</p>
-      <video class="film-player" controls playsinline preload="none"
-        poster="media/nova-guide-cover.jpg" src="media/nova-guide-intro.mp4"
+      <div id="voice-selector" class="film-voices" role="radiogroup" aria-labelledby="voice-label" hidden>
+        <span id="voice-label" class="voice-label">中文旁白</span>
+        <div class="voice-options">
+          <label><input type="radio" name="voice" value="bright" checked aria-controls="film-player" /><span>轻快</span></label>
+          <label><input type="radio" name="voice" value="gentle" aria-controls="film-player" /><span>柔和</span></label>
+        </div>
+      </div>
+      <video id="film-player" class="film-player" controls playsinline preload="none"
+        poster="media/nova-guide-cover.jpg?v=2" src="media/nova-guide-intro.mp4?v=2"
         aria-label="诺瓦剧情手记项目介绍，有中文解说与画面字幕">
-        您可以<a href="media/nova-guide-intro.mp4" download>下载介绍视频</a>观看。
+        您可以<a data-video-download href="media/nova-guide-intro.mp4?v=2" download="诺瓦剧情手记-轻快.mp4">下载介绍视频</a>观看。
       </video>
       <p class="film-hint" id="film-error" role="status" hidden>当前浏览器未能播放短片。可使用下方的「下载视频」保存后观看。</p>
       <nav class="film-tools" aria-label="短片与阅读指南">
         <a class="film-action film-primary" href="index.html#route">进入阅读指南 <span aria-hidden="true">→</span></a>
-        <a class="film-action film-download" href="media/nova-guide-intro.mp4" download>下载视频 <span>MP4</span></a>
-        <a class="film-action film-download" href="media/nova-guide-intro.srt" download>字幕 <span>SRT</span></a>
+        <a class="film-action film-download" data-video-download href="media/nova-guide-intro.mp4?v=2" download="诺瓦剧情手记-轻快.mp4">下载视频 <span>MP4</span></a>
+        <a class="film-action film-download" href="media/nova-guide-intro.srt?v=2" download="诺瓦剧情手记.srt">字幕 <span>SRT</span></a>
         <a class="film-action film-download" href="https://github.com/Juvenile-A3/stella-sora-story-guide/archive/refs/heads/main.zip">下载离线指南 <span>ZIP</span></a>
       </nav>
     </main>
@@ -113,9 +135,74 @@
         document.getElementById("film-source").href =
           "https://github.com/Juvenile-A3/stella-sora-story-guide/blob/main/media/素材来源.md";
       }
-      document.querySelector("video").addEventListener("error", function () {
-        document.getElementById("film-error").hidden = false;
+      const player = document.getElementById("film-player");
+      const selector = document.getElementById("voice-selector");
+      const errorMessage = document.getElementById("film-error");
+      const versions = {
+        bright: { label: "轻快", src: "media/nova-guide-intro.mp4?v=2" },
+        gentle: { label: "柔和", src: "media/nova-guide-gentle.mp4?v=2" }
+      };
+      let currentVoice = "bright";
+      let hasPlayed = false;
+      let pendingSeek = null;
+
+      player.addEventListener("play", () => { hasPlayed = true; });
+      player.addEventListener("error", () => { errorMessage.hidden = !player.error; });
+      player.addEventListener("loadedmetadata", () => {
+        if (!pendingSeek || player.currentSrc !== pendingSeek.src || player.readyState < 1) return;
+        const { time } = pendingSeek;
+        pendingSeek = null;
+        if (time > 0) {
+          player.currentTime = Number.isFinite(player.duration) ? Math.min(time, player.duration) : time;
+        }
       });
+
+      function selectVoice(voice, updateAddress) {
+        const version = versions[voice];
+        selector.querySelector('input[value="' + voice + '"]').checked = true;
+        player.setAttribute("aria-label", "诺瓦剧情手记项目介绍，" + version.label + "中文旁白，有画面字幕");
+        document.querySelectorAll("[data-video-download]").forEach(link => {
+          link.href = version.src;
+          link.download = "诺瓦剧情手记-" + version.label + ".mp4";
+          link.setAttribute("aria-label", "下载视频，" + version.label + "旁白，MP4");
+        });
+        if (voice === currentVoice) return;
+        currentVoice = voice;
+        errorMessage.hidden = true;
+
+        // A second selection may arrive before the first new file has metadata.
+        // Keep the original position while the media element is still at zero.
+        const time = pendingSeek ? pendingSeek.time : player.currentTime;
+        const playing = !player.paused && !player.ended;
+        const rate = player.playbackRate;
+        const shouldLoad = hasPlayed || playing || time > 0;
+        const src = new URL(version.src, document.baseURI).href;
+        pendingSeek = shouldLoad ? { src, time } : null;
+        player.preload = shouldLoad ? "metadata" : "none";
+        player.defaultPlaybackRate = rate;
+        player.src = version.src;
+        if (shouldLoad) {
+          // Reset once, synchronously, before issuing play inside the user's gesture.
+          // Keeping the same element preserves volume, mute and native controls.
+          player.load();
+          player.playbackRate = rate;
+          if (playing) player.play().catch(() => {
+            // A rapid switch aborts the previous play request. Native controls
+            // remain usable if the browser requires a new playback gesture.
+          });
+        }
+        if (updateAddress && /^https?:$/.test(location.protocol)) {
+          const url = new URL(location.href);
+          if (voice === "gentle") url.searchParams.set("voice", "gentle");
+          else url.searchParams.delete("voice");
+          history.replaceState(history.state, "", url);
+        }
+      }
+      selector.addEventListener("change", event => {
+        if (event.target.name === "voice" && event.target.checked) selectVoice(event.target.value, true);
+      });
+      selectVoice(new URLSearchParams(location.search).get("voice") === "gentle" ? "gentle" : "bright", false);
+      selector.hidden = false;
     </script>
   </body>
 </html>
