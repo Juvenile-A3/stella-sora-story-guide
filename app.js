@@ -779,7 +779,7 @@
         ? '<div class="hero-actions">' +
           button("resume", icon("book") + (!resume ? "当前筛选无可读篇目" : hasHistory ? "继续阅读" : resume.type === "序章" ? "从序章开始" : "开始阅读"), "hero-cta", resume ? "" : "disabled") +
           button("chapters", "按章定位 " + icon("next"), "hero-secondary") +
-          '<a href="intro.html" class="hero-film">' + icon("play") + ' 介绍短片</a></div>' +
+          '<a href="https://www.bilibili.com/video/BV1R7Wd6rE7A/" class="hero-film">' + icon("play") + ' 介绍短片</a></div>' +
           (hasHistory && resume ? '<div class="resume-hint">' + icon("mark") + '下次阅读　' + esc(safeTitle(resume)) + '</div>' : '')
         : "") +
       '</div>' + (view === "route" ?
