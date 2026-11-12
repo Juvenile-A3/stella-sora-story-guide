@@ -126,6 +126,13 @@ def build(root):
             if group_id in (132,144):ph="第二章以后"
             if group_id in (133,134):ph="第四章以后"
             if group_id==110:ph="第六章以后"
+            if group_id==145:ph="6.5章后至第七章交锋前（推定）"
+            if group_id==149:
+                ph="997年花月十五日起（仅知下界）"
+                if order==1:
+                    r["calendar"]=calendar(None,"花月",15)
+                else:
+                    tm="承接上篇花月十五日的委托，最早在997年。本话未单独标注日期。"
             if group_id in (119,):
                 ev+=" 花原在下篇确认当日生日，角色资料将生日列为4月20日。"
                 r["sources"].append({"label":"角色档案 · 花原生日","url":table+"/language/zh_CN/CharacterArchiveBaseInfo.json"})

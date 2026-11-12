@@ -32,6 +32,11 @@ def dated_period(s):
         return "已预告／待开放",9_999_999,"待开放",None,""
     if s.get("nodeId")==908:
         return "994年米拉什段以前（仅知上界）",993999,"相对时窗",None,""
+    if window=="997年花月十五日起（仅知下界）":
+        label="花月15日（最早997年）" if day else ""
+        return window,997050.1,"相对时窗",None,label
+    if window=="6.5章后至第七章交锋前（推定）":
+        return window,996100.1,"相对时窗",None,""
     if y is not None and natural:
         pre=f"前星塔历{-y}年" if y<0 else f"星塔历{y}年"
         is_branch="分支终局" in mode and y>=997
