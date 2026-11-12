@@ -34,6 +34,8 @@
 
 公开站点由 GitHub Pages 从 `main` 分支的根目录发布。更新并提交构建产物后，Pages 会重新部署。站内导航使用 URL 片段，可直接分享某一篇或某一页的地址。
 
+访问统计使用 Cloudflare Web Analytics。在 Web Analytics → Add a site 填入主机名 `juvenile-a3.github.io`，从 Manage site 的 JS snippet 复制公开的站点 `token` 到 `assets/analytics.js` 的 `siteToken`，再更新资源版本并发布。可在后台查看首页和介绍短片页的浏览量与访问次数。筛选和切换篇目不会增加浏览量。留空 `siteToken` 可关闭统计，离线版和本机预览也不会加载统计脚本。
+
 发布前运行 `python build/stamp_assets.py`，按文件内容更新两页引用的脚本、数据、样式与影音地址。线上首页和短片页为本站注册更新检查，普通打开时会向服务器核对页面与资源版本；未变更的资源可复用。离线解压版仍可直接打开。
 
 首页空白旅团合影可点开查看全幅，封面也可收起。按章定位、隐藏已读、分享当前目录条件均可直接操作。篇目详情可以定位到推荐路线或故事时间线。手机底栏可在四页间直接切换。[美术核对](research/game-art.md) · [短片逐镜出处](media/素材来源.md)

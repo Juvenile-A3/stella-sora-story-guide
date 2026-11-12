@@ -1452,6 +1452,30 @@ footer button {
   width: 15px;
   height: 15px;
 }
+#route-types {
+  margin: 0 0 14px;
+  min-width: 0;
+  padding: 8px 12px;
+  border: 1px solid var(--edge);
+}
+#route-types legend {
+  padding: 0 5px;
+  font-size: 13px;
+}
+#route-types p {
+  margin: 0 0 6px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.route-type-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(105px, 1fr));
+  gap: 3px 10px;
+  margin-bottom: 6px;
+}
+.route-type-options label {
+  min-height: 32px;
+}
 .time-hint {
   overflow: hidden;
   text-overflow: ellipsis;

@@ -166,6 +166,27 @@
       ...all.map((s) => s.phase || "未知"),
     ]);
   const sortedTypes = unique(all.map((s) => s.type));
+  const routeTypes = unique(["角色羁绊", "心链", "邀约", "旅人档案", "秘闻", "秘纹散文", "NPC羁绊", ...sortedTypes])
+    .filter(type => sortedTypes.includes(type));
+  const routePrefsKey = "stella-sora.route-filters.v1";
+  let routePrefs = {};
+  let routePrefsInMemory = false;
+  function loadRoutePrefs() {
+    if (routePrefsInMemory) return routePrefs;
+    try {
+      routePrefs = JSON.parse(localStorage.getItem(routePrefsKey) || "{}") || {};
+    } catch { /* Keep in-memory preferences when storage is unavailable. */ }
+    return routePrefs;
+  }
+  function saveRoutePref(key, value) {
+    routePrefs = { ...loadRoutePrefs(), [key]: value };
+    try { localStorage.setItem(routePrefsKey, JSON.stringify(routePrefs)); }
+    catch {
+      routePrefsInMemory = true;
+      showNotice("浏览器无法保存筛选设置，本次打开期间仍可使用。");
+    }
+  }
+  let includeOptional = false, hideRead = false, hiddenTypes = new Set(), routeTypesOpen = false;
   const routeStories = [...all].sort(
     (a, b) =>
       number(a.route) - number(b.route) ||
@@ -366,10 +387,17 @@
   function routeTitle() {
     return stage === "*" ? (includeOptional ? "完整阅读路线" : "首读路线") : stageLabel(stage);
   }
+  function routeMatches(s) {
+    return !hiddenTypes.has(s.type) && (includeOptional || !s.optional) && (!hideRead || status(s) !== "read");
+  }
   function nextReading() {
-    return routeStories.find(s => s.released !== false && status(s) === "reading") ||
-      routeStories.find(s => s.released !== false && !s.optional && status(s) === "unread") ||
-      routeStories.find(s => s.released !== false && status(s) === "unread");
+    const available = routeStories.filter(s => s.released !== false && routeMatches(s));
+    return available.find(s => status(s) === "reading") ||
+      available.find(s => !s.optional && status(s) === "unread") ||
+      available.find(s => status(s) === "unread") || available[0];
+  }
+  function nextRouteStory(id) {
+    return routeStories.slice(indexes.get(id) + 1).find(s => s.released !== false && routeMatches(s));
   }
   function catalogLink(params) {
     return "#catalog?" + esc(new URLSearchParams(params).toString());
@@ -387,8 +415,9 @@
       }
     } else if (view === "route") {
       if (stage !== "*") params.set("stage", stage);
-      if (includeOptional) params.set("optional", "1");
-      if (hideRead) params.set("unread", "1");
+      params.set("optional", includeOptional ? "1" : "0");
+      params.set("unread", hideRead ? "1" : "0");
+      params.set("omit", routeTypes.filter(type => hiddenTypes.has(type)).join(","));
     } else if (view === "time") {
       if (phase !== "*") params.set("phase", periodToken(phase));
       if (zoom !== "篇目") params.set("zoom", zoom);
@@ -646,7 +675,7 @@
       "</p>" +
       (view === "route"
         ? '<div class="hero-actions">' +
-          button("resume", icon("book") + (hasHistory ? "继续阅读" : "从序章开始"), "hero-cta") +
+          button("resume", icon("book") + (!resume ? "当前筛选无可读篇目" : hasHistory ? "继续阅读" : resume.type === "序章" ? "从序章开始" : "开始阅读"), "hero-cta", resume ? "" : "disabled") +
           button("chapters", "按章定位 " + icon("next"), "hero-secondary") +
           '<a href="intro.html" class="hero-film">' + icon("play") + ' 介绍短片</a></div>' +
           (hasHistory && resume ? '<div class="resume-hint">' + icon("mark") + '下次阅读　' + esc(safeTitle(resume)) + '</div>' : '')
@@ -682,7 +711,7 @@
         entries: [...routeBuckets].map(([key, ss]) => [
           key,
           stageLabel(key),
-          includeOptional ? ss.length : ss.filter((s) => !s.optional).length,
+          ss.filter(routeMatches).length,
         ]).filter((row) => row[2] || row[0] === stage),
       };
     if (view === "time")
@@ -776,7 +805,7 @@
   }
   function renderRoute() {
     const pool = stage === "*" ? routeStories : routeBuckets.get(stage) || [],
-      items = pool.filter(s => (includeOptional || !s.optional) && (!hideRead || status(s) !== "read")),
+      items = pool.filter(routeMatches),
       chunk = sliceStories(items);
     return (
       titleBlock(
@@ -790,15 +819,23 @@
       '</span><label class="toggle-extra"><input type="checkbox" id="optional"' +
       (includeOptional ? " checked" : "") +
       " >显示可选补完（" +
-      fmt(pool.filter((s) => s.optional).length) +
+      fmt(pool.filter(s => s.optional && !hiddenTypes.has(s.type) && (!hideRead || status(s) !== "read")).length) +
       '）</label><label class="toggle-extra"><input type="checkbox" id="hide-read"' +
       (hideRead ? " checked" : "") + '>隐藏已读</label>' +
+      button("route-types", "类型筛选" + (hiddenTypes.size ? "（已隐藏 " + hiddenTypes.size + " 类）" : ""), "link-btn",
+        'aria-expanded="' + routeTypesOpen + '" aria-controls="route-types"') +
       button("about", "证据等级 " + icon("info"), "link-btn") +
       "</div>" +
+      '<fieldset id="route-types"' + (routeTypesOpen ? "" : " hidden") + '><legend>勾选要隐藏的剧情类型</legend>' +
+      '<p>好感不足时可先隐藏角色羁绊、心链；缺少秘纹时可先隐藏秘闻、秘纹散文。</p>' +
+      '<div class="route-type-options">' + routeTypes.map(type =>
+        '<label class="toggle-extra"><input type="checkbox" data-route-type="' + esc(type) + '"' +
+        (hiddenTypes.has(type) ? " checked" : "") + '> ' + esc(type) + '</label>').join("") + '</div>' +
+      button("clear-route-types", "显示全部类型", "link-btn", hiddenTypes.size ? "" : "disabled") + '</fieldset>' +
       bulkControls() +
       (chunk.length
         ? splitRows(chunk, stageKey, stageLabel)
-        : empty(hideRead ? "这个范围里没有待阅读的篇目，可取消「隐藏已读」查看。" : "这个阶段尚未收录篇目。")) +
+        : empty("当前筛选下没有篇目。可调整上方筛选，或切换阅读阶段。")) +
       pager(items.length)
     );
   }
@@ -1751,7 +1788,7 @@
           )
         : "") +
       (view === "route" && s.released !== false && !list(s.branches).length &&
-        routeStories.slice(indexes.get(s.id) + 1).some((item) => item.released !== false && (includeOptional || !item.optional))
+        nextRouteStory(s.id)
         ? button("read-next", status(s) === "read" ? "推荐路线下一篇" : "标为已读，读下一篇", "btn primary") : "") +
       button("close", "返回列表", "btn") +
       "</div></div>";
@@ -1841,8 +1878,6 @@
     );
   }
   let availablePhases = new Set();
-  let includeOptional = false;
-  let hideRead = false;
   function render(focusId = "") {
     const focusInput = focusId ? $("#" + focusId) : null;
     const start = focusInput?.selectionStart,
@@ -1938,8 +1973,8 @@
       stage = stageKey(s);
       if (s.optional) includeOptional = true;
       if (hideRead && status(s) === "read") hideRead = false;
-      const list = routeBuckets.get(stage).filter(story =>
-        (includeOptional || !story.optional) && (!hideRead || status(story) !== "read"));
+      hiddenTypes.delete(s.type);
+      const list = routeBuckets.get(stage).filter(routeMatches);
       pageNo = Math.floor(list.indexOf(s) / pageSize) + 1;
     } else {
       phase = s.phase || "未知";
@@ -1968,8 +2003,12 @@
           !all.some(s => archiveOwner(s) === filters.person) && !visibleCast().includes(filters.person)) filters.person = "";
     } else if (view === "route") {
       stage = routeBuckets.has(params.get("stage")) ? params.get("stage") : "*";
-      includeOptional = params.get("optional") === "1" || !!routeBuckets.get(stage)?.every(s => s.optional);
-      hideRead = params.get("unread") === "1";
+      const prefs = loadRoutePrefs();
+      includeOptional = params.has("optional") ? params.get("optional") === "1" :
+        prefs.includeOptional === true || !!routeBuckets.get(stage)?.every(s => s.optional);
+      hideRead = params.has("unread") ? params.get("unread") === "1" : prefs.hideRead === true;
+      const omitted = params.has("omit") ? params.get("omit").split(",") : prefs.hiddenTypes;
+      hiddenTypes = new Set(Array.isArray(omitted) ? omitted.filter(type => sortedTypes.includes(type)) : []);
     } else if (view === "time") {
       phase = timeBuckets.has(addressPeriod) ? addressPeriod : "*";
       zoom = ["日期","时期"].includes(params.get("zoom")) ? params.get("zoom") : "篇目";
@@ -2179,9 +2218,19 @@
         render();
         $('[data-act="catalog-filters"]').focus({preventScroll:true});
         break;
+      case "route-types":
+        routeTypesOpen = !routeTypesOpen;
+        render();
+        $('[data-act="route-types"]').focus({preventScroll:true});
+        break;
+      case "clear-route-types":
+        hiddenTypes.clear();
+        saveRoutePref("hiddenTypes", []);
+        resetPage(); render(); syncViewAddress(true);
+        $('[data-act="route-types"]').focus({preventScroll:true});
+        break;
       case "read-next": {
-        const nextStory = routeStories.slice(indexes.get(modalId) + 1)
-          .find((item) => item.released !== false && (includeOptional || !item.optional));
+        const nextStory = nextRouteStory(modalId);
         if (!nextStory || !modalId) break;
         writeStatus(modalId, "read");
         store();
@@ -2200,7 +2249,7 @@
         openStory(key);
         break;
       case "resume": {
-        const s = nextReading() || routeStories[0];
+        const s = nextReading();
         if (s) openStory(s.id);
         break;
       }
@@ -2336,16 +2385,22 @@
       render();
       syncViewAddress(true);
     }
-    if (el.id === "optional") {
-      includeOptional = el.checked;
-      if (!includeOptional && stage !== "*" && routeBuckets.get(stage)?.every((s) => s.optional)) stage = "*";
-      resetPage();
-      render();
-      syncViewAddress(true);
-    }
-    if (el.id === "hide-read") {
-      hideRead = el.checked;
+    if (el.id === "optional" || el.id === "hide-read" || el.hasAttribute("data-route-type")) {
+      const type = el.dataset.routeType;
+      if (type) {
+        if (el.checked) hiddenTypes.add(type);
+        else hiddenTypes.delete(type);
+        saveRoutePref("hiddenTypes", [...hiddenTypes]);
+      } else if (el.id === "optional") {
+        includeOptional = el.checked;
+        saveRoutePref("includeOptional", includeOptional);
+        if (!includeOptional && routeBuckets.get(stage)?.every(s => s.optional)) stage = "*";
+      } else {
+        hideRead = el.checked;
+        saveRoutePref("hideRead", hideRead);
+      }
       resetPage(); render(); syncViewAddress(true);
+      $(type ? '[data-route-type="' + CSS.escape(type) + '"]' : "#" + el.id)?.focus({preventScroll:true});
     }
     if (el.id === "import") importProgress(el.files?.[0]);
   });
