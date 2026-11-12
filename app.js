@@ -141,7 +141,7 @@
     D: "仅有发布或玩家读序线索",
     U: "尚无跨篇定位依据",
   };
-  const stateText = { unread: "未读", reading: "在读", read: "已读" };
+  const stateText = { unread: "未读", read: "已读" };
   const graphTabs = {
     people: "人物",
     orgs: "组织",
@@ -187,6 +187,7 @@
     }
   }
   let includeOptional = false, hideRead = false, hiddenTypes = new Set(), routeTypesOpen = false;
+  let readableOnly = false;
   const routeStories = [...all].sort(
     (a, b) =>
       number(a.route) - number(b.route) ||
@@ -195,6 +196,16 @@
       cmp(a.id, b.id),
   );
   const indexes = new Map(routeStories.map((s, index) => [s.id, index]));
+  const parentsByStory = new Map(all.map(s => {
+    const any = list(s.alternativeParents);
+    const required = unique([
+      ...list(s.requires), ...list(s.unlockRequires), ...list(s.readAfter),
+      ...list(s.topologyParents).filter(id => !any.includes(id)),
+    ]);
+    // At a parallel-story merge the reading guidance can explicitly require every arrival path.
+    return [s.id, { all: required, any: any.every(id => required.includes(id)) ? [] : unique(any) }];
+  }));
+  const routeParents = s => parentsByStory.get(s.id);
   const storageKey = "stella-sora-reading-guide.v1";
   let saveMessage = "",
     saved;
@@ -206,18 +217,16 @@
   }
   const stableKey = (id) => stories.get(id)?.progressKey || id;
   const knownProgressKeys = new Set(all.map((s) => stableKey(s.id)));
-  const validStates = (obj) => {
-    const clean = Object.create(null),
-      entries = Object.entries(obj || {});
-    for (const [id, value] of entries)
-      if (["reading", "read"].includes(value) && !knownProgressKeys.has(id))
-        clean[stableKey(id)] = value;
-    for (const [id, value] of entries)
-      if (["reading", "read"].includes(value) && knownProgressKeys.has(id))
-        clean[id] = value;
-    return clean;
-  };
-  let progress = validStates(saved.progress),
+  function applyProgress(records, target = Object.create(null)) {
+    for (const [id, value] of Object.entries(records || {})) {
+      const key = stableKey(id);
+      // Older backups may contain both a story ID and its newer progress key.
+      if (key !== id && Object.hasOwn(records, key)) continue;
+      writeStatus(id, value, target);
+    }
+    return target;
+  }
+  let progress = applyProgress(saved.progress),
     guard = saved.guard !== false;
   const revealed = new Set(),
     selected = new Set();
@@ -245,6 +254,7 @@
     phase: "",
     grade: "",
     status: "",
+    ready: "",
     position: "",
   });
   let filters = defaultFilter();
@@ -294,6 +304,25 @@
         )?.[1] || "";
   const namedArchives = new Set(["角色羁绊", "心链", "邀约", "NPC羁绊", "旅人档案"]);
   const archiveOwner = (s) => namedArchives.has(s.type) ? s.group.split(" · ")[0] : "";
+  // Official chapter, event and series names identify the volume. The episode title has its own spoiler guard.
+  const publicCollections = new Set(["序章", "主线", "特别篇", "活动", "诺瓦异闻"]);
+  function storyOrigin(s) {
+    if (publicCollections.has(s.type)) return s.group || "";
+    if (s.type === "心链" || s.type === "NPC羁绊") return archiveOwner(s);
+    const group = safeGroup(s);
+    if (group) {
+      if (group.startsWith(s.type + " · ")) return group.slice(s.type.length + 3);
+      if (group.endsWith(" · " + s.type)) return group.slice(0, -s.type.length - 3);
+      return group;
+    }
+    return archiveOwner(s) || (s.type.startsWith("尖兵陷阵") ? "尖兵陷阵" : "");
+  }
+  function originLine(s) {
+    const origin = storyOrigin(s);
+    return '<span class="story-origin" data-kind="' + typesOf(s.type) + '"><span class="origin-type">' +
+      esc(s.type) + '</span>' +
+      (origin && origin !== s.type ? '<span class="origin-name">' + esc(origin) + '</span>' : "") + '</span>';
+  }
   const featuredTravelers = ["尘沙","琥珀","鸢尾","格芮","千都世"];
   const travelerArt = window.TRAVELER_ART || {};
   const listedTravelers = Object.keys(travelerArt).sort(cmp);
@@ -389,13 +418,13 @@
       showNotice(saveMessage);
     }
   }
-  function writeStatus(id, value) {
+  function writeStatus(id, value, target = progress) {
     const key = stableKey(id);
-    if (value === "unread") delete progress[key];
-    else if (Object.hasOwn(stateText, value)) progress[key] = value;
+    if (value === "read") target[key] = value;
+    else if (value === "unread" || value === "reading") delete target[key];
   }
   function stat() {
-    const counts = { read: 0, reading: 0, unread: 0 };
+    const counts = { read: 0, unread: 0 };
     all.forEach((s) => counts[status(s)]++);
     return counts;
   }
@@ -414,20 +443,55 @@
   function routeTitle() {
     return stage === "*" ? (includeOptional ? "完整阅读路线" : "首读路线") : stageLabel(stage);
   }
-  function passesRouteFilters(s) {
+  function readingBlockers(s, completingId = "") {
+    const checked = new Map();
+    function blockersForParent(id) {
+      if (checked.has(id)) return checked.get(id);
+      const parent = stories.get(id);
+      let missing = [id];
+      if (parent && parent.released !== false && (id === completingId || status(parent) === "read")) {
+        // A marked campaign checkpoint records arrival there. A marked side story
+        // cannot vouch for its underlying campaign or other reading requirements.
+        missing = ["主线", "序章", "特别篇"].includes(parent.type) ? [] : blockers(parent);
+      }
+      checked.set(id, missing);
+      return missing;
+    }
+    function blockers(story) {
+      const {all, any} = routeParents(story);
+      const missing = all.flatMap(blockersForParent);
+      if (any.length) {
+        const choices = any.map(blockersForParent);
+        if (choices.every(ids => ids.length)) missing.push(...choices.flat());
+      }
+      return unique(missing);
+    }
+    return blockers(s);
+  }
+  function isReadable(s, completingId = "") {
+    return s.released !== false && status(s) !== "read" && s.id !== completingId &&
+      !readingBlockers(s, completingId).length;
+  }
+  function passesRouteFilters(s, completingId = "") {
     return !hiddenTypes.has(s.type) && (!hideRead || status(s) !== "read") &&
+      (!readableOnly || isReadable(s, completingId)) &&
       !storyOwners.get(s.id)?.some(key => hiddenOwners.has(key));
   }
   function routeMatches(s) {
     return (includeOptional || !s.optional) && passesRouteFilters(s);
   }
   function nextReading() {
-    const available = routeStories.filter(s => s.released !== false && routeMatches(s));
-    return available.find(s => status(s) === "reading") ||
-      available.find(s => !s.optional && status(s) === "unread") ||
+    const pool = stage === "*" ? routeStories : routeBuckets.get(stage) || [];
+    const available = pool.filter(s => s.released !== false && routeMatches(s));
+    return available.find(s => !s.optional && status(s) === "unread") ||
       available.find(s => status(s) === "unread") || available[0];
   }
   function nextRouteStory(id) {
+    if (readableOnly) {
+      const pool = stage === "*" ? routeStories : routeBuckets.get(stage) || [];
+      const available = s => (includeOptional || !s.optional) && passesRouteFilters(s, id);
+      return pool.find(s => indexes.get(s.id) > indexes.get(id) && available(s)) || pool.find(available);
+    }
     return routeStories.slice(indexes.get(id) + 1).find(s => s.released !== false && routeMatches(s));
   }
   function catalogLink(params) {
@@ -448,6 +512,7 @@
       if (stage !== "*") params.set("stage", stage);
       params.set("optional", includeOptional ? "1" : "0");
       params.set("unread", hideRead ? "1" : "0");
+      params.set("ready", readableOnly ? "1" : "0");
       params.set("omit", routeTypes.filter(type => hiddenTypes.has(type)).join(","));
       params.set("owners", [...hiddenOwners].join(","));
     } else if (view === "time") {
@@ -496,16 +561,12 @@
       "</div>"
     );
   }
-  function selectState(s) {
-    return (
-      '<select aria-label="设置此篇阅读状态" class="state-select ' +
-      status(s) +
-      '" data-status="' +
-      esc(s.id) +
-      '">' +
-      options(Object.entries(stateText), status(s)) +
-      "</select>"
-    );
+  function statusToggle(s) {
+    const value = status(s), isRead = value === "read", id = esc(s.id);
+    return button("toggle-status", stateText[value], "state-toggle " + value,
+      'data-key="' + id + '" data-status="' + id + '" aria-pressed="' + isRead +
+      '" aria-label="已读标记 · ' + esc(safeTitle(s)) +
+      '" title="标为' + (isRead ? "未读" : "已读") + '"');
   }
   function badge(s) {
     const gr = s.grade || "U",
@@ -547,14 +608,12 @@
     }).join("") + '</div>';
   }
   function row(s, opts = {}) {
-    const g = safeGroup(s),
-      info = opts.timeline
+    const info = opts.timeline
         ? visible(s)
           ? s.dateLabel || s.time
           : "时间线索已遮蔽"
-        : routePosition(s);
-    const title = safeTitle(s),
-      visiblyGrouped = g && g !== title;
+        : "推荐位置 · " + routePosition(s);
+    const title = safeTitle(s);
     const timeHint = opts.timeline
       ? ""
       : visible(s)
@@ -576,13 +635,9 @@
         : "") +
       '<div class="row-story"><a href="' +
       esc(storyHref(s.id)) +
-      '" class="row-open"><strong>' +
+      '" class="row-open">' + originLine(s) + '<strong>' +
       esc(title) +
-      '</strong><span class="row-sub"><span class="pin-type">' +
-      esc(s.type) +
-      "</span>" +
-      (visiblyGrouped ? "<span>" + esc(g) + "</span>" : "") +
-      "<span>" +
+      '</strong><span class="row-sub"><span>' +
       esc(info) +
       "</span>" +
       (timeHint ? '<span class="time-hint">' + esc(timeHint) + "</span>" : "") +
@@ -590,7 +645,7 @@
       badge(s) +
       "</span></a>" + ownerActions(s) + "</div>" +
       '<div class="row-actions">' +
-      selectState(s) +
+      statusToggle(s) +
       '<a class="row-chevron" aria-label="打开此篇详情" href="' +
       esc(storyHref(s.id)) +
       '">' +
@@ -633,6 +688,10 @@
   }
   function bulkControls() {
     if (!bulk) return "";
+    if (selected.size) {
+      const matches = new Set(currentList.map(s => s.id));
+      for (const id of selected) if (!matches.has(id)) selected.delete(id);
+    }
     return (
       '<div class="bulk">' +
       button("pick-page", "选本页", "tiny-btn") +
@@ -644,10 +703,10 @@
       button("clear-picks", "清除选择", "tiny-btn") +
       "<span>已选 " +
       fmt(selected.size) +
-      ' 篇</span><select aria-label="批量更改后的状态" id="bulk-value">' +
-      options(Object.entries(stateText), "read") +
-      "</select>" +
-      button("set-many", "应用", "tiny-btn", !selected.size ? "disabled" : "") +
+      " 篇</span>" +
+      Object.entries(stateText).map(([value, label]) =>
+        button("set-many", "标为" + label, "tiny-btn",
+          'data-key="' + value + '"' + (!selected.size ? " disabled" : ""))).join("") +
       "</div>"
     );
   }
@@ -701,13 +760,13 @@
       graph: "人物与剧情关系图",
     };
     const intros = {
-      route: "把主线、异闻与角色羁绊串成一条首读路线。重读时，再沿诺瓦历追踪旅人的相遇。",
+      route: "沿主线前进，也可以在分岔处读一篇异闻或角色羁绊。重读时，再沿诺瓦历追踪旅人的相遇。",
       time: "在相对时期与可考日期之间，追踪人物经历。",
       catalog: "按篇目、所属故事、人物或证据等级查找档案。",
       graph: "从一次初遇、一场事件或一个分歧点，找到相连的篇目。",
     };
     const hasHistory = Object.keys(progress).length > 0;
-    const resume = nextReading();
+    const resume = view === "route" ? nextReading() : null;
     hero.innerHTML =
       '<div class="hero-inner"><div class="hero-kicker">星塔旅人 · ' +
       (view === "route" ? "剧情阅读指南" : tabNames[view]) +
@@ -805,8 +864,8 @@
       ' 篇已读</small></div><div class="track"><i style="width:' +
       pct +
       '%"></i></div><div class="progress-tail"><span>' +
-      fmt(stats.reading) +
-      " 篇在读</span><span>" +
+      fmt(stats.unread) +
+      " 篇未读</span><span>" +
       pct +
       "%</span></div></div>" +
       '<div class="side-box"><div class="side-head">' +
@@ -880,7 +939,9 @@
       '<div class="filter-meta"><span>' +
       fmt(items.length) +
       " 篇" +
-      '</span><label class="toggle-extra"><input type="checkbox" id="optional"' +
+      '</span><label class="toggle-extra"><input type="checkbox" id="route-ready"' +
+      (readableOnly ? " checked" : "") + '>目前可阅读</label>' +
+      '<label class="toggle-extra"><input type="checkbox" id="optional"' +
       (includeOptional ? " checked" : "") +
       " >显示可选补完（" +
       fmt(pool.filter(s => s.optional && passesRouteFilters(s)).length) +
@@ -892,6 +953,7 @@
         'aria-expanded="' + ownerPanelOpen + '" aria-controls="route-owners"') +
       button("about", "证据等级 " + icon("info"), "link-btn") +
       "</div>" +
+      (readableOnly ? '<p class="section-note">按你在手记中标记的主线和支线进度筛选。篇目详情里可以查看具体的阅读前置。</p>' : "") +
       '<fieldset id="route-types"' + (routeTypesOpen ? "" : " hidden") + '><legend>勾选要隐藏的剧情类型</legend>' +
       '<p>好感不足时可先隐藏角色羁绊、心链；缺少秘纹时可先隐藏秘闻、秘纹散文。</p>' +
       '<div class="route-type-options">' + routeTypes.map(type =>
@@ -908,6 +970,7 @@
   }
   function catalogMatches(s, terms) {
     if (
+      (filters.ready && !isReadable(s)) ||
       (filters.type && filters.type !== s.type) ||
       (filters.phase && filters.phase !== (s.phase || "未知")) ||
       (filters.grade && filters.grade !== (s.grade || "U")) ||
@@ -923,7 +986,7 @@
     if (!terms.length) return true;
     const fields = [
       safeTitle(s),
-      safeGroup(s),
+      storyOrigin(s),
       archiveOwner(s),
       s.type,
       routePosition(s),
@@ -972,7 +1035,7 @@
     const filterLabels = {type:"分类",person:"人物",phase:"时期",grade:"证据",position:"定位",status:"进度"};
     const pills = Object.entries(filters).filter(([k,v]) => k!=="q" && v).map(([k,v]) => {
       const display = k === "status" ? stateText[v] : k === "phase" ? phaseLabel(v) : v;
-      const text = filterLabels[k] + " · " + display;
+      const text = k === "ready" ? "目前可阅读" : filterLabels[k] + " · " + display;
       return button("remove-filter",esc(text) + icon("close"),"filter-pill",
         'data-key="' + esc(k) + '" aria-label="移除' + esc(text) + '"');
     }).join("");
@@ -1033,6 +1096,8 @@
         filters.status,
         "全部状态",
       ) +
+      '<label class="toggle-extra"><input type="checkbox" data-filter="ready"' +
+      (filters.ready ? " checked" : "") + '>目前可阅读</label>' +
       button(
         "reset-filters",
         "重置筛选",
@@ -1609,10 +1674,10 @@
       "</div></section>"
     );
   }
-  function dialogHead(title, subtitle = "") {
+  function dialogHead(title, subtitle = "", story = null) {
     return (
       '<div class="dialog-head"><div>' +
-      (subtitle ? '<span class="quiet">' + esc(subtitle) + "</span>" : "") +
+      (story ? originLine(story) : subtitle ? '<span class="quiet">' + esc(subtitle) + "</span>" : "") +
       '<h2 id="sheet-title">' +
       esc(title) +
       "</h2></div>" +
@@ -1708,15 +1773,33 @@
     modalId = id;
     $("#sheet-body").innerHTML = body;
   }
+  function readingConditions(s) {
+    const {all, any} = routeParents(s);
+    if (!all.length && !any.length) return '<p class="no-reading-prereq">这篇没有剧情阅读前置。</p>';
+    const blockers = readingBlockers(s);
+    const waitingForRelease = blockers.some(id => stories.get(id).released === false);
+    const direct = new Set([...all, ...any]);
+    function links(label, ids) {
+      if (!ids.length) return "";
+      return '<div><dt>' + label + '</dt><dd>' + ids.map(id => {
+        const parent = stories.get(id);
+        const origin = storyOrigin(parent);
+        const name = (origin ? origin + "　" : "") + safeTitle(parent);
+        return '<a href="' + esc(storyHref(id)) + '"><span class="condition-state">' +
+          (parent.released === false ? "待开放" : stateText[status(parent)]) + '</span>' + esc(name) + '</a>';
+      }).join("") + '</dd></div>';
+    }
+    return '<details class="reading-conditions"><summary>阅读前置 · ' +
+      (waitingForRelease ? "尚有前置待开放" : blockers.length ? "还有前置未读" : "已满足") + '</summary><dl>' +
+      links("须先读完", all) + links("任选一条来路", any) +
+      links("上游待补", blockers.filter(id => !direct.has(id))) + '</dl></details>';
+  }
   function storyModal(s, keepScroll = false) {
     if (!s) return;
     const offset = sheet.scrollTop,
       shown = visible(s);
     let body =
-      dialogHead(
-        safeTitle(s),
-        s.type + (safeGroup(s) ? " · " + safeGroup(s) : ""),
-      ) +
+      dialogHead(safeTitle(s), "", s) +
       '<div class="tag-row">' +
       badge(s) +
       '<span class="quiet">' +
@@ -1733,7 +1816,7 @@
       "</div>";
     const mainLinkLabel = s.released === false ? "查看开放资料" :
       s.availability === "无独立对白" ? "查看关卡资料" : "阅读本篇原文";
-    body += '<div class="primary-source">' + external(s.source, mainLinkLabel) + '</div>';
+    body += '<div class="primary-source">' + external(s.source, mainLinkLabel) + '</div>' + readingConditions(s);
     const branches = knownIds(s.branches);
     if (branches.length) {
       body += '<section class="dialog-section"><h3>可选分支（依所选路线进入）</h3>' +
@@ -1843,9 +1926,9 @@
     body += '<nav class="story-locations" aria-label="定位本篇"><a href="#route?at=' +
       encodeURIComponent(s.id) + '">' + icon("route") + ' 在推荐路线中定位</a><a href="#time?at=' +
       encodeURIComponent(s.id) + '">' + icon("time") + ' 在时间线上定位</a></nav>' +
-      '<div class="dialog-actions"><label class="quiet">阅读状态　' +
-      selectState(s) +
-      '</label><div class="inline-actions">' +
+      '<div class="dialog-actions"><div class="quiet">阅读状态　' +
+      statusToggle(s) +
+      '</div><div class="inline-actions">' +
       ownerActions(s) +
       (shown && guard && status(s) !== "read"
         ? button(
@@ -1885,7 +1968,7 @@
         ) +
         para(
           "恢复记录",
-          "合并会保留本机独有的标记。选择整份恢复后，进度会还原为备份中的状态。",
+          "合并会保留本机独有的标记。整份恢复会用备份替换当前进度。旧版的「在读」按未读处理。",
         ) +
         '<label class="field">导入方式<select id="import-method"><option value="merge">合并备份与本机标记</option><option value="restore">用备份恢复整份进度</option></select></label>' +
         (note ? '<div class="notice-box">' + esc(note) + "</div>" : "") +
@@ -1947,6 +2030,7 @@
   }
   let availablePhases = new Set();
   function render(focusId = "") {
+    if (view === "route" && locatedId && !routeMatches(stories.get(locatedId))) locatedId = "";
     const focusInput = focusId ? $("#" + focusId) : null;
     const start = focusInput?.selectionStart,
       end = focusInput?.selectionEnd;
@@ -2041,6 +2125,7 @@
       stage = stageKey(s);
       if (s.optional) includeOptional = true;
       if (hideRead && status(s) === "read") hideRead = false;
+      if (readableOnly && !isReadable(s)) readableOnly = false;
       hiddenTypes.delete(s.type);
       for (const key of storyOwners.get(s.id) || []) hiddenOwners.delete(key);
       const list = routeBuckets.get(stage).filter(routeMatches);
@@ -2071,6 +2156,9 @@
     if (view === "catalog") {
       filters = defaultFilter();
       for (const key of Object.keys(filters)) filters[key] = params.get(key) || "";
+      if (filters.status === "reading") filters.status = "unread";
+      if (!Object.hasOwn(stateText, filters.status)) filters.status = "";
+      filters.ready = params.get("ready") === "1" ? "1" : "";
       filters.phase = timeBuckets.has(addressPeriod) ? addressPeriod : "";
       if (guard && filters.person && !bondsByOwner.has(filters.person) &&
           !all.some(s => archiveOwner(s) === filters.person) && !visibleCast().includes(filters.person)) filters.person = "";
@@ -2080,6 +2168,7 @@
       includeOptional = params.has("optional") ? params.get("optional") === "1" :
         prefs.includeOptional === true || !!routeBuckets.get(stage)?.every(s => s.optional);
       hideRead = params.has("unread") ? params.get("unread") === "1" : prefs.hideRead === true;
+      readableOnly = params.has("ready") ? params.get("ready") === "1" : prefs.readableOnly === true;
       const omitted = params.has("omit") ? params.get("omit").split(",") : prefs.hiddenTypes;
       hiddenTypes = new Set(Array.isArray(omitted) ? omitted.filter(type => sortedTypes.includes(type)) : []);
       const owners = params.has("owners") ? params.get("owners").split(",") : prefs.hiddenOwners;
@@ -2117,7 +2206,7 @@
       sheet.close();
     }
     if (!id && locatedId) {
-      const row = $('.story-row[data-entry="' + CSS.escape(locatedId) + '"]');
+      const row = $('#view-main [data-entry="' + CSS.escape(locatedId) + '"]');
       requestAnimationFrame(() => {
         if (!row?.isConnected || sheet.open) return;
         row.querySelector(".row-open")?.focus({preventScroll:true});
@@ -2133,7 +2222,7 @@
     if (ev.key !== storageKey) return;
     try {
       const next = JSON.parse(ev.newValue || "{}");
-      progress = validStates(next.progress);
+      progress = applyProgress(next.progress);
       guard = next.guard !== false;
       revealed.clear();
       render();
@@ -2217,17 +2306,13 @@
       if (
         entries.some(
           ([id, st]) =>
-            !id || id.length > 1600 || !Object.hasOwn(stateText, st),
+            !id || id.length > 1600 || (st !== "reading" && !Object.hasOwn(stateText, st)),
         )
       )
         throw new Error("备份包含无效状态，现有进度未改动。");
       const restore = $("#import-method")?.value === "restore";
-      if (restore) progress = Object.create(null);
-      let known = 0;
-      for (const [id, st] of entries) {
-        if (stories.has(id) || knownProgressKeys.has(id)) known++;
-        writeStatus(id, st);
-      }
+      progress = applyProgress(json.progress, restore ? Object.create(null) : progress);
+      const known = entries.filter(([id]) => stories.has(id) || knownProgressKeys.has(id)).length;
       store();
       render();
       progressModal(
@@ -2235,7 +2320,7 @@
           fmt(known) +
           " 个当前篇目的记录。" +
           (entries.length > known
-            ? "另保留 " + fmt(entries.length - known) + " 个其他版本的标记。"
+            ? "另处理 " + fmt(entries.length - known) + " 个其他版本的记录。"
             : ""),
       );
     } catch (e) {
@@ -2282,6 +2367,30 @@
       case "guard":
         changeGuard();
         break;
+      case "toggle-status": {
+        const story = stories.get(key);
+        if (!story) break;
+        const selector = '[data-status="' + CSS.escape(key) + '"]';
+        const position = [...document.querySelectorAll("#view-main [data-status]")].findIndex(el => el.dataset.status === key);
+        const value = status(story) === "read" ? "unread" : "read";
+        writeStatus(key, value);
+        store();
+        render();
+        const controls = document.querySelectorAll("#view-main [data-status]");
+        const listTarget = $("#view-main " + selector) || controls[Math.min(Math.max(0, position), controls.length - 1)] ||
+          $("#view-main h2");
+        if (listTarget?.matches("h2")) listTarget.tabIndex = -1;
+        if (modal === "story") {
+          storyModal(story, true);
+          sheet.querySelector(selector)?.focus({preventScroll:true});
+          if (listTarget && (!returnFocusSelector || !$(returnFocusSelector))) lastFocus = listTarget;
+        } else {
+          syncViewAddress();
+          listTarget?.focus({preventScroll:true});
+        }
+        if (!saveMessage) showNotice("已标为" + stateText[value] + "。");
+        break;
+      }
       case "progress":
         progressModal();
         break;
@@ -2419,13 +2528,14 @@
         render();
         break;
       case "set-many": {
-        const v = $("#bulk-value").value,
-          n = selected.size;
-        selected.forEach((id) => writeStatus(id, v));
+        const n = selected.size;
+        selected.forEach((id) => writeStatus(id, key));
         selected.clear();
         store();
         render();
-        showNotice("已将 " + fmt(n) + " 篇标为" + stateText[v] + "。");
+        syncViewAddress();
+        $('[data-act="pick-page"]')?.focus({preventScroll:true});
+        showNotice("已将 " + fmt(n) + " 篇标为" + stateText[key] + "。");
         break;
       }
       case "reset-filters":
@@ -2470,13 +2580,6 @@
       $("#view-main").scrollIntoView({block:"start"});
       return;
     }
-    if (el.dataset.status) {
-      writeStatus(el.dataset.status, el.value);
-      store();
-      render();
-      if (modal === "story") storyModal(stories.get(modalId), true);
-      return;
-    }
     if (el.dataset.menu) {
       applyMenu(el.dataset.menu, el.value);
       return;
@@ -2489,10 +2592,11 @@
       return;
     }
     if (el.dataset.filter) {
-      filters[el.dataset.filter] = el.value;
+      filters[el.dataset.filter] = el.type === "checkbox" ? (el.checked ? "1" : "") : el.value;
       resetPage();
       render();
       syncViewAddress(true);
+      $('[data-filter="' + CSS.escape(el.dataset.filter) + '"]')?.focus({preventScroll:true});
       return;
     }
     if (el.id === "time-person") {
@@ -2523,7 +2627,7 @@
       $('[data-owner="' + CSS.escape(key) + '"]').focus({preventScroll:true});
       return;
     }
-    if (el.id === "optional" || el.id === "hide-read" || el.hasAttribute("data-route-type")) {
+    if (el.id === "optional" || el.id === "hide-read" || el.id === "route-ready" || el.hasAttribute("data-route-type")) {
       const type = el.dataset.routeType;
       if (type) {
         if (el.checked) hiddenTypes.add(type);
@@ -2533,6 +2637,9 @@
         includeOptional = el.checked;
         saveRoutePref("includeOptional", includeOptional);
         if (!includeOptional && routeBuckets.get(stage)?.every(s => s.optional)) stage = "*";
+      } else if (el.id === "route-ready") {
+        readableOnly = el.checked;
+        saveRoutePref("readableOnly", readableOnly);
       } else {
         hideRead = el.checked;
         saveRoutePref("hideRead", hideRead);

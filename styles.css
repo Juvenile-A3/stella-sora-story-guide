@@ -763,10 +763,42 @@ footer button:hover {
   flex: none;
   color: #6e8798;
 }
-.pin-type {
-  color: #365467;
-  font-weight: 600;
+.story-origin {
+  --origin-ink: #244f71;
+  --origin-paper: #deebf2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 3px 9px;
+  margin-bottom: 5px;
+  color: #314c59;
+  font-size: 13px;
+  line-height: 1.45;
+  font-weight: 650;
 }
+.story-origin[data-kind="side"] { --origin-ink: #5c4177; --origin-paper: #eee7f5; }
+.story-origin[data-kind="event"] { --origin-ink: #77461d; --origin-paper: #fae9d5; }
+.story-origin[data-kind="person"] { --origin-ink: #255b49; --origin-paper: #e0f0e7; }
+.story-origin[data-kind="secret"] { --origin-ink: #703a58; --origin-paper: #f5e5ed; }
+.story-origin[data-kind="extra"] { --origin-ink: #415262; --origin-paper: #e8eced; }
+.origin-type {
+  padding: 2px 7px;
+  border-radius: 3px;
+  background: var(--origin-paper);
+  color: var(--origin-ink);
+  white-space: nowrap;
+  font-size: 12px;
+  font-weight: 700;
+}
+.origin-name { overflow-wrap: anywhere; }
+.dialog-head .story-origin { font-size: 15px; margin-bottom: 6px; }
+.reading-conditions, .no-reading-prereq { color: #405a62; font-size: 14px; margin: 12px 0; }
+.reading-conditions summary { cursor: pointer; width: fit-content; font-weight: 650; }
+.reading-conditions dl { margin: 9px 0; border-left: 2px solid #b8ceca; padding-left: 13px; }
+.reading-conditions dt { font-weight: 650; margin-top: 6px; }
+.reading-conditions dd { margin: 0; }
+.reading-conditions a { display: block; width: fit-content; overflow-wrap: anywhere; padding-block: 3px; }
+.condition-state { margin-right: 7px; color: var(--muted); font-size: 12px; }
 .row-actions {
   display: flex;
   gap: 6px;
@@ -800,21 +832,24 @@ footer button:hover {
   color: #346557;
   background: #e7f1ea;
 }
-.state-select {
+.state-toggle {
   font-size: 12px;
   border: 1px solid #d2dce4;
   border-radius: 4px;
   min-height: 30px;
-  padding: 4px 3px;
+  min-width: 44px;
+  padding: 4px 8px;
+  color: #405566;
   background: #f9fbfc;
+  cursor: pointer;
 }
-.state-select.read {
+.state-toggle.read {
   color: #286752;
   background: #eaf5ef;
+  border-color: #b6d3c5;
 }
-.state-select.reading {
-  background: #fff7de;
-  color: #705316;
+.state-toggle:hover {
+  border-color: currentColor;
 }
 .pager {
   justify-content: center;
@@ -1094,7 +1129,7 @@ dialog::backdrop {
 }
 .stat-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 8px;
 }
 .stat-grid div {
@@ -1373,7 +1408,7 @@ footer button {
   .row-sub {
     gap: 3px 6px;
   }
-  .state-select {
+  .state-toggle {
     max-width: 52px;
     font-size: 11px;
   }
@@ -1590,7 +1625,7 @@ footer button {
   .hero:not(.sub) { min-height: 196px; }
   .hero:not(.sub) h1 { font-size: clamp(38px,7.8vw,52px); }
   .hero:not(.sub) p { max-width: 25em; }
-  .hero-actions button, .hero-actions a, .state-select { min-height: 40px; }
+  .hero-actions button, .hero-actions a, .state-toggle { min-height: 40px; }
   .hero.sub { min-height: 105px; }
   .filter-switch {
     display: inline-flex; align-items: center; justify-content: center;

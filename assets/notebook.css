@@ -88,7 +88,7 @@
 .page-jump select { min-height: 34px; }
 .guide-page .row-open strong { font-size: 16px; }
 .guide-page .group-heading { margin-top: 17px; }
-.guide-page .state-select { min-height: 34px; }
+.guide-page .state-toggle { min-height: 34px; }
 .guide-page .progress-card { background: #254758; }
 .guide-page .btn.primary { background: #145665; color: #fff; }
 .guide-page .sidebar { top: 13px; }

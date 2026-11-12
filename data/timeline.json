@@ -3964,6 +3964,11 @@
     },
     {
       "to": "discs/214004_仙踪良梦",
+      "type": "reading",
+      "from": "characters/110_翡冷翠/sections/11003_菲莱假日 下"
+    },
+    {
+      "to": "discs/214004_仙踪良梦",
       "type": "related",
       "from": "characters/110_翡冷翠/sections/11003_菲莱假日 下"
     },
@@ -4779,6 +4784,11 @@
     },
     {
       "to": "anecdotes/char/114_猫眼_最终证明@11403",
+      "type": "reading",
+      "from": "characters/114_猫眼/sections/11403_名为“魔王试炼”的委托 下"
+    },
+    {
+      "to": "discs/214029_猫之珍藏",
       "type": "reading",
       "from": "characters/114_猫眼/sections/11403_名为“魔王试炼”的委托 下"
     },
@@ -7039,6 +7049,11 @@
     },
     {
       "to": "mirror/DatingStartEndEvent/126102",
+      "type": "reading",
+      "from": "characters/126_紫槿/sections/12603_蝶说 下"
+    },
+    {
+      "to": "mirror/DiscIP/213016",
       "type": "reading",
       "from": "characters/126_紫槿/sections/12603_蝶说 下"
     },
@@ -10158,6 +10173,21 @@
       "from": "characters/144_千都世/sections/14403_人刀合一的修行 下"
     },
     {
+      "to": "anecdotes/char/145_乙叶_镜子与面具@14501",
+      "type": "reading",
+      "from": "characters/145_乙叶/sections/14501_千面演者 上"
+    },
+    {
+      "to": "anecdotes/char/145_乙叶_镜子与面具@14502",
+      "type": "reading",
+      "from": "characters/145_乙叶/sections/14501_千面演者 上"
+    },
+    {
+      "to": "anecdotes/char/145_乙叶_镜子与面具@14503",
+      "type": "reading",
+      "from": "characters/145_乙叶/sections/14501_千面演者 上"
+    },
+    {
       "to": "characters/145_乙叶/sections/14502_千面演者 中",
       "type": "prerequisite",
       "from": "characters/145_乙叶/sections/14501_千面演者 上"
@@ -10244,6 +10274,11 @@
     },
     {
       "to": "_chat/PM14501@10",
+      "type": "reading",
+      "from": "characters/145_乙叶/sections/14503_千面演者 下"
+    },
+    {
+      "to": "discs/214045_繁花幻梦",
       "type": "reading",
       "from": "characters/145_乙叶/sections/14503_千面演者 下"
     },
@@ -10704,6 +10739,11 @@
     },
     {
       "to": "_chat/PM14902@06",
+      "type": "reading",
+      "from": "characters/149_格芮/sections/14903_项圈与绳索 下"
+    },
+    {
+      "to": "discs/214036_迷途的朝圣者",
       "type": "reading",
       "from": "characters/149_格芮/sections/14903_项圈与绳索 下"
     },
@@ -11449,6 +11489,11 @@
     },
     {
       "to": "discs/214037_抓住传说",
+      "type": "reading",
+      "from": "characters/156_小禾/sections/15603_小房间大扫除 下"
+    },
+    {
+      "to": "discs/214037_抓住传说",
       "type": "related",
       "from": "characters/156_小禾/sections/15603_小房间大扫除 下"
     },
@@ -11904,6 +11949,11 @@
     },
     {
       "to": "discs/214044_罗帷春染岁朝新",
+      "type": "reading",
+      "from": "characters/159_科洛妮丝（新春）/sections/15903_消食秘方 下"
+    },
+    {
+      "to": "discs/214044_罗帷春染岁朝新",
       "type": "related",
       "from": "characters/159_科洛妮丝（新春）/sections/15903_消食秘方 下"
     },
@@ -12059,6 +12109,11 @@
     },
     {
       "to": "anecdotes/char/160_薇洛（盛夏）_星塔调研@16003",
+      "type": "reading",
+      "from": "characters/160_薇洛（盛夏）/sections/16003_奔忙的假期 下"
+    },
+    {
+      "to": "discs/214055_浮光掠影",
       "type": "reading",
       "from": "characters/160_薇洛（盛夏）/sections/16003_奔忙的假期 下"
     },
@@ -12304,12 +12359,27 @@
     },
     {
       "to": "mirror/DiscIP/213006",
+      "type": "reading",
+      "from": "discs/214005_晴之花"
+    },
+    {
+      "to": "mirror/DiscIP/213006",
       "type": "related",
       "from": "discs/214005_晴之花"
     },
     {
       "to": "mirror/DiscIP/214011",
+      "type": "reading",
+      "from": "discs/214005_晴之花"
+    },
+    {
+      "to": "mirror/DiscIP/214011",
       "type": "related",
+      "from": "discs/214005_晴之花"
+    },
+    {
+      "to": "mirror/DiscIP/214020",
+      "type": "reading",
       "from": "discs/214005_晴之花"
     },
     {
@@ -12340,6 +12410,11 @@
     {
       "to": "storysets/荒野快讯/1007_雪愿的回响/sections/100703_第三话",
       "type": "related",
+      "from": "discs/214005_晴之花"
+    },
+    {
+      "to": "storysets/荒野快讯/1011_晨间溜走的信使/sections/101101_第一话",
+      "type": "reading",
       "from": "discs/214005_晴之花"
     },
     {
@@ -12426,6 +12501,11 @@
       "to": "mirror/DiscIP/211006",
       "type": "related",
       "from": "discs/214015_鹿鸣"
+    },
+    {
+      "to": "events/activity_10105_冬夜镇魂曲与破晓扳机/sections/101050201_01_前往北境之城",
+      "type": "reading",
+      "from": "discs/214016_春日纪事"
     },
     {
       "to": "events/activity_10105_冬夜镇魂曲与破晓扳机/sections/101050201_01_前往北境之城",
@@ -12838,6 +12918,36 @@
       "from": "events/activity_10104_烟火绚丽寻春意/sections/101040210_08_此去经年"
     },
     {
+      "to": "anecdotes/char/159_科洛妮丝（新春）_城外探险@15901",
+      "type": "reading",
+      "from": "events/activity_10104_烟火绚丽寻春意/sections/101040211_09_人间万象更新时"
+    },
+    {
+      "to": "anecdotes/char/159_科洛妮丝（新春）_城外探险@15902",
+      "type": "reading",
+      "from": "events/activity_10104_烟火绚丽寻春意/sections/101040211_09_人间万象更新时"
+    },
+    {
+      "to": "anecdotes/char/159_科洛妮丝（新春）_城外探险@15903",
+      "type": "reading",
+      "from": "events/activity_10104_烟火绚丽寻春意/sections/101040211_09_人间万象更新时"
+    },
+    {
+      "to": "characters/113_师渺/sections/11301_锅中见真情 上",
+      "type": "reading",
+      "from": "events/activity_10104_烟火绚丽寻春意/sections/101040211_09_人间万象更新时"
+    },
+    {
+      "to": "characters/141_赤霞/sections/14101_荒村惊魂 上",
+      "type": "reading",
+      "from": "events/activity_10104_烟火绚丽寻春意/sections/101040211_09_人间万象更新时"
+    },
+    {
+      "to": "characters/159_科洛妮丝（新春）/sections/15901_消食秘方 上",
+      "type": "reading",
+      "from": "events/activity_10104_烟火绚丽寻春意/sections/101040211_09_人间万象更新时"
+    },
+    {
       "to": "mirror/DiscIP/214042",
       "type": "reading",
       "from": "events/activity_10104_烟火绚丽寻春意/sections/101040211_09_人间万象更新时"
@@ -12913,6 +13023,26 @@
       "from": "events/activity_10105_冬夜镇魂曲与破晓扳机/sections/101050211_09_何为强大"
     },
     {
+      "to": "anecdotes/char/143_风影_猎火者@14301",
+      "type": "reading",
+      "from": "events/activity_10105_冬夜镇魂曲与破晓扳机/sections/101050212_10_告别风雪"
+    },
+    {
+      "to": "anecdotes/char/143_风影_猎火者@14302",
+      "type": "reading",
+      "from": "events/activity_10105_冬夜镇魂曲与破晓扳机/sections/101050212_10_告别风雪"
+    },
+    {
+      "to": "anecdotes/char/143_风影_猎火者@14303",
+      "type": "reading",
+      "from": "events/activity_10105_冬夜镇魂曲与破晓扳机/sections/101050212_10_告别风雪"
+    },
+    {
+      "to": "characters/143_风影/sections/14301_我所认识的你 上",
+      "type": "reading",
+      "from": "events/activity_10105_冬夜镇魂曲与破晓扳机/sections/101050212_10_告别风雪"
+    },
+    {
       "to": "mirror/DiscIP/214046",
       "type": "reading",
       "from": "events/activity_10105_冬夜镇魂曲与破晓扳机/sections/101050212_10_告别风雪"
@@ -12920,6 +13050,11 @@
     {
       "to": "mirror/DiscIP/214046",
       "type": "related",
+      "from": "events/activity_10105_冬夜镇魂曲与破晓扳机/sections/101050212_10_告别风雪"
+    },
+    {
+      "to": "storysets/荒野快讯/1014_跨越星声的对话/sections/101401_第一话",
+      "type": "reading",
       "from": "events/activity_10105_冬夜镇魂曲与破晓扳机/sections/101050212_10_告别风雪"
     },
     {
@@ -13033,6 +13168,41 @@
       "from": "events/activity_10106_敬启，致珍重的你/sections/101060211_07_跨越时空的问候"
     },
     {
+      "to": "anecdotes/char/130_多娜_送往星塔的信@13001",
+      "type": "reading",
+      "from": "events/activity_10106_敬启，致珍重的你/sections/101060212_08_敬启，致珍重的你"
+    },
+    {
+      "to": "anecdotes/char/130_多娜_送往星塔的信@13002",
+      "type": "reading",
+      "from": "events/activity_10106_敬启，致珍重的你/sections/101060212_08_敬启，致珍重的你"
+    },
+    {
+      "to": "anecdotes/char/130_多娜_送往星塔的信@13003",
+      "type": "reading",
+      "from": "events/activity_10106_敬启，致珍重的你/sections/101060212_08_敬启，致珍重的你"
+    },
+    {
+      "to": "characters/125_苍兰/sections/12501_胜利者法则 上",
+      "type": "reading",
+      "from": "events/activity_10106_敬启，致珍重的你/sections/101060212_08_敬启，致珍重的你"
+    },
+    {
+      "to": "characters/127_特丽莎/sections/12701_机敏信使不会受伤 上",
+      "type": "reading",
+      "from": "events/activity_10106_敬启，致珍重的你/sections/101060212_08_敬启，致珍重的你"
+    },
+    {
+      "to": "discs/214008_飞越青空",
+      "type": "reading",
+      "from": "events/activity_10106_敬启，致珍重的你/sections/101060212_08_敬启，致珍重的你"
+    },
+    {
+      "to": "mirror/DiscIP/214047",
+      "type": "reading",
+      "from": "events/activity_10106_敬启，致珍重的你/sections/101060212_08_敬启，致珍重的你"
+    },
+    {
       "to": "mirror/DiscIP/214047",
       "type": "related",
       "from": "events/activity_10106_敬启，致珍重的你/sections/101060212_08_敬启，致珍重的你"
@@ -13050,6 +13220,11 @@
     {
       "to": "events/activity_10107_穿透心壁的取景框/sections/101070204_04_实验体",
       "type": "prerequisite",
+      "from": "events/activity_10107_穿透心壁的取景框/sections/101070203_03_监护人"
+    },
+    {
+      "to": "mirror/DiscIP/214003",
+      "type": "reading",
       "from": "events/activity_10107_穿透心壁的取景框/sections/101070203_03_监护人"
     },
     {
@@ -13085,6 +13260,11 @@
     {
       "to": "characters/115_火垂/sections/11501_找呀找呀找朋友 上",
       "type": "prerequisite",
+      "from": "events/activity_10107_穿透心壁的取景框/sections/101070211_09_普通女孩"
+    },
+    {
+      "to": "characters/120_卡娜丝/sections/12001_课后的秘密论文 上",
+      "type": "reading",
       "from": "events/activity_10107_穿透心壁的取景框/sections/101070211_09_普通女孩"
     },
     {
@@ -13143,6 +13323,31 @@
       "from": "events/activity_10108_心跳！柔光狂想曲/sections/101080209_07_虎口脱险"
     },
     {
+      "to": "anecdotes/char/140_斯帕克拉_魔王派@14001",
+      "type": "reading",
+      "from": "events/activity_10108_心跳！柔光狂想曲/sections/101080210_EX_一份新的订单"
+    },
+    {
+      "to": "anecdotes/char/140_斯帕克拉_魔王派@14002",
+      "type": "reading",
+      "from": "events/activity_10108_心跳！柔光狂想曲/sections/101080210_EX_一份新的订单"
+    },
+    {
+      "to": "anecdotes/char/140_斯帕克拉_魔王派@14003",
+      "type": "reading",
+      "from": "events/activity_10108_心跳！柔光狂想曲/sections/101080210_EX_一份新的订单"
+    },
+    {
+      "to": "discs/214054_微小的乐园",
+      "type": "reading",
+      "from": "events/activity_10108_心跳！柔光狂想曲/sections/101080210_EX_一份新的订单"
+    },
+    {
+      "to": "mirror/CharacterArchiveContent/14002",
+      "type": "reading",
+      "from": "events/activity_10108_心跳！柔光狂想曲/sections/101080210_EX_一份新的订单"
+    },
+    {
       "to": "mirror/CharacterArchiveContent/14002",
       "type": "related",
       "from": "events/activity_10108_心跳！柔光狂想曲/sections/101080210_EX_一份新的订单"
@@ -13191,6 +13396,16 @@
       "to": "events/activity_10109_枪林弹雨覆黄沙/sections/101090210_08_干杯……敬最强大的猫眼大人",
       "type": "prerequisite",
       "from": "events/activity_10109_枪林弹雨覆黄沙/sections/101090209_07_冲出重围……黑暗之力的重生"
+    },
+    {
+      "to": "characters/108_卡西米拉/sections/10801_幸运的一天 上",
+      "type": "reading",
+      "from": "events/activity_10109_枪林弹雨覆黄沙/sections/101090210_08_干杯……敬最强大的猫眼大人"
+    },
+    {
+      "to": "characters/114_猫眼/sections/11401_名为“魔王试炼”的委托 上",
+      "type": "reading",
+      "from": "events/activity_10109_枪林弹雨覆黄沙/sections/101090210_08_干杯……敬最强大的猫眼大人"
     },
     {
       "to": "main/chapter_07_谜影的序曲/sections/6506_04_故地重游",
@@ -13343,6 +13558,21 @@
       "from": "events/activity_10111_奋斗吧！大小姐的旅人修炼手册！/sections/101110208_07_突围"
     },
     {
+      "to": "anecdotes/char/137_埃莉诺_星塔写生@13701",
+      "type": "reading",
+      "from": "events/activity_10111_奋斗吧！大小姐的旅人修炼手册！/sections/101110210_08_荣誉之夜"
+    },
+    {
+      "to": "anecdotes/char/137_埃莉诺_星塔写生@13702",
+      "type": "reading",
+      "from": "events/activity_10111_奋斗吧！大小姐的旅人修炼手册！/sections/101110210_08_荣誉之夜"
+    },
+    {
+      "to": "anecdotes/char/137_埃莉诺_星塔写生@13703",
+      "type": "reading",
+      "from": "events/activity_10111_奋斗吧！大小姐的旅人修炼手册！/sections/101110210_08_荣誉之夜"
+    },
+    {
       "to": "characters/137_埃莉诺/sections/13701_后辈的烦恼日 上",
       "type": "prerequisite",
       "from": "events/activity_10111_奋斗吧！大小姐的旅人修炼手册！/sections/101110210_08_荣誉之夜"
@@ -13380,6 +13610,16 @@
     {
       "to": "characters/157_花铃/sections/15701_二人三脚 上",
       "type": "prerequisite",
+      "from": "events/activity_11100_惊奇冒险！渊海幽灵船传说！/sections/111000202_第二话_来自幽灵船"
+    },
+    {
+      "to": "discs/214038_波光漫游",
+      "type": "reading",
+      "from": "events/activity_11100_惊奇冒险！渊海幽灵船传说！/sections/111000202_第二话_来自幽灵船"
+    },
+    {
+      "to": "discs/214057_伴我航行",
+      "type": "reading",
       "from": "events/activity_11100_惊奇冒险！渊海幽灵船传说！/sections/111000202_第二话_来自幽灵船"
     },
     {
@@ -13668,14 +13908,89 @@
       "from": "events/activity_20101_闪耀的使者与圣夜的精灵/sections/201010212_10_危险的“游戏”"
     },
     {
+      "to": "anecdotes/char/158_菈露（圣夜）_星塔里的雪@15801",
+      "type": "reading",
+      "from": "events/activity_20101_闪耀的使者与圣夜的精灵/sections/201010214_尾声_为你准备的礼物"
+    },
+    {
+      "to": "anecdotes/char/158_菈露（圣夜）_星塔里的雪@15802",
+      "type": "reading",
+      "from": "events/activity_20101_闪耀的使者与圣夜的精灵/sections/201010214_尾声_为你准备的礼物"
+    },
+    {
+      "to": "anecdotes/char/158_菈露（圣夜）_星塔里的雪@15803",
+      "type": "reading",
+      "from": "events/activity_20101_闪耀的使者与圣夜的精灵/sections/201010214_尾声_为你准备的礼物"
+    },
+    {
+      "to": "characters/126_紫槿/sections/12601_蝶说 上",
+      "type": "reading",
+      "from": "events/activity_20101_闪耀的使者与圣夜的精灵/sections/201010214_尾声_为你准备的礼物"
+    },
+    {
       "to": "characters/158_菈露（圣夜）/sections/15801_派送的礼物 上",
       "type": "prerequisite",
+      "from": "events/activity_20101_闪耀的使者与圣夜的精灵/sections/201010214_尾声_为你准备的礼物"
+    },
+    {
+      "to": "discs/214048_雪夜惊喜",
+      "type": "reading",
+      "from": "events/activity_20101_闪耀的使者与圣夜的精灵/sections/201010214_尾声_为你准备的礼物"
+    },
+    {
+      "to": "events/activity_10104_烟火绚丽寻春意/sections/101040201_01_苍茫人海逢故人",
+      "type": "reading",
+      "from": "events/activity_20101_闪耀的使者与圣夜的精灵/sections/201010214_尾声_为你准备的礼物"
+    },
+    {
+      "to": "mirror/CharacterArchiveContent/15802",
+      "type": "reading",
+      "from": "events/activity_20101_闪耀的使者与圣夜的精灵/sections/201010214_尾声_为你准备的礼物"
+    },
+    {
+      "to": "mirror/CharacterArchiveContent/15809",
+      "type": "reading",
+      "from": "events/activity_20101_闪耀的使者与圣夜的精灵/sections/201010214_尾声_为你准备的礼物"
+    },
+    {
+      "to": "mirror/CharacterArchiveContent/15811",
+      "type": "reading",
+      "from": "events/activity_20101_闪耀的使者与圣夜的精灵/sections/201010214_尾声_为你准备的礼物"
+    },
+    {
+      "to": "mirror/CharacterArchiveContent/15813",
+      "type": "reading",
+      "from": "events/activity_20101_闪耀的使者与圣夜的精灵/sections/201010214_尾声_为你准备的礼物"
+    },
+    {
+      "to": "mirror/DiscIP/214041",
+      "type": "reading",
       "from": "events/activity_20101_闪耀的使者与圣夜的精灵/sections/201010214_尾声_为你准备的礼物"
     },
     {
       "to": "mirror/DiscIP/214041",
       "type": "related",
       "from": "events/activity_20101_闪耀的使者与圣夜的精灵/sections/201010214_尾声_为你准备的礼物"
+    },
+    {
+      "to": "storysets/荒野快讯/1007_雪愿的回响/sections/100701_第一话",
+      "type": "reading",
+      "from": "events/activity_20101_闪耀的使者与圣夜的精灵/sections/201010214_尾声_为你准备的礼物"
+    },
+    {
+      "to": "characters/160_薇洛（盛夏）/sections/16001_奔忙的假期 上",
+      "type": "reading",
+      "from": "events/activity_20103_晴风碧海 · 悠哉盛夏依然打卡~/sections/201030201_01_是时候休个假了！"
+    },
+    {
+      "to": "dispatch/solo/薇洛（盛夏） · 委托结算演出（其一）_16001",
+      "type": "reading",
+      "from": "events/activity_20103_晴风碧海 · 悠哉盛夏依然打卡~/sections/201030201_01_是时候休个假了！"
+    },
+    {
+      "to": "dispatch/solo/薇洛（盛夏） · 委托结算演出（其二）_16002",
+      "type": "reading",
+      "from": "events/activity_20103_晴风碧海 · 悠哉盛夏依然打卡~/sections/201030201_01_是时候休个假了！"
     },
     {
       "to": "events/activity_20103_晴风碧海 · 悠哉盛夏依然打卡~/sections/201030202_02_穿上泳装，拿起扫帚",
@@ -13871,6 +14186,16 @@
       "to": "mirror/CharacterArchiveContent/16210@revision",
       "type": "unlock",
       "from": "main/STm10001_20"
+    },
+    {
+      "to": "discs/214066_指引前路的启明星",
+      "type": "reading",
+      "from": "main/STm10001_21"
+    },
+    {
+      "to": "mirror/DiscIP/214067",
+      "type": "reading",
+      "from": "main/STm10001_21"
     },
     {
       "to": "main/chapter_01_没有记忆的生物/sections/106_06_飞翔的选择",
@@ -14083,6 +14408,16 @@
       "from": "main/chapter_02_水道桥上的风/sections/204_01_公司与绿洲"
     },
     {
+      "to": "npc_bonds/9133_波西亚/sections/913302_第二话",
+      "type": "reading",
+      "from": "main/chapter_02_水道桥上的风/sections/204_01_公司与绿洲"
+    },
+    {
+      "to": "npc_bonds/9172_贝缇丽/sections/917201_第一话",
+      "type": "reading",
+      "from": "main/chapter_02_水道桥上的风/sections/204_01_公司与绿洲"
+    },
+    {
       "to": "main/chapter_02_水道桥上的风/sections/208_03A_暗夜中的视线",
       "type": "unlock",
       "from": "main/chapter_02_水道桥上的风/sections/205_02A_深夜潜入"
@@ -14223,6 +14558,71 @@
       "from": "main/chapter_02_水道桥上的风/sections/216_10_实现愿望的方法"
     },
     {
+      "to": "_chat/PM10301@01",
+      "type": "reading",
+      "from": "main/chapter_02_水道桥上的风/sections/217_尾声_新的起点"
+    },
+    {
+      "to": "_chat/PM10301@08",
+      "type": "reading",
+      "from": "main/chapter_02_水道桥上的风/sections/217_尾声_新的起点"
+    },
+    {
+      "to": "_chat/PM11101@01",
+      "type": "reading",
+      "from": "main/chapter_02_水道桥上的风/sections/217_尾声_新的起点"
+    },
+    {
+      "to": "_chat/PM11101@08",
+      "type": "reading",
+      "from": "main/chapter_02_水道桥上的风/sections/217_尾声_新的起点"
+    },
+    {
+      "to": "_chat/PM11201@01",
+      "type": "reading",
+      "from": "main/chapter_02_水道桥上的风/sections/217_尾声_新的起点"
+    },
+    {
+      "to": "_chat/PM11201@08",
+      "type": "reading",
+      "from": "main/chapter_02_水道桥上的风/sections/217_尾声_新的起点"
+    },
+    {
+      "to": "characters/103_琥珀/sections/10301_寻猫记 上",
+      "type": "reading",
+      "from": "main/chapter_02_水道桥上的风/sections/217_尾声_新的起点"
+    },
+    {
+      "to": "characters/111_鸢尾/sections/11101_购物大作战 上",
+      "type": "reading",
+      "from": "main/chapter_02_水道桥上的风/sections/217_尾声_新的起点"
+    },
+    {
+      "to": "characters/112_尘沙/sections/11201_极速环游 上",
+      "type": "reading",
+      "from": "main/chapter_02_水道桥上的风/sections/217_尾声_新的起点"
+    },
+    {
+      "to": "characters/132_密涅瓦/sections/13201_不良少女的一天 上",
+      "type": "reading",
+      "from": "main/chapter_02_水道桥上的风/sections/217_尾声_新的起点"
+    },
+    {
+      "to": "characters/142_珂赛特/sections/14201_“约会”风波 上",
+      "type": "reading",
+      "from": "main/chapter_02_水道桥上的风/sections/217_尾声_新的起点"
+    },
+    {
+      "to": "discs/214007_午夜，堕天使",
+      "type": "reading",
+      "from": "main/chapter_02_水道桥上的风/sections/217_尾声_新的起点"
+    },
+    {
+      "to": "events/activity_20101_闪耀的使者与圣夜的精灵/sections/201010201_01_雪愿节的使者",
+      "type": "reading",
+      "from": "main/chapter_02_水道桥上的风/sections/217_尾声_新的起点"
+    },
+    {
       "to": "main/chapter_03_我们的旅团/sections/304_幕间 上_手机",
       "type": "reading",
       "from": "main/chapter_02_水道桥上的风/sections/217_尾声_新的起点"
@@ -14253,8 +14653,98 @@
       "from": "main/chapter_02_水道桥上的风/sections/217_尾声_新的起点"
     },
     {
+      "to": "mirror/DiscIP/211001",
+      "type": "reading",
+      "from": "main/chapter_02_水道桥上的风/sections/217_尾声_新的起点"
+    },
+    {
+      "to": "mirror/DiscIP/211005",
+      "type": "reading",
+      "from": "main/chapter_02_水道桥上的风/sections/217_尾声_新的起点"
+    },
+    {
+      "to": "mirror/DiscIP/211007",
+      "type": "reading",
+      "from": "main/chapter_02_水道桥上的风/sections/217_尾声_新的起点"
+    },
+    {
+      "to": "mirror/DiscIP/213003",
+      "type": "reading",
+      "from": "main/chapter_02_水道桥上的风/sections/217_尾声_新的起点"
+    },
+    {
+      "to": "mirror/DiscIP/213004",
+      "type": "reading",
+      "from": "main/chapter_02_水道桥上的风/sections/217_尾声_新的起点"
+    },
+    {
+      "to": "mirror/DiscIP/213008",
+      "type": "reading",
+      "from": "main/chapter_02_水道桥上的风/sections/217_尾声_新的起点"
+    },
+    {
+      "to": "mirror/DiscIP/213012",
+      "type": "reading",
+      "from": "main/chapter_02_水道桥上的风/sections/217_尾声_新的起点"
+    },
+    {
+      "to": "mirror/DiscIP/213014",
+      "type": "reading",
+      "from": "main/chapter_02_水道桥上的风/sections/217_尾声_新的起点"
+    },
+    {
+      "to": "mirror/DiscIP/213018",
+      "type": "reading",
+      "from": "main/chapter_02_水道桥上的风/sections/217_尾声_新的起点"
+    },
+    {
+      "to": "mirror/DiscIP/213024",
+      "type": "reading",
+      "from": "main/chapter_02_水道桥上的风/sections/217_尾声_新的起点"
+    },
+    {
+      "to": "mirror/DiscIP/214009",
+      "type": "reading",
+      "from": "main/chapter_02_水道桥上的风/sections/217_尾声_新的起点"
+    },
+    {
       "to": "mirror/DiscIP/214010",
       "type": "related",
+      "from": "main/chapter_02_水道桥上的风/sections/217_尾声_新的起点"
+    },
+    {
+      "to": "mirror/DiscIP/214022",
+      "type": "reading",
+      "from": "main/chapter_02_水道桥上的风/sections/217_尾声_新的起点"
+    },
+    {
+      "to": "mirror/DiscIP/214023",
+      "type": "reading",
+      "from": "main/chapter_02_水道桥上的风/sections/217_尾声_新的起点"
+    },
+    {
+      "to": "mirror/DiscIP/214024",
+      "type": "reading",
+      "from": "main/chapter_02_水道桥上的风/sections/217_尾声_新的起点"
+    },
+    {
+      "to": "npc_bonds/9173_珀尔娜/sections/917301_第一话",
+      "type": "reading",
+      "from": "main/chapter_02_水道桥上的风/sections/217_尾声_新的起点"
+    },
+    {
+      "to": "npc_bonds/9174_维嘉尔/sections/917401_第一话",
+      "type": "reading",
+      "from": "main/chapter_02_水道桥上的风/sections/217_尾声_新的起点"
+    },
+    {
+      "to": "returnee/sections/ST_sys_reengagement_归星漫途",
+      "type": "reading",
+      "from": "main/chapter_02_水道桥上的风/sections/217_尾声_新的起点"
+    },
+    {
+      "to": "storysets/旅途随笔/1001_刀尖之寒，掌心之暖/sections/100101_第一话",
+      "type": "reading",
       "from": "main/chapter_02_水道桥上的风/sections/217_尾声_新的起点"
     },
     {
@@ -14279,6 +14769,11 @@
     },
     {
       "to": "storysets/职场热线/1006_卫队之魂，骑士之心/sections/100601_第一话",
+      "type": "reading",
+      "from": "main/chapter_02_水道桥上的风/sections/217_尾声_新的起点"
+    },
+    {
+      "to": "storysets/职场热线/1006_卫队之魂，骑士之心/sections/100601_第一话",
       "type": "related",
       "from": "main/chapter_02_水道桥上的风/sections/217_尾声_新的起点"
     },
@@ -14290,6 +14785,11 @@
     {
       "to": "storysets/职场热线/1006_卫队之魂，骑士之心/sections/100603_第三话",
       "type": "related",
+      "from": "main/chapter_02_水道桥上的风/sections/217_尾声_新的起点"
+    },
+    {
+      "to": "storysets/荒野快讯/1012_眼眸中的彼此/sections/101201_第一话",
+      "type": "reading",
       "from": "main/chapter_02_水道桥上的风/sections/217_尾声_新的起点"
     },
     {
@@ -14588,8 +15088,23 @@
       "from": "main/chapter_04_梦的彼岸/sections/411_05_想要保护的东西"
     },
     {
+      "to": "discs/214006_魔女的秋千",
+      "type": "reading",
+      "from": "main/chapter_04_梦的彼岸/sections/412_06_外乡人"
+    },
+    {
+      "to": "events/activity_11100_惊奇冒险！渊海幽灵船传说！/sections/111000201_第一话_闪烁的微光",
+      "type": "reading",
+      "from": "main/chapter_04_梦的彼岸/sections/412_06_外乡人"
+    },
+    {
       "to": "main/chapter_04_梦的彼岸/sections/413_07_一场看气氛的雨",
       "type": "unlock",
+      "from": "main/chapter_04_梦的彼岸/sections/412_06_外乡人"
+    },
+    {
+      "to": "mirror/DiscIP/213005",
+      "type": "reading",
       "from": "main/chapter_04_梦的彼岸/sections/412_06_外乡人"
     },
     {
@@ -14693,6 +15208,26 @@
       "from": "main/chapter_04_梦的彼岸/sections/416_10_在星塔下"
     },
     {
+      "to": "characters/133_夏花/sections/13301_风中密语 上",
+      "type": "reading",
+      "from": "main/chapter_04_梦的彼岸/sections/417_尾声_尘埃未定"
+    },
+    {
+      "to": "characters/134_冬香/sections/13401_初雪来时 上",
+      "type": "reading",
+      "from": "main/chapter_04_梦的彼岸/sections/417_尾声_尘埃未定"
+    },
+    {
+      "to": "characters/156_小禾/sections/15601_小房间大扫除 上",
+      "type": "reading",
+      "from": "main/chapter_04_梦的彼岸/sections/417_尾声_尘埃未定"
+    },
+    {
+      "to": "discs/214015_鹿鸣",
+      "type": "reading",
+      "from": "main/chapter_04_梦的彼岸/sections/417_尾声_尘埃未定"
+    },
+    {
       "to": "main/chapter_05_落于暗夜的荧光/sections/504_幕间_秘密交易",
       "type": "reading",
       "from": "main/chapter_04_梦的彼岸/sections/417_尾声_尘埃未定"
@@ -14710,6 +15245,46 @@
     {
       "to": "mirror/CharacterArchiveContent/13310@revision",
       "type": "unlock",
+      "from": "main/chapter_04_梦的彼岸/sections/417_尾声_尘埃未定"
+    },
+    {
+      "to": "mirror/DiscIP/211006",
+      "type": "reading",
+      "from": "main/chapter_04_梦的彼岸/sections/417_尾声_尘埃未定"
+    },
+    {
+      "to": "mirror/DiscIP/213002",
+      "type": "reading",
+      "from": "main/chapter_04_梦的彼岸/sections/417_尾声_尘埃未定"
+    },
+    {
+      "to": "mirror/DiscIP/213015",
+      "type": "reading",
+      "from": "main/chapter_04_梦的彼岸/sections/417_尾声_尘埃未定"
+    },
+    {
+      "to": "mirror/DiscIP/214014",
+      "type": "reading",
+      "from": "main/chapter_04_梦的彼岸/sections/417_尾声_尘埃未定"
+    },
+    {
+      "to": "mirror/DiscIP/214021",
+      "type": "reading",
+      "from": "main/chapter_04_梦的彼岸/sections/417_尾声_尘埃未定"
+    },
+    {
+      "to": "mirror/DiscIP/214040",
+      "type": "reading",
+      "from": "main/chapter_04_梦的彼岸/sections/417_尾声_尘埃未定"
+    },
+    {
+      "to": "storysets/职场热线/1005_老油条与新员工/sections/100501_第一话",
+      "type": "reading",
+      "from": "main/chapter_04_梦的彼岸/sections/417_尾声_尘埃未定"
+    },
+    {
+      "to": "storysets/荒野快讯/1013_大小姐与俏女仆/sections/101301_第一话",
+      "type": "reading",
       "from": "main/chapter_04_梦的彼岸/sections/417_尾声_尘埃未定"
     },
     {
@@ -15028,6 +15603,31 @@
       "from": "main/chapter_06_微火的奇迹/sections/621_12_最后的忠诚"
     },
     {
+      "to": "anecdotes/char/126_紫槿_弗拉维奥往事@12601",
+      "type": "reading",
+      "from": "main/chapter_06_微火的奇迹/sections/622_13_未知的明天"
+    },
+    {
+      "to": "anecdotes/char/126_紫槿_弗拉维奥往事@12602",
+      "type": "reading",
+      "from": "main/chapter_06_微火的奇迹/sections/622_13_未知的明天"
+    },
+    {
+      "to": "anecdotes/char/126_紫槿_弗拉维奥往事@12603",
+      "type": "reading",
+      "from": "main/chapter_06_微火的奇迹/sections/622_13_未知的明天"
+    },
+    {
+      "to": "characters/110_翡冷翠/sections/11001_菲莱假日 上",
+      "type": "reading",
+      "from": "main/chapter_06_微火的奇迹/sections/622_13_未知的明天"
+    },
+    {
+      "to": "events/activity_10109_枪林弹雨覆黄沙/sections/101090201_01_远征凯旋……黑暗之力的缺席",
+      "type": "reading",
+      "from": "main/chapter_06_微火的奇迹/sections/622_13_未知的明天"
+    },
+    {
       "to": "main/chapter_07_谜影的序曲/sections/6503_01_午夜来信",
       "type": "reading",
       "from": "main/chapter_06_微火的奇迹/sections/622_13_未知的明天"
@@ -15038,13 +15638,83 @@
       "from": "main/chapter_06_微火的奇迹/sections/622_13_未知的明天"
     },
     {
+      "to": "mirror/DiscIP/211003",
+      "type": "reading",
+      "from": "main/chapter_06_微火的奇迹/sections/622_13_未知的明天"
+    },
+    {
+      "to": "mirror/DiscIP/213001",
+      "type": "reading",
+      "from": "main/chapter_06_微火的奇迹/sections/622_13_未知的明天"
+    },
+    {
+      "to": "mirror/DiscIP/213011",
+      "type": "reading",
+      "from": "main/chapter_06_微火的奇迹/sections/622_13_未知的明天"
+    },
+    {
+      "to": "mirror/DiscIP/213019",
+      "type": "reading",
+      "from": "main/chapter_06_微火的奇迹/sections/622_13_未知的明天"
+    },
+    {
+      "to": "mirror/DiscIP/214001",
+      "type": "reading",
+      "from": "main/chapter_06_微火的奇迹/sections/622_13_未知的明天"
+    },
+    {
+      "to": "mirror/DiscIP/214002",
+      "type": "reading",
+      "from": "main/chapter_06_微火的奇迹/sections/622_13_未知的明天"
+    },
+    {
+      "to": "mirror/DiscIP/214012",
+      "type": "reading",
+      "from": "main/chapter_06_微火的奇迹/sections/622_13_未知的明天"
+    },
+    {
+      "to": "mirror/DiscIP/214018",
+      "type": "reading",
+      "from": "main/chapter_06_微火的奇迹/sections/622_13_未知的明天"
+    },
+    {
       "to": "mirror/DiscIP/214018",
       "type": "related",
       "from": "main/chapter_06_微火的奇迹/sections/622_13_未知的明天"
     },
     {
+      "to": "mirror/DiscIP/214019",
+      "type": "reading",
+      "from": "main/chapter_06_微火的奇迹/sections/622_13_未知的明天"
+    },
+    {
+      "to": "mirror/DiscIP/214030",
+      "type": "reading",
+      "from": "main/chapter_06_微火的奇迹/sections/622_13_未知的明天"
+    },
+    {
+      "to": "mirror/DiscIP/214032",
+      "type": "reading",
+      "from": "main/chapter_06_微火的奇迹/sections/622_13_未知的明天"
+    },
+    {
+      "to": "mirror/DiscIP/214033",
+      "type": "reading",
+      "from": "main/chapter_06_微火的奇迹/sections/622_13_未知的明天"
+    },
+    {
+      "to": "mirror/DiscIP/214043",
+      "type": "reading",
+      "from": "main/chapter_06_微火的奇迹/sections/622_13_未知的明天"
+    },
+    {
       "to": "mirror/DiscIP/214043",
       "type": "related",
+      "from": "main/chapter_06_微火的奇迹/sections/622_13_未知的明天"
+    },
+    {
+      "to": "mirror/DiscIP/214053",
+      "type": "reading",
       "from": "main/chapter_06_微火的奇迹/sections/622_13_未知的明天"
     },
     {
@@ -15065,6 +15735,21 @@
     {
       "to": "storysets/旅途随笔/1018_眠于秋分之日/sections/101803_第三话",
       "type": "related",
+      "from": "main/chapter_06_微火的奇迹/sections/622_13_未知的明天"
+    },
+    {
+      "to": "storysets/职场热线/1010_丰收日/sections/101001_第一话",
+      "type": "reading",
+      "from": "main/chapter_06_微火的奇迹/sections/622_13_未知的明天"
+    },
+    {
+      "to": "storysets/荒野快讯/1008_真理的囚徒/sections/100801_第一话",
+      "type": "reading",
+      "from": "main/chapter_06_微火的奇迹/sections/622_13_未知的明天"
+    },
+    {
+      "to": "storysets/荒野快讯/1009_临时搭档/sections/100901_第一话",
+      "type": "reading",
       "from": "main/chapter_06_微火的奇迹/sections/622_13_未知的明天"
     },
     {
@@ -15163,6 +15848,16 @@
       "from": "main/chapter_07_谜影的序曲/sections/6511_09_致辞"
     },
     {
+      "to": "characters/145_乙叶/sections/14501_千面演者 上",
+      "type": "reading",
+      "from": "main/chapter_07_谜影的序曲/sections/6512_10_白昼梦"
+    },
+    {
+      "to": "characters/150_菈露/sections/15001_闯祸的薯条 上",
+      "type": "reading",
+      "from": "main/chapter_07_谜影的序曲/sections/6512_10_白昼梦"
+    },
+    {
       "to": "main/chapter_08_星之竞拍/sections/804_幕间_天穹保险",
       "type": "reading",
       "from": "main/chapter_07_谜影的序曲/sections/6512_10_白昼梦"
@@ -15170,6 +15865,11 @@
     {
       "to": "main/chapter_08_星之竞拍/sections/804_幕间_天穹保险",
       "type": "unlock",
+      "from": "main/chapter_07_谜影的序曲/sections/6512_10_白昼梦"
+    },
+    {
+      "to": "storysets/职场热线/1004_抹茶梦语/sections/100401_第一话",
+      "type": "reading",
       "from": "main/chapter_07_谜影的序曲/sections/6512_10_白昼梦"
     },
     {
@@ -15363,6 +16063,26 @@
       "from": "main/chapter_08_星之竞拍/sections/824_15_五十一层"
     },
     {
+      "to": "_chat/PM11002@02",
+      "type": "reading",
+      "from": "main/chapter_08_星之竞拍/sections/825_尾声_死之权杖"
+    },
+    {
+      "to": "characters/116_岭川/sections/11601_非典型温室 上",
+      "type": "reading",
+      "from": "main/chapter_08_星之竞拍/sections/825_尾声_死之权杖"
+    },
+    {
+      "to": "characters/117_璟麟/sections/11701_糖果藏在约定里 上",
+      "type": "reading",
+      "from": "main/chapter_08_星之竞拍/sections/825_尾声_死之权杖"
+    },
+    {
+      "to": "events/activity_10108_心跳！柔光狂想曲/sections/101080201_01_能源危机",
+      "type": "reading",
+      "from": "main/chapter_08_星之竞拍/sections/825_尾声_死之权杖"
+    },
+    {
       "to": "main/chapter_09_往日残影/sections/901_01_无罪杀戮",
       "type": "reading",
       "from": "main/chapter_08_星之竞拍/sections/825_尾声_死之权杖"
@@ -15370,6 +16090,11 @@
     {
       "to": "main/chapter_09_往日残影/sections/901_01_无罪杀戮",
       "type": "unlock",
+      "from": "main/chapter_08_星之竞拍/sections/825_尾声_死之权杖"
+    },
+    {
+      "to": "mirror/DiscIP/213020",
+      "type": "reading",
       "from": "main/chapter_08_星之竞拍/sections/825_尾声_死之权杖"
     },
     {
@@ -15563,6 +16288,11 @@
       "from": "main/chapter_09_往日残影/sections/926_15A_我的名字"
     },
     {
+      "to": "mirror/DiscIP/214050",
+      "type": "reading",
+      "from": "main/chapter_09_往日残影/sections/926_15A_我的名字"
+    },
+    {
       "to": "main/chapter_09_往日残影/sections/928_终局_妈妈",
       "type": "unlock",
       "from": "main/chapter_09_往日残影/sections/927_15B_蝴蝶效应"
@@ -15570,6 +16300,11 @@
     {
       "to": "main/chapter_10_遥远的塔/sections/1002_幕间 下_点燃",
       "type": "unlock",
+      "from": "main/chapter_10_遥远的塔/sections/1001_幕间 上_引线"
+    },
+    {
+      "to": "mirror/DiscIP/214010",
+      "type": "reading",
       "from": "main/chapter_10_遥远的塔/sections/1001_幕间 上_引线"
     },
     {
@@ -15748,6 +16483,26 @@
       "from": "main/chapter_10_遥远的塔/sections/1025_终局_遥远的塔"
     },
     {
+      "to": "_chat/PM13901@08",
+      "type": "reading",
+      "from": "main/chapter_10_遥远的塔/sections/1026_真·终局_窄门"
+    },
+    {
+      "to": "characters/139_艾蕾/sections/13901_结婚过家家 上",
+      "type": "reading",
+      "from": "main/chapter_10_遥远的塔/sections/1026_真·终局_窄门"
+    },
+    {
+      "to": "discs/214005_晴之花",
+      "type": "reading",
+      "from": "main/chapter_10_遥远的塔/sections/1026_真·终局_窄门"
+    },
+    {
+      "to": "discs/214061_睡前童话",
+      "type": "reading",
+      "from": "main/chapter_10_遥远的塔/sections/1026_真·终局_窄门"
+    },
+    {
       "to": "main/chapter_11_完璧之庭·微尘破晓/sections/1101_01_昨日重现",
       "type": "reading",
       "from": "main/chapter_10_遥远的塔/sections/1026_真·终局_窄门"
@@ -15764,7 +16519,17 @@
     },
     {
       "to": "mirror/DiscIP/214062",
+      "type": "reading",
+      "from": "main/chapter_10_遥远的塔/sections/1026_真·终局_窄门"
+    },
+    {
+      "to": "mirror/DiscIP/214062",
       "type": "related",
+      "from": "main/chapter_10_遥远的塔/sections/1026_真·终局_窄门"
+    },
+    {
+      "to": "storysets/旅途随笔/1018_眠于秋分之日/sections/101801_第一话",
+      "type": "reading",
       "from": "main/chapter_10_遥远的塔/sections/1026_真·终局_窄门"
     },
     {
@@ -15808,6 +16573,101 @@
       "from": "main/chapter_11_完璧之庭·微尘破晓/sections/1103_02_完璧之城"
     },
     {
+      "to": "mirror/DatingBranch/18001",
+      "type": "reading",
+      "from": "main/chapter_11_完璧之庭·微尘破晓/sections/1103_02_完璧之城"
+    },
+    {
+      "to": "mirror/DatingBranch/18002",
+      "type": "reading",
+      "from": "main/chapter_11_完璧之庭·微尘破晓/sections/1103_02_完璧之城"
+    },
+    {
+      "to": "mirror/DatingBranch/19001",
+      "type": "reading",
+      "from": "main/chapter_11_完璧之庭·微尘破晓/sections/1103_02_完璧之城"
+    },
+    {
+      "to": "mirror/DatingBranch/19002",
+      "type": "reading",
+      "from": "main/chapter_11_完璧之庭·微尘破晓/sections/1103_02_完璧之城"
+    },
+    {
+      "to": "mirror/DatingCharacterEvent/1807",
+      "type": "reading",
+      "from": "main/chapter_11_完璧之庭·微尘破晓/sections/1103_02_完璧之城"
+    },
+    {
+      "to": "mirror/DatingCharacterEvent/1907",
+      "type": "reading",
+      "from": "main/chapter_11_完璧之庭·微尘破晓/sections/1103_02_完璧之城"
+    },
+    {
+      "to": "mirror/DatingCharacterEvent/1908",
+      "type": "reading",
+      "from": "main/chapter_11_完璧之庭·微尘破晓/sections/1103_02_完璧之城"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/1801",
+      "type": "reading",
+      "from": "main/chapter_11_完璧之庭·微尘破晓/sections/1103_02_完璧之城"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/1802",
+      "type": "reading",
+      "from": "main/chapter_11_完璧之庭·微尘破晓/sections/1103_02_完璧之城"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/1803",
+      "type": "reading",
+      "from": "main/chapter_11_完璧之庭·微尘破晓/sections/1103_02_完璧之城"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/1804",
+      "type": "reading",
+      "from": "main/chapter_11_完璧之庭·微尘破晓/sections/1103_02_完璧之城"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/1805",
+      "type": "reading",
+      "from": "main/chapter_11_完璧之庭·微尘破晓/sections/1103_02_完璧之城"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/1806",
+      "type": "reading",
+      "from": "main/chapter_11_完璧之庭·微尘破晓/sections/1103_02_完璧之城"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/1901",
+      "type": "reading",
+      "from": "main/chapter_11_完璧之庭·微尘破晓/sections/1103_02_完璧之城"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/1902",
+      "type": "reading",
+      "from": "main/chapter_11_完璧之庭·微尘破晓/sections/1103_02_完璧之城"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/1903",
+      "type": "reading",
+      "from": "main/chapter_11_完璧之庭·微尘破晓/sections/1103_02_完璧之城"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/1904",
+      "type": "reading",
+      "from": "main/chapter_11_完璧之庭·微尘破晓/sections/1103_02_完璧之城"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/1905",
+      "type": "reading",
+      "from": "main/chapter_11_完璧之庭·微尘破晓/sections/1103_02_完璧之城"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/1906",
+      "type": "reading",
+      "from": "main/chapter_11_完璧之庭·微尘破晓/sections/1103_02_完璧之城"
+    },
+    {
       "to": "mirror/DiscIP/214067",
       "type": "related",
       "from": "main/chapter_11_完璧之庭·微尘破晓/sections/1103_02_完璧之城"
@@ -15828,6 +16688,51 @@
       "from": "main/chapter_11_完璧之庭·微尘破晓/sections/1106_05_因苏拉"
     },
     {
+      "to": "mirror/DatingBranch/20001",
+      "type": "reading",
+      "from": "main/chapter_11_完璧之庭·微尘破晓/sections/1106_05_因苏拉"
+    },
+    {
+      "to": "mirror/DatingBranch/20002",
+      "type": "reading",
+      "from": "main/chapter_11_完璧之庭·微尘破晓/sections/1106_05_因苏拉"
+    },
+    {
+      "to": "mirror/DatingCharacterEvent/2007",
+      "type": "reading",
+      "from": "main/chapter_11_完璧之庭·微尘破晓/sections/1106_05_因苏拉"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/2001",
+      "type": "reading",
+      "from": "main/chapter_11_完璧之庭·微尘破晓/sections/1106_05_因苏拉"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/2002",
+      "type": "reading",
+      "from": "main/chapter_11_完璧之庭·微尘破晓/sections/1106_05_因苏拉"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/2003",
+      "type": "reading",
+      "from": "main/chapter_11_完璧之庭·微尘破晓/sections/1106_05_因苏拉"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/2004",
+      "type": "reading",
+      "from": "main/chapter_11_完璧之庭·微尘破晓/sections/1106_05_因苏拉"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/2005",
+      "type": "reading",
+      "from": "main/chapter_11_完璧之庭·微尘破晓/sections/1106_05_因苏拉"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/2006",
+      "type": "reading",
+      "from": "main/chapter_11_完璧之庭·微尘破晓/sections/1106_05_因苏拉"
+    },
+    {
       "to": "main/chapter_11_完璧之庭·微尘破晓/sections/1108_07_守夜人的日常",
       "type": "unlock",
       "from": "main/chapter_11_完璧之庭·微尘破晓/sections/1107_06_圣女的意义"
@@ -15841,6 +16746,46 @@
       "to": "main/chapter_11_完璧之庭·微尘破晓/sections/1110_09_角斗士",
       "type": "unlock",
       "from": "main/chapter_11_完璧之庭·微尘破晓/sections/1109_08_禁忌的愿望"
+    },
+    {
+      "to": "_chat/PM16201@01",
+      "type": "reading",
+      "from": "main/chapter_11_完璧之庭·微尘破晓/sections/1110_09_角斗士"
+    },
+    {
+      "to": "_chat/PM16201@08",
+      "type": "reading",
+      "from": "main/chapter_11_完璧之庭·微尘破晓/sections/1110_09_角斗士"
+    },
+    {
+      "to": "anecdotes/char/162_尘沙（源初）_向星塔祈愿@16201",
+      "type": "reading",
+      "from": "main/chapter_11_完璧之庭·微尘破晓/sections/1110_09_角斗士"
+    },
+    {
+      "to": "anecdotes/char/162_尘沙（源初）_向星塔祈愿@16202",
+      "type": "reading",
+      "from": "main/chapter_11_完璧之庭·微尘破晓/sections/1110_09_角斗士"
+    },
+    {
+      "to": "anecdotes/char/162_尘沙（源初）_向星塔祈愿@16203",
+      "type": "reading",
+      "from": "main/chapter_11_完璧之庭·微尘破晓/sections/1110_09_角斗士"
+    },
+    {
+      "to": "characters/162_尘沙（源初）/sections/16201_那个人的名字 上",
+      "type": "reading",
+      "from": "main/chapter_11_完璧之庭·微尘破晓/sections/1110_09_角斗士"
+    },
+    {
+      "to": "dispatch/solo/尘沙（源初） · 委托结算演出（其一）_16201",
+      "type": "reading",
+      "from": "main/chapter_11_完璧之庭·微尘破晓/sections/1110_09_角斗士"
+    },
+    {
+      "to": "dispatch/solo/尘沙（源初） · 委托结算演出（其二）_16202",
+      "type": "reading",
+      "from": "main/chapter_11_完璧之庭·微尘破晓/sections/1110_09_角斗士"
     },
     {
       "to": "main/STm10001_10",
@@ -15864,6 +16809,11 @@
     },
     {
       "to": "mirror/CharacterArchiveContent/16213",
+      "type": "reading",
+      "from": "main/chapter_11_完璧之庭·微尘破晓/sections/1110_09_角斗士"
+    },
+    {
+      "to": "soldier/sections/ST_sys_soldier_intro_尖兵陷阵 · 开场剧情",
       "type": "reading",
       "from": "main/chapter_11_完璧之庭·微尘破晓/sections/1110_09_角斗士"
     },
@@ -17583,12 +18533,732 @@
       "from": "npc_bonds/9174_维嘉尔/sections/917402_第二话"
     },
     {
+      "to": "battles_unmounted/BBm00_01",
+      "type": "reading",
+      "from": "prologue/sections/STm00_01_最初的起点"
+    },
+    {
+      "to": "battles_unmounted/BBm00_02",
+      "type": "reading",
+      "from": "prologue/sections/STm00_01_最初的起点"
+    },
+    {
+      "to": "battles_unmounted/BBm00_03",
+      "type": "reading",
+      "from": "prologue/sections/STm00_01_最初的起点"
+    },
+    {
+      "to": "battles_unmounted/BBm00_04",
+      "type": "reading",
+      "from": "prologue/sections/STm00_01_最初的起点"
+    },
+    {
+      "to": "battles_unmounted/BBm00_05",
+      "type": "reading",
+      "from": "prologue/sections/STm00_01_最初的起点"
+    },
+    {
+      "to": "battles_unmounted/BBm00_06",
+      "type": "reading",
+      "from": "prologue/sections/STm00_01_最初的起点"
+    },
+    {
       "to": "prologue/sections/STm00_02_最初的起点",
       "type": "prerequisite",
       "from": "prologue/sections/STm00_01_最初的起点"
     },
     {
       "to": "main/chapter_01_没有记忆的生物/sections/101_01_梦醒时分",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingBranch/14000",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingBranch/14001",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingBranch/17000",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingBranch/17001",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingBranch/5000",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingBranch/5001",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingBranch/6000",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingBranch/6001",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingBranch/7000",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingBranch/7001",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingBranch/8000",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingBranch/8001",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingCharacterEvent/1414",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingCharacterEvent/1415",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingCharacterEvent/1416",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingCharacterEvent/1417",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingCharacterEvent/1714",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingCharacterEvent/1715",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingCharacterEvent/1716",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingCharacterEvent/1717",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingCharacterEvent/1718",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingCharacterEvent/1719",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingCharacterEvent/515",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingCharacterEvent/516",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingCharacterEvent/517",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingCharacterEvent/518",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingCharacterEvent/519",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingCharacterEvent/615",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingCharacterEvent/616",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingCharacterEvent/617",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingCharacterEvent/618",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingCharacterEvent/714",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingCharacterEvent/715",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingCharacterEvent/716",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingCharacterEvent/717",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingCharacterEvent/718",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingCharacterEvent/719",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingCharacterEvent/720",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingCharacterEvent/721",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingCharacterEvent/722",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingCharacterEvent/723",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingCharacterEvent/814",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingCharacterEvent/815",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingCharacterEvent/816",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingCharacterEvent/817",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/1401",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/1402",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/1403",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/1404",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/1405",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/1406",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/1407",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/1408",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/1409",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/1410",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/1411",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/1412",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/1413",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/1418",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/1419",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/1420",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/1701",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/1702",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/1703",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/1704",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/1705",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/1706",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/1707",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/1708",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/1709",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/1710",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/1711",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/1712",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/1713",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/1720",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/501",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/502",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/503",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/504",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/505",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/506",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/507",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/508",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/509",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/510",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/511",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/512",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/513",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/514",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/520",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/521",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/601",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/602",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/603",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/604",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/605",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/606",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/607",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/608",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/609",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/610",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/611",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/612",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/613",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/614",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/619",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/620",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/701",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/702",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/703",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/704",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/705",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/706",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/707",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/708",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/709",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/710",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/711",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/712",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/713",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/724",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/725",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/726",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/801",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/802",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/803",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/804",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/805",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/806",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/807",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/808",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/809",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/810",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/811",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/812",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/813",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/818",
+      "type": "reading",
+      "from": "prologue/sections/STm00_02_最初的起点"
+    },
+    {
+      "to": "mirror/DatingLandmarkEvent/819",
       "type": "reading",
       "from": "prologue/sections/STm00_02_最初的起点"
     },
@@ -17978,6 +19648,21 @@
       "from": "storysets/旅途随笔/1001_刀尖之寒，掌心之暖/sections/100102_第二话"
     },
     {
+      "to": "anecdotes/char/144_千都世_攀登之路@14401",
+      "type": "reading",
+      "from": "storysets/旅途随笔/1001_刀尖之寒，掌心之暖/sections/100103_第三话"
+    },
+    {
+      "to": "anecdotes/char/144_千都世_攀登之路@14402",
+      "type": "reading",
+      "from": "storysets/旅途随笔/1001_刀尖之寒，掌心之暖/sections/100103_第三话"
+    },
+    {
+      "to": "anecdotes/char/144_千都世_攀登之路@14403",
+      "type": "reading",
+      "from": "storysets/旅途随笔/1001_刀尖之寒，掌心之暖/sections/100103_第三话"
+    },
+    {
       "to": "characters/144_千都世/sections/14401_人刀合一的修行 上",
       "type": "prerequisite",
       "from": "storysets/旅途随笔/1001_刀尖之寒，掌心之暖/sections/100103_第三话"
@@ -17989,6 +19674,11 @@
     },
     {
       "to": "mirror/CharacterArchiveContent/14413",
+      "type": "reading",
+      "from": "storysets/旅途随笔/1001_刀尖之寒，掌心之暖/sections/100103_第三话"
+    },
+    {
+      "to": "mirror/DiscIP/214031",
       "type": "reading",
       "from": "storysets/旅途随笔/1001_刀尖之寒，掌心之暖/sections/100103_第三话"
     },
@@ -18008,6 +19698,11 @@
       "from": "storysets/旅途随笔/1002_仍未知晓，你的名字/sections/100203_第三话"
     },
     {
+      "to": "characters/111_鸢尾/sections/11101_购物大作战 上",
+      "type": "reading",
+      "from": "storysets/旅途随笔/1002_仍未知晓，你的名字/sections/100204_第四话"
+    },
+    {
       "to": "npc_bonds/9133_波西亚/sections/913302_第二话",
       "type": "prerequisite",
       "from": "storysets/旅途随笔/1002_仍未知晓，你的名字/sections/100204_第四话"
@@ -18015,6 +19710,11 @@
     {
       "to": "npc_bonds/9172_贝缇丽/sections/917202_第二话",
       "type": "prerequisite",
+      "from": "storysets/旅途随笔/1002_仍未知晓，你的名字/sections/100204_第四话"
+    },
+    {
+      "to": "returnee/sections/ST_sys_reengagement_归星漫途",
+      "type": "reading",
       "from": "storysets/旅途随笔/1002_仍未知晓，你的名字/sections/100204_第四话"
     },
     {
@@ -18038,6 +19738,16 @@
       "from": "storysets/职场热线/1004_抹茶梦语/sections/100402_第二话"
     },
     {
+      "to": "characters/119_花原/sections/11901_女仆的秘密任务 上",
+      "type": "reading",
+      "from": "storysets/职场热线/1004_抹茶梦语/sections/100403_第三话"
+    },
+    {
+      "to": "discs/214028_白日花园",
+      "type": "reading",
+      "from": "storysets/职场热线/1004_抹茶梦语/sections/100403_第三话"
+    },
+    {
       "to": "storysets/职场热线/1005_老油条与新员工/sections/100502_第二话",
       "type": "prerequisite",
       "from": "storysets/职场热线/1005_老油条与新员工/sections/100501_第一话"
@@ -18056,6 +19766,21 @@
       "to": "storysets/职场热线/1016_此间日常/sections/101603_第三话",
       "type": "related",
       "from": "storysets/职场热线/1005_老油条与新员工/sections/100502_第二话"
+    },
+    {
+      "to": "characters/150_菈露/sections/15001_闯祸的薯条 上",
+      "type": "reading",
+      "from": "storysets/职场热线/1005_老油条与新员工/sections/100503_第三话"
+    },
+    {
+      "to": "mirror/DiscIP/214056",
+      "type": "reading",
+      "from": "storysets/职场热线/1005_老油条与新员工/sections/100503_第三话"
+    },
+    {
+      "to": "storysets/职场热线/1016_此间日常/sections/101601_第一话",
+      "type": "reading",
+      "from": "storysets/职场热线/1005_老油条与新员工/sections/100503_第三话"
     },
     {
       "to": "storysets/职场热线/1016_此间日常/sections/101601_第一话",
@@ -18093,6 +19818,11 @@
       "from": "storysets/职场热线/1006_卫队之魂，骑士之心/sections/100602_第二话"
     },
     {
+      "to": "characters/107_缇莉娅/sections/10701_蒙面骑士缇莉娅 上",
+      "type": "reading",
+      "from": "storysets/职场热线/1006_卫队之魂，骑士之心/sections/100603_第三话"
+    },
+    {
       "to": "storysets/风情杂记/1015_可爱依赖症候群/sections/101501_第一话",
       "type": "prerequisite",
       "from": "storysets/职场热线/1006_卫队之魂，骑士之心/sections/100603_第三话"
@@ -18121,6 +19851,11 @@
       "to": "storysets/职场热线/1010_丰收日/sections/101003_第三话",
       "type": "prerequisite",
       "from": "storysets/职场热线/1010_丰收日/sections/101002_第二话"
+    },
+    {
+      "to": "characters/116_岭川/sections/11601_非典型温室 上",
+      "type": "reading",
+      "from": "storysets/职场热线/1010_丰收日/sections/101003_第三话"
     },
     {
       "to": "mirror/CharacterArchiveContent/16012",
@@ -18158,6 +19893,11 @@
       "from": "storysets/荒野快讯/1008_真理的囚徒/sections/100802_第二话"
     },
     {
+      "to": "characters/118_科洛妮丝/sections/11801_黑色的骨头 上",
+      "type": "reading",
+      "from": "storysets/荒野快讯/1008_真理的囚徒/sections/100803_第三话"
+    },
+    {
       "to": "storysets/荒野快讯/1009_临时搭档/sections/100902_第二话",
       "type": "prerequisite",
       "from": "storysets/荒野快讯/1009_临时搭档/sections/100901_第一话"
@@ -18166,6 +19906,11 @@
       "to": "storysets/荒野快讯/1009_临时搭档/sections/100903_第三话",
       "type": "prerequisite",
       "from": "storysets/荒野快讯/1009_临时搭档/sections/100902_第二话"
+    },
+    {
+      "to": "characters/135_雾语/sections/13501_魔女的特别专访 上",
+      "type": "reading",
+      "from": "storysets/荒野快讯/1009_临时搭档/sections/100903_第三话"
     },
     {
       "to": "storysets/荒野快讯/1011_晨间溜走的信使/sections/101102_第二话",
@@ -18186,6 +19931,16 @@
       "to": "storysets/荒野快讯/1017_最珍贵的宝物/sections/101703_第三话",
       "type": "related",
       "from": "storysets/荒野快讯/1011_晨间溜走的信使/sections/101102_第二话"
+    },
+    {
+      "to": "characters/130_多娜/sections/13001_不一样的多娜 上",
+      "type": "reading",
+      "from": "storysets/荒野快讯/1011_晨间溜走的信使/sections/101103_第三话"
+    },
+    {
+      "to": "events/activity_10106_敬启，致珍重的你/sections/101060201_01_万送屋的委托",
+      "type": "reading",
+      "from": "storysets/荒野快讯/1011_晨间溜走的信使/sections/101103_第三话"
     },
     {
       "to": "storysets/荒野快讯/1017_最珍贵的宝物/sections/101701_第一话",
@@ -18323,6 +20078,21 @@
       "from": "storysets/荒野快讯/1012_眼眸中的彼此/sections/101204_第四话"
     },
     {
+      "to": "anecdotes/char/149_格芮_记忆中的碎片@14901",
+      "type": "reading",
+      "from": "storysets/荒野快讯/1012_眼眸中的彼此/sections/101204_第四话"
+    },
+    {
+      "to": "anecdotes/char/149_格芮_记忆中的碎片@14902",
+      "type": "reading",
+      "from": "storysets/荒野快讯/1012_眼眸中的彼此/sections/101204_第四话"
+    },
+    {
+      "to": "anecdotes/char/149_格芮_记忆中的碎片@14903",
+      "type": "reading",
+      "from": "storysets/荒野快讯/1012_眼眸中的彼此/sections/101204_第四话"
+    },
+    {
       "to": "characters/149_格芮/sections/14901_项圈与绳索 上",
       "type": "prerequisite",
       "from": "storysets/荒野快讯/1012_眼眸中的彼此/sections/101204_第四话"
@@ -18378,6 +20148,11 @@
       "from": "storysets/荒野快讯/1014_跨越星声的对话/sections/101402_第二话"
     },
     {
+      "to": "characters/147_焦糖/sections/14701_星与心的回响 上",
+      "type": "reading",
+      "from": "storysets/荒野快讯/1014_跨越星声的对话/sections/101403_第三话"
+    },
+    {
       "to": "storysets/荒野快讯/1017_最珍贵的宝物/sections/101702_第二话",
       "type": "prerequisite",
       "from": "storysets/荒野快讯/1017_最珍贵的宝物/sections/101701_第一话"
@@ -18396,6 +20171,16 @@
       "to": "storysets/风情杂记/1003_夜放花千树/sections/100303_第三话",
       "type": "prerequisite",
       "from": "storysets/风情杂记/1003_夜放花千树/sections/100302_第二话"
+    },
+    {
+      "to": "discs/214027_龙飞凤舞",
+      "type": "reading",
+      "from": "storysets/风情杂记/1003_夜放花千树/sections/100303_第三话"
+    },
+    {
+      "to": "events/activity_10104_烟火绚丽寻春意/sections/101040201_01_苍茫人海逢故人",
+      "type": "reading",
+      "from": "storysets/风情杂记/1003_夜放花千树/sections/100303_第三话"
     },
     {
       "to": "storysets/风情杂记/1015_可爱依赖症候群/sections/101502_第二话",
@@ -19403,7 +21188,6 @@
     "mirror/StarTowerTalk/917428",
     "mirror/StarTowerTalk/917429",
     "mirror/StarTowerTalk/917430",
-    "discs/214036_迷途的朝圣者",
     "characters/103_琥珀/sections/10301_寻猫记 上",
     "characters/103_琥珀/sections/10302_寻猫记 中",
     "characters/103_琥珀/sections/10303_寻猫记 下",
@@ -20962,48 +22746,6 @@
     "mirror/CharacterArchiveContent/12012",
     "mirror/CharacterArchiveContent/12013",
     "mirror/DiscIP/214003",
-    "characters/147_焦糖/sections/14701_星与心的回响 上",
-    "characters/147_焦糖/sections/14702_星与心的回响 中",
-    "characters/147_焦糖/sections/14703_星与心的回响 下",
-    "dispatch/solo/焦糖 · 委托结算演出（其一）_14701",
-    "dispatch/solo/焦糖 · 委托结算演出（其二）_14702",
-    "_chat/PM14701@01",
-    "mirror/CharacterArchiveContent/14701",
-    "anecdotes/char/147_焦糖_星塔的认可@14701",
-    "mirror/DatingStartEndEvent/147101",
-    "mirror/DatingCharacterEvent/147301",
-    "_chat/PM14702@01",
-    "_chat/PM14701@02",
-    "_chat/PM14702@02",
-    "mirror/CharacterArchiveContent/14702",
-    "anecdotes/char/147_焦糖_星塔的认可@14702",
-    "mirror/DatingStartEndEvent/147102",
-    "mirror/DatingCharacterEvent/147302",
-    "_chat/PM14701@03",
-    "_chat/PM14702@03",
-    "mirror/CharacterArchiveContent/14703",
-    "anecdotes/char/147_焦糖_星塔的认可@14703",
-    "mirror/DatingCharacterEvent/147303",
-    "_chat/PM14701@04",
-    "mirror/CharacterArchiveContent/14704",
-    "_chat/PM14701@05",
-    "mirror/CharacterArchiveContent/14705",
-    "_chat/PM14701@06",
-    "mirror/CharacterArchiveContent/14706",
-    "_chat/PM14701@07",
-    "mirror/CharacterArchiveContent/14707",
-    "_chat/PM14702@04",
-    "_chat/PM14702@05",
-    "_chat/PM14702@06",
-    "_chat/PM14701@08",
-    "mirror/CharacterArchiveContent/14708",
-    "_chat/PM14701@09",
-    "mirror/CharacterArchiveContent/14709",
-    "_chat/PM14701@10",
-    "mirror/CharacterArchiveContent/14710",
-    "mirror/CharacterArchiveContent/14711",
-    "mirror/CharacterArchiveContent/14712",
-    "mirror/CharacterArchiveContent/14713",
     "mirror/DiscIP/213005",
     "mirror/DiscIP/213017",
     "discs/214016_春日纪事",
@@ -21064,6 +22806,48 @@
     "storysets/荒野快讯/1014_跨越星声的对话/sections/101401_第一话",
     "storysets/荒野快讯/1014_跨越星声的对话/sections/101402_第二话",
     "storysets/荒野快讯/1014_跨越星声的对话/sections/101403_第三话",
+    "characters/147_焦糖/sections/14701_星与心的回响 上",
+    "characters/147_焦糖/sections/14702_星与心的回响 中",
+    "characters/147_焦糖/sections/14703_星与心的回响 下",
+    "_chat/PM14701@01",
+    "_chat/PM14701@08",
+    "dispatch/solo/焦糖 · 委托结算演出（其一）_14701",
+    "dispatch/solo/焦糖 · 委托结算演出（其二）_14702",
+    "mirror/CharacterArchiveContent/14701",
+    "mirror/CharacterArchiveContent/14702",
+    "mirror/CharacterArchiveContent/14703",
+    "mirror/CharacterArchiveContent/14704",
+    "mirror/CharacterArchiveContent/14705",
+    "mirror/CharacterArchiveContent/14706",
+    "mirror/CharacterArchiveContent/14707",
+    "mirror/CharacterArchiveContent/14708",
+    "mirror/CharacterArchiveContent/14709",
+    "mirror/CharacterArchiveContent/14710",
+    "mirror/CharacterArchiveContent/14711",
+    "mirror/CharacterArchiveContent/14712",
+    "anecdotes/char/147_焦糖_星塔的认可@14701",
+    "anecdotes/char/147_焦糖_星塔的认可@14702",
+    "anecdotes/char/147_焦糖_星塔的认可@14703",
+    "mirror/DatingStartEndEvent/147101",
+    "mirror/DatingStartEndEvent/147102",
+    "mirror/DatingCharacterEvent/147301",
+    "mirror/DatingCharacterEvent/147302",
+    "mirror/DatingCharacterEvent/147303",
+    "_chat/PM14701@02",
+    "_chat/PM14701@03",
+    "_chat/PM14701@04",
+    "_chat/PM14701@05",
+    "_chat/PM14701@06",
+    "_chat/PM14701@07",
+    "_chat/PM14701@09",
+    "_chat/PM14701@10",
+    "_chat/PM14702@01",
+    "_chat/PM14702@02",
+    "_chat/PM14702@03",
+    "mirror/CharacterArchiveContent/14713",
+    "_chat/PM14702@04",
+    "_chat/PM14702@05",
+    "_chat/PM14702@06",
     "anecdotes/char/143_风影_猎火者@14301",
     "anecdotes/char/143_风影_猎火者@14302",
     "anecdotes/char/143_风影_猎火者@14303",
@@ -21123,6 +22907,7 @@
     "characters/149_格芮/sections/14901_项圈与绳索 上",
     "characters/149_格芮/sections/14902_项圈与绳索 中",
     "characters/149_格芮/sections/14903_项圈与绳索 下",
+    "discs/214036_迷途的朝圣者",
     "mirror/CharacterArchiveContent/14907@revision",
     "dispatch/solo/格芮 · 委托结算演出（其一）_14901",
     "dispatch/solo/格芮 · 委托结算演出（其二）_14902",
@@ -21518,7 +23303,6 @@
     "_chat/PM16001@07",
     "_chat/PM16001@09",
     "_chat/PM16001@10",
-    "discs/214066_指引前路的启明星",
     "main/STm10001_10",
     "main/STm10001_11",
     "main/STm10001_12",
@@ -21533,6 +23317,7 @@
     "main/BAm10001_BT03",
     "main/STm10001_20",
     "main/STm10001_21",
+    "discs/214066_指引前路的启明星",
     "mirror/CharacterArchiveContent/16201@revision",
     "mirror/CharacterArchiveContent/16210@revision",
     "mirror/DiscIP/214067",

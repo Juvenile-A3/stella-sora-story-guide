@@ -14,6 +14,7 @@ import side_stories
 import misc_stories
 import supplement
 import profile_review
+from reading_gates import add_reading_gates
 
 MONTHS = main_events.MONTHS
 CHAPTERS = "一二三四五六七八九"
@@ -336,6 +337,7 @@ def build(root,cache):
             r["dateScope"]="04:15 是两篇共有的场景。各篇还叙述了其他时段。"
         if r.get("parallelKey") and "救援" in r["parallelKey"]:
             r["dateScope"]="两篇交叉描写同一救援；日历上的具体日子仍未给出。"
+    add_reading_gates(all_stories)
     # An editorial slot can place a backstory late. Inside that reading plan, do
     # not offer a chat/revision before its real unlock or its chosen reading prerequisites.
     rows={r["id"]:r for r in all_stories}
