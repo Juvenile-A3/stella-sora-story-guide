@@ -303,6 +303,33 @@
     { no: "#01", title: "刀尖之寒，掌心之暖", label: "往事回看", image: "01", alt: "异闻 #01 的导读插图" }
   ];
   const bondsByOwner = by(all.filter(s => s.type === "角色羁绊"), archiveOwner);
+  const ownerKinds = { traveler: "旅人", disc: "秘纹", npc: "NPC" };
+  const routeOwners = new Map(), storyOwners = new Map();
+  const npcNames = new Set(all.filter(s => s.type === "NPC羁绊").map(archiveOwner));
+  const travelerTypes = new Set(["角色羁绊", "旅人档案", "心链", "邀约", "委托对话"]);
+  const npcTypes = new Set(["NPC羁绊", "星塔交谈", "星塔事件"]);
+  function registerOwner(kind, label, id = label) {
+    const key = kind + ":" + id;
+    if (!routeOwners.has(key)) routeOwners.set(key, { key, kind, label });
+    return key;
+  }
+  for (const s of all) {
+    let owners = [];
+    const groupName = (s.group || "").split(" · ")[0];
+    if (s.type === "秘闻" || s.type === "秘纹散文") {
+      const discId = s.id.split("/").pop().split("_")[0];
+      owners = [registerOwner("disc", s.title, discId)];
+    } else if (npcTypes.has(s.type) || (s.type === "逸闻笔记" && npcNames.has(groupName))) {
+      owners = [registerOwner("npc", groupName)];
+    } else if (travelerTypes.has(s.type) || s.type === "逸闻笔记") {
+      // Group labels retain independent forms and the required party for shared commissions.
+      owners = groupName.split(/\s*[＋／]\s*/).filter(name => bondsByOwner.has(name))
+        .map(name => registerOwner("traveler", name));
+    }
+    if (owners.length) storyOwners.set(s.id, owners);
+  }
+  const ownerOptions = [...routeOwners.values()].sort((a, b) => cmp(a.label, b.label));
+  let hiddenOwners = new Set(), ownerPanelOpen = false, ownerQuery = "", ownerKind = "";
   let compactCover = false;
   try { compactCover = localStorage.getItem("stella-sora.compact-cover") === "yes"; } catch {}
   const chapterNames = [
@@ -387,8 +414,12 @@
   function routeTitle() {
     return stage === "*" ? (includeOptional ? "完整阅读路线" : "首读路线") : stageLabel(stage);
   }
+  function passesRouteFilters(s) {
+    return !hiddenTypes.has(s.type) && (!hideRead || status(s) !== "read") &&
+      !storyOwners.get(s.id)?.some(key => hiddenOwners.has(key));
+  }
   function routeMatches(s) {
-    return !hiddenTypes.has(s.type) && (includeOptional || !s.optional) && (!hideRead || status(s) !== "read");
+    return (includeOptional || !s.optional) && passesRouteFilters(s);
   }
   function nextReading() {
     const available = routeStories.filter(s => s.released !== false && routeMatches(s));
@@ -418,6 +449,7 @@
       params.set("optional", includeOptional ? "1" : "0");
       params.set("unread", hideRead ? "1" : "0");
       params.set("omit", routeTypes.filter(type => hiddenTypes.has(type)).join(","));
+      params.set("owners", [...hiddenOwners].join(","));
     } else if (view === "time") {
       if (phase !== "*") params.set("phase", periodToken(phase));
       if (zoom !== "篇目") params.set("zoom", zoom);
@@ -803,6 +835,27 @@
       "</select></label></aside>"
     );
   }
+  function ownerChoices() {
+    const query = strip(ownerQuery.trim());
+    const choices = ownerOptions.filter(o => (!ownerKind || ownerKind === o.kind) && strip(o.label).includes(query));
+    return Object.entries(ownerKinds).map(([kind, label]) => {
+      const group = choices.filter(o => o.kind === kind);
+      if (!group.length) return "";
+      return '<fieldset><legend>' + label + '</legend><div class="route-type-options">' + group.map(o =>
+        '<label class="toggle-extra"><input type="checkbox" data-owner="' + esc(o.key) + '"' +
+        (hiddenOwners.has(o.key) ? " checked" : "") + '> ' + esc(o.label) + '</label>').join("") + '</div></fieldset>';
+    }).join("") || '<p>没有找到匹配的名称。</p>';
+  }
+  function ownerPanel() {
+    if (!ownerPanelOpen) return '<fieldset id="route-owners" hidden></fieldset>';
+    return '<fieldset id="route-owners"><legend>勾选要隐藏的旅人、秘纹或 NPC</legend>' +
+      '<p>勾选旅人会隐藏其个人篇目和需要其参与的委托。独立形态、秘纹可以分别选择。</p>' +
+      '<div class="owner-tools"><select id="owner-kind" aria-label="对象类别">' +
+      options([["", "全部对象"], ...Object.entries(ownerKinds)], ownerKind) + '</select>' +
+      '<input type="search" id="owner-query" aria-label="搜索对象名称" placeholder="搜索名称" value="' + esc(ownerQuery) + '">' +
+      button("clear-route-owners", "清除对象筛选", "link-btn", hiddenOwners.size ? "" : "disabled") + '</div>' +
+      '<div id="owner-choices">' + ownerChoices() + '</div></fieldset>';
+  }
   function renderRoute() {
     const pool = stage === "*" ? routeStories : routeBuckets.get(stage) || [],
       items = pool.filter(routeMatches),
@@ -819,11 +872,13 @@
       '</span><label class="toggle-extra"><input type="checkbox" id="optional"' +
       (includeOptional ? " checked" : "") +
       " >显示可选补完（" +
-      fmt(pool.filter(s => s.optional && !hiddenTypes.has(s.type) && (!hideRead || status(s) !== "read")).length) +
+      fmt(pool.filter(s => s.optional && passesRouteFilters(s)).length) +
       '）</label><label class="toggle-extra"><input type="checkbox" id="hide-read"' +
       (hideRead ? " checked" : "") + '>隐藏已读</label>' +
       button("route-types", "类型筛选" + (hiddenTypes.size ? "（已隐藏 " + hiddenTypes.size + " 类）" : ""), "link-btn",
         'aria-expanded="' + routeTypesOpen + '" aria-controls="route-types"') +
+      button("route-owners", "旅人／秘纹／NPC" + (hiddenOwners.size ? "（已隐藏 " + hiddenOwners.size + "）" : ""), "link-btn",
+        'aria-expanded="' + ownerPanelOpen + '" aria-controls="route-owners"') +
       button("about", "证据等级 " + icon("info"), "link-btn") +
       "</div>" +
       '<fieldset id="route-types"' + (routeTypesOpen ? "" : " hidden") + '><legend>勾选要隐藏的剧情类型</legend>' +
@@ -832,6 +887,7 @@
         '<label class="toggle-extra"><input type="checkbox" data-route-type="' + esc(type) + '"' +
         (hiddenTypes.has(type) ? " checked" : "") + '> ' + esc(type) + '</label>').join("") + '</div>' +
       button("clear-route-types", "显示全部类型", "link-btn", hiddenTypes.size ? "" : "disabled") + '</fieldset>' +
+      ownerPanel() +
       bulkControls() +
       (chunk.length
         ? splitRows(chunk, stageKey, stageLabel)
@@ -1974,6 +2030,7 @@
       if (s.optional) includeOptional = true;
       if (hideRead && status(s) === "read") hideRead = false;
       hiddenTypes.delete(s.type);
+      for (const key of storyOwners.get(s.id) || []) hiddenOwners.delete(key);
       const list = routeBuckets.get(stage).filter(routeMatches);
       pageNo = Math.floor(list.indexOf(s) / pageSize) + 1;
     } else {
@@ -2009,6 +2066,8 @@
       hideRead = params.has("unread") ? params.get("unread") === "1" : prefs.hideRead === true;
       const omitted = params.has("omit") ? params.get("omit").split(",") : prefs.hiddenTypes;
       hiddenTypes = new Set(Array.isArray(omitted) ? omitted.filter(type => sortedTypes.includes(type)) : []);
+      const owners = params.has("owners") ? params.get("owners").split(",") : prefs.hiddenOwners;
+      hiddenOwners = new Set(Array.isArray(owners) ? owners.filter(key => routeOwners.has(key)) : []);
     } else if (view === "time") {
       phase = timeBuckets.has(addressPeriod) ? addressPeriod : "*";
       zoom = ["日期","时期"].includes(params.get("zoom")) ? params.get("zoom") : "篇目";
@@ -2223,6 +2282,17 @@
         render();
         $('[data-act="route-types"]').focus({preventScroll:true});
         break;
+      case "route-owners":
+        ownerPanelOpen = !ownerPanelOpen;
+        render();
+        $('[data-act="route-owners"]').focus({preventScroll:true});
+        break;
+      case "clear-route-owners":
+        hiddenOwners.clear();
+        saveRoutePref("hiddenOwners", []);
+        resetPage(); render(); syncViewAddress(true);
+        $("#owner-kind").focus({preventScroll:true});
+        break;
       case "clear-route-types":
         hiddenTypes.clear();
         saveRoutePref("hiddenTypes", []);
@@ -2385,6 +2455,22 @@
       render();
       syncViewAddress(true);
     }
+    if (el.id === "owner-kind") {
+      ownerKind = el.value;
+      $("#owner-choices").innerHTML = ownerChoices();
+      $("#owner-choices").scrollTop = 0;
+      return;
+    }
+    if (el.dataset.owner) {
+      const key = el.dataset.owner, scroll = $("#owner-choices").scrollTop;
+      if (el.checked) hiddenOwners.add(key);
+      else hiddenOwners.delete(key);
+      saveRoutePref("hiddenOwners", [...hiddenOwners]);
+      resetPage(); render(); syncViewAddress(true);
+      $("#owner-choices").scrollTop = scroll;
+      $('[data-owner="' + CSS.escape(key) + '"]').focus({preventScroll:true});
+      return;
+    }
     if (el.id === "optional" || el.id === "hide-read" || el.hasAttribute("data-route-type")) {
       const type = el.dataset.routeType;
       if (type) {
@@ -2409,6 +2495,12 @@
       ev.target.dispatchEvent(new Event("input", { bubbles: true }));
   });
   document.addEventListener("input", (ev) => {
+    if (ev.target.id === "owner-query") {
+      ownerQuery = ev.target.value;
+      $("#owner-choices").innerHTML = ownerChoices();
+      $("#owner-choices").scrollTop = 0;
+      return;
+    }
     if (ev.target.id === "roster-query") { updateRoster(ev.target.value); return; }
     if (ev.isComposing) return;
     if (ev.target.id === "query") {

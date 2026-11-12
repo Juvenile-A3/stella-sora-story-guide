@@ -1452,17 +1452,17 @@ footer button {
   width: 15px;
   height: 15px;
 }
-#route-types {
+#route-types, #route-owners {
   margin: 0 0 14px;
   min-width: 0;
   padding: 8px 12px;
   border: 1px solid var(--edge);
 }
-#route-types legend {
+#route-types legend, #route-owners legend {
   padding: 0 5px;
   font-size: 13px;
 }
-#route-types p {
+#route-types p, #route-owners p {
   margin: 0 0 6px;
   color: var(--muted);
   font-size: 12px;
@@ -1475,6 +1475,33 @@ footer button {
 }
 .route-type-options label {
   min-height: 32px;
+}
+.owner-tools {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 8px 0;
+}
+.owner-tools input {
+  flex: 1 1 9em;
+  min-width: 0;
+}
+#owner-choices {
+  max-height: min(42vh, 360px);
+  overflow-y: auto;
+}
+#owner-choices fieldset {
+  border: 0;
+  padding: 4px 0;
+  margin: 0;
+  min-width: 0;
+}
+#owner-choices legend {
+  font-weight: bold;
+}
+#owner-choices input {
+  flex-shrink: 0;
 }
 .time-hint {
   overflow: hidden;
