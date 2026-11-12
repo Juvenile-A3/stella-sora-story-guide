@@ -11,7 +11,8 @@
     <meta property="og:image" content="https://juvenile-a3.github.io/stella-sora-story-guide/media/nova-guide-cover.jpg?v=4" />
     <meta property="og:url" content="https://juvenile-a3.github.io/stella-sora-story-guide/intro.html" />
     <link rel="canonical" href="https://juvenile-a3.github.io/stella-sora-story-guide/intro.html" />
-    <link rel="stylesheet" href="styles.css?v=4" />
+    <link rel="stylesheet" href="styles.css?v=0f2629d497b3" />
+    <script defer src="assets/start-updates.js?v=84153310c9c2"></script>
     <style>
       .film-head-inner {
         display: flex;
@@ -138,15 +139,15 @@
         </div>
       </div>
       <video id="film-player" class="film-player" controls playsinline preload="none"
-        poster="media/nova-guide-cover.jpg?v=4" src="media/nova-guide-intro.mp4?v=4"
+        poster="media/nova-guide-cover.jpg?v=42294e815e86" src="media/nova-guide-intro.mp4?v=c80b8ea0de87"
         aria-label="诺瓦剧情手记项目介绍，日语解说，中文字幕">
-        您可以<a data-video-download href="media/nova-guide-intro.mp4?v=4" download="诺瓦剧情手记-日语轻快.mp4">下载介绍视频</a>观看。
+        您可以<a data-video-download href="media/nova-guide-intro.mp4?v=c80b8ea0de87" download="诺瓦剧情手记-日语轻快.mp4">下载介绍视频</a>观看。
       </video>
       <p class="film-hint" id="film-error" role="status" hidden>当前浏览器未能播放短片。可使用下方的「下载视频」保存后观看。</p>
       <nav class="film-tools" aria-label="短片与阅读指南">
         <a class="film-action film-primary" href="index.html#route">进入阅读指南 <span aria-hidden="true">→</span></a>
-        <a class="film-action film-download" data-video-download href="media/nova-guide-intro.mp4?v=4" download="诺瓦剧情手记-日语轻快.mp4">下载视频 <span>MP4</span></a>
-        <a class="film-action film-download" href="media/nova-guide-intro.srt?v=4" download="诺瓦剧情手记.zh-CN.srt">中文字幕 <span>SRT</span></a>
+        <a class="film-action film-download" data-video-download href="media/nova-guide-intro.mp4?v=c80b8ea0de87" download="诺瓦剧情手记-日语轻快.mp4">下载视频 <span>MP4</span></a>
+        <a class="film-action film-download" href="media/nova-guide-intro.srt?v=1c8600403559" download="诺瓦剧情手记.zh-CN.srt">中文字幕 <span>SRT</span></a>
         <a class="film-action film-download" href="https://github.com/Juvenile-A3/stella-sora-story-guide/archive/refs/heads/main.zip">下载离线指南 <span>ZIP</span></a>
       </nav>
       <section id="art-sources" class="film-sources" aria-labelledby="art-heading">
@@ -158,7 +159,9 @@
           <button type="button" data-seek="86.4"><small>01:26</small><b>空白旅团的合影</b><span>秘纹《“空白”的序章》</span></button>
         </div>
         <p>游戏美术 © Yostar。短片采用游戏原画、指南录屏与原创配乐。<a href="https://stellasora.miraheze.org/wiki/File:Story_main_01_025.png">尘沙驾车原图</a> · <a href="https://www.gamekee.com/stellasora/700625.html">格芮的 GameKee 资料</a> · <a href="https://stellasora.miraheze.org/wiki/New_Star_Prelude">空白旅团合影出处</a></p>
-        <p>本片两条日语解说分别使用 <span lang="ja">VOICEVOX:春日部つむぎ</span> 和 <span lang="ja">VOICEVOX:四国めたん</span>。<a href="https://fish.audio/m/fbee4287745f4c49878a279c67868888/" target="_blank" rel="noopener noreferrer">试听玩家上传的《星塔旅人》Fish Audio 模型 ↗</a> · <a href="media/narration-ja.txt" download>下载本片日语配音稿</a></p>
+        <p>本片两条日语解说分别使用 <span lang="ja">VOICEVOX:春日部つむぎ</span> 和 <span lang="ja">VOICEVOX:四国めたん</span>。<a href="https://fish.audio/m/fbee4287745f4c49878a279c67868888/" target="_blank" rel="noopener noreferrer">试听玩家上传的《星塔旅人》Fish Audio 模型 ↗</a> · <a href="media/narration-ja.txt?v=7785c53304ae" download>下载本片日语配音稿</a></p>
+        <p id="mandarin">普通话试听 · 同一句开场白，先听轻快的 zf_088，再听柔和的 zf_007。<a href="https://huggingface.co/hexgrad/Kokoro-82M-v1.1-zh">Kokoro 中文声库</a></p>
+        <audio controls preload="none" aria-labelledby="mandarin" style="max-width:100%" src="media/mandarin-preview.mp3?v=c57191690cf1"></audio>
         <p><a id="film-credit-notes" href="media/素材来源.md">完整素材清单与署名</a></p>
       </section>
     </main>
@@ -180,8 +183,8 @@
       const selector = document.getElementById("voice-selector");
       const errorMessage = document.getElementById("film-error");
       const versions = {
-        bright: { label: "轻快", src: "media/nova-guide-intro.mp4?v=4" },
-        gentle: { label: "柔和", src: "media/nova-guide-gentle.mp4?v=4" }
+        bright: { label: "轻快", src: "media/nova-guide-intro.mp4?v=c80b8ea0de87" },
+        gentle: { label: "柔和", src: "media/nova-guide-gentle.mp4?v=248b35681586" }
       };
       let currentVoice = "bright";
       let hasPlayed = false;
