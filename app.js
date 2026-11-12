@@ -535,6 +535,17 @@
       ? '<span class="branch-mark">' + icon("graph") + " " + label + "</span>"
       : "";
   }
+  function ownerActions(s) {
+    const keys = storyOwners.get(s.id);
+    if (!keys?.length) return "";
+    return '<div class="entry-owner-actions">' + keys.map(key => {
+      const owner = routeOwners.get(key);
+      const target = owner.kind === "disc" ? "此秘纹" : owner.label;
+      const scope = view === "route" ? "" : "在路线中";
+      const label = scope + (hiddenOwners.has(key) ? "恢复" : "隐藏") + target + "专属";
+      return button("toggle-entry-owner", esc(label), "link-btn", 'data-key="' + esc(key) + '"');
+    }).join("") + '</div>';
+  }
   function row(s, opts = {}) {
     const g = safeGroup(s),
       info = opts.timeline
@@ -563,7 +574,7 @@
           (selected.has(s.id) ? " checked" : "") +
           ">"
         : "") +
-      '<a href="' +
+      '<div class="row-story"><a href="' +
       esc(storyHref(s.id)) +
       '" class="row-open"><strong>' +
       esc(title) +
@@ -577,7 +588,7 @@
       (timeHint ? '<span class="time-hint">' + esc(timeHint) + "</span>" : "") +
       topologyMark(s) +
       badge(s) +
-      "</span></a>" +
+      "</span></a>" + ownerActions(s) + "</div>" +
       '<div class="row-actions">' +
       selectState(s) +
       '<a class="row-chevron" aria-label="打开此篇详情" href="' +
@@ -1835,6 +1846,7 @@
       '<div class="dialog-actions"><label class="quiet">阅读状态　' +
       selectState(s) +
       '</label><div class="inline-actions">' +
+      ownerActions(s) +
       (shown && guard && status(s) !== "read"
         ? button(
             "hide-one",
@@ -2050,6 +2062,10 @@
       id = params.get("story"),
       addressPeriod = periodFromToken(params.get("phase"));
     view = next;
+    if (view !== "route") {
+      const savedOwners = loadRoutePrefs().hiddenOwners;
+      hiddenOwners = new Set(Array.isArray(savedOwners) ? savedOwners.filter(key => routeOwners.has(key)) : []);
+    }
     pageNo = /^[1-9]\d{0,5}$/.test(params.get("page") || "") ? Number(params.get("page")) : 1;
     locatedId = "";
     if (view === "catalog") {
@@ -2287,6 +2303,42 @@
         render();
         $('[data-act="route-owners"]').focus({preventScroll:true});
         break;
+      case "toggle-entry-owner": {
+        const owner = routeOwners.get(key);
+        if (!owner) break;
+        const hiding = !hiddenOwners.has(key);
+        const selector = '[data-act="toggle-entry-owner"][data-key="' + CSS.escape(key) + '"]';
+        const row = b.closest(".story-row");
+        const rows = [...document.querySelectorAll(".story-row")];
+        const position = rows.findIndex(r => r === row || (modal === "story" && r.dataset.entry === modalId));
+        if (hiding) hiddenOwners.add(key);
+        else hiddenOwners.delete(key);
+        saveRoutePref("hiddenOwners", [...hiddenOwners]);
+        if (view === "route") {
+          selected.clear();
+          locatedId = "";
+        }
+        render();
+        if (view === "route") {
+          const remaining = document.querySelectorAll(".story-row .row-open");
+          const target = remaining[Math.min(Math.max(position, 0), remaining.length - 1)] || $('[data-act="route-owners"]');
+          if (modal === "story") {
+            lastFocus = target;
+            closeDialog();
+          } else {
+            syncViewAddress(true);
+            target.focus({preventScroll:true});
+          }
+        } else if (modal === "story") {
+          storyModal(stories.get(modalId), true);
+          sheet.querySelector(selector)?.focus({preventScroll:true});
+        } else if (row) {
+          document.querySelectorAll(".story-row")[position]?.querySelector(selector)?.focus({preventScroll:true});
+        }
+        const targetName = owner.kind === "disc" ? "此秘纹" : "「" + owner.label + "」";
+        showNotice("已在推荐路线" + (hiding ? "隐藏" : "恢复") + targetName + "的专属剧情。");
+        break;
+      }
       case "clear-route-owners":
         hiddenOwners.clear();
         saveRoutePref("hiddenOwners", []);

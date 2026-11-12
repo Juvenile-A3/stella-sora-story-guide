@@ -727,6 +727,21 @@ footer button:hover {
   padding: 1px 0;
   color: var(--ink);
 }
+.row-story {
+  min-width: 0;
+  flex: 1;
+}
+.entry-owner-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2px 12px;
+}
+.entry-owner-actions .link-btn {
+  padding: 4px 0;
+  font-size: 12px;
+  text-align: left;
+}
 .row-open strong {
   display: block;
   font-size: 15px;
