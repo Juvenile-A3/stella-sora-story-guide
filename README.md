@@ -2,7 +2,7 @@
 
 《星塔旅人》中文互动阅读指南。第一次玩可以沿着主线读到角色初遇，通关后也能回来查两段故事是否发生在同一天。第一版核查于 2026 年 11 月 12 日，采用 11 月 11 日的 Stella Sora Archive 快照。
 
-**[在线打开《诺瓦剧情手记》](https://juvenile-a3.github.io/stella-sora-story-guide/)** · [观看介绍短片](https://juvenile-a3.github.io/stella-sora-story-guide/intro.html) · [下载离线版](https://github.com/Juvenile-A3/stella-sora-story-guide/archive/refs/heads/main.zip) · [研究摘要（含剧透）](research-notes.md)
+**[在线打开《诺瓦剧情手记》](https://juvenile-a3.github.io/stella-sora-story-guide/)** · [观看介绍短片](https://juvenile-a3.github.io/stella-sora-story-guide/intro.html) · [作者的 B 站主页](https://space.bilibili.com/412633250) · [研究摘要（含剧透）](research-notes.md)
 
 ## 打开与使用
 
@@ -26,7 +26,7 @@
 | [人物](data/characters.json) · [时间线](data/timeline.json) | 出场索引、确认初遇、组织关系、推荐顺序、故事时间及有类型的边 |
 | [版本与计数](data/metadata.json) | 上游两份镜像版本、各类条目与等级分布 |
 | [本版验收记录](research/verification.md) | 档案对账、定位精度、实际浏览器的检索与进度测试 |
-| [项目短片](intro.html) · [影片素材与署名](media/素材来源.md) | 游戏角色原画、指南实录、日语解说与中文字幕。可切换轻快或柔和声线，下载按钮对应当前选择。 |
+| [项目短片](intro.html) · [影片素材与署名](media/素材来源.md) | 游戏角色原画、指南实录、日语解说与中文字幕。默认使用 Fish Audio Drama 3 的《星塔旅人》社区声线，也可切换两版 VOICEVOX 旁白。 |
 | [构建程序](build/build_guide.py) · [校验程序](build/validate.py) | 从快照重建网页数据、核验覆盖和前置 |
 | [来源与署名](NOTICE.md) | 资料和本地图片来源、改编说明 |
 

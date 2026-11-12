@@ -114,6 +114,7 @@
       .scene-index small { font:600 12px/1.4 var(--mono);color:#4d6b73; }
       .scene-index span { font-size:12px; }
       @media(max-width:410px) { .scene-index {grid-template-columns:repeat(2,minmax(0,1fr));} }
+    @media (max-width: 600px) { .film-voices { flex-wrap: wrap; } .voice-options { flex-wrap: wrap; max-width: 100%; } }
     </style>
   </head>
   <body>
@@ -134,21 +135,22 @@
       <div id="voice-selector" class="film-voices" role="radiogroup" aria-labelledby="voice-label" hidden>
         <span id="voice-label" class="voice-label">旁白声线</span>
         <div class="voice-options">
-          <label><input type="radio" name="voice" value="bright" checked aria-controls="film-player" /><span>轻快<small lang="ja">春日部つむぎ</small></span></label>
+          <label><input type="radio" name="voice" value="fish" checked aria-controls="film-player" /><span>星塔旅人<small>Fish Audio</small></span></label>
+          <label><input type="radio" name="voice" value="bright" aria-controls="film-player" /><span>轻快<small lang="ja">春日部つむぎ</small></span></label>
           <label><input type="radio" name="voice" value="gentle" aria-controls="film-player" /><span>柔和<small lang="ja">四国めたん</small></span></label>
         </div>
       </div>
       <video id="film-player" class="film-player" controls playsinline preload="none"
-        poster="media/nova-guide-cover.jpg?v=42294e815e86" src="media/nova-guide-intro.mp4?v=c80b8ea0de87"
+        poster="media/nova-guide-cover.jpg?v=42294e815e86" src="media/nova-guide-fish.mp4?v=6ce986fc4c76"
         aria-label="诺瓦剧情手记项目介绍，日语解说，中文字幕">
-        您可以<a data-video-download href="media/nova-guide-intro.mp4?v=c80b8ea0de87" download="诺瓦剧情手记-日语轻快.mp4">下载介绍视频</a>观看。
+        您可以<a data-video-download href="media/nova-guide-fish.mp4?v=6ce986fc4c76" download="诺瓦剧情手记-日语星塔旅人.mp4">下载介绍视频</a>观看。
       </video>
       <p class="film-hint" id="film-error" role="status" hidden>当前浏览器未能播放短片。可使用下方的「下载视频」保存后观看。</p>
       <nav class="film-tools" aria-label="短片与阅读指南">
         <a class="film-action film-primary" href="index.html#route">进入阅读指南 <span aria-hidden="true">→</span></a>
-        <a class="film-action film-download" data-video-download href="media/nova-guide-intro.mp4?v=c80b8ea0de87" download="诺瓦剧情手记-日语轻快.mp4">下载视频 <span>MP4</span></a>
-        <a class="film-action film-download" href="media/nova-guide-intro.srt?v=1c8600403559" download="诺瓦剧情手记.zh-CN.srt">中文字幕 <span>SRT</span></a>
-        <a class="film-action film-download" href="https://github.com/Juvenile-A3/stella-sora-story-guide/archive/refs/heads/main.zip">下载离线指南 <span>ZIP</span></a>
+        <a class="film-action film-download" data-video-download href="media/nova-guide-fish.mp4?v=6ce986fc4c76" download="诺瓦剧情手记-日语星塔旅人.mp4">下载视频 <span>MP4</span></a>
+        <a class="film-action film-download" href="media/nova-guide-intro.srt?v=f14f89430e57" download="诺瓦剧情手记.zh-CN.srt">中文字幕 <span>SRT</span></a>
+        <a class="film-action film-download" href="https://space.bilibili.com/412633250" target="_blank" rel="noopener">作者的 B 站主页 <span aria-hidden="true">↗</span></a>
       </nav>
       <section id="art-sources" class="film-sources" aria-labelledby="art-heading">
         <h2 id="art-heading">镜头里的故事</h2>
@@ -159,7 +161,7 @@
           <button type="button" data-seek="86.4"><small>01:26</small><b>空白旅团的合影</b><span>秘纹《“空白”的序章》</span></button>
         </div>
         <p>游戏美术 © Yostar。短片采用游戏原画、指南录屏与原创配乐。<a href="https://stellasora.miraheze.org/wiki/File:Story_main_01_025.png">尘沙驾车原图</a> · <a href="https://www.gamekee.com/stellasora/700625.html">格芮的 GameKee 资料</a> · <a href="https://stellasora.miraheze.org/wiki/New_Star_Prelude">空白旅团合影出处</a></p>
-        <p>本片两条日语解说分别使用 <span lang="ja">VOICEVOX:春日部つむぎ</span> 和 <span lang="ja">VOICEVOX:四国めたん</span>。<a href="https://fish.audio/m/fbee4287745f4c49878a279c67868888/" target="_blank" rel="noopener noreferrer">试听玩家上传的《星塔旅人》Fish Audio 模型 ↗</a> · <a href="media/narration-ja.txt?v=7785c53304ae" download>下载本片日语配音稿</a></p>
+        <p>默认日语解说使用 Fish Audio Drama 3 和玩家上传的《星塔旅人》声线。另可选择 <span lang="ja">VOICEVOX:春日部つむぎ</span> 和 <span lang="ja">VOICEVOX:四国めたん</span>。<a href="https://fish.audio/m/fbee4287745f4c49878a279c67868888/" target="_blank" rel="noopener noreferrer">查看《星塔旅人》声线来源 ↗</a> · <a href="media/narration-ja.txt?v=e9659e487e75" download>下载本片日语配音稿</a></p>
         <p id="mandarin">普通话试听 · 同一句开场白，先听轻快的 zf_088，再听柔和的 zf_007。<a href="https://huggingface.co/hexgrad/Kokoro-82M-v1.1-zh">Kokoro 中文声库</a></p>
         <audio controls preload="none" aria-labelledby="mandarin" style="max-width:100%" src="media/mandarin-preview.mp3?v=c57191690cf1"></audio>
         <p><a id="film-credit-notes" href="media/素材来源.md">完整素材清单与署名</a></p>
@@ -183,10 +185,11 @@
       const selector = document.getElementById("voice-selector");
       const errorMessage = document.getElementById("film-error");
       const versions = {
-        bright: { label: "轻快", src: "media/nova-guide-intro.mp4?v=c80b8ea0de87" },
-        gentle: { label: "柔和", src: "media/nova-guide-gentle.mp4?v=248b35681586" }
+        fish: { label: "星塔旅人", src: "media/nova-guide-fish.mp4?v=6ce986fc4c76" },
+        bright: { label: "轻快", src: "media/nova-guide-intro.mp4?v=10c9840b27a8" },
+        gentle: { label: "柔和", src: "media/nova-guide-gentle.mp4?v=be87e05d5174" }
       };
-      let currentVoice = "bright";
+      let currentVoice = "fish";
       let hasPlayed = false;
       let pendingSeek = null;
 
@@ -237,7 +240,7 @@
         }
         if (updateAddress && /^https?:$/.test(location.protocol)) {
           const url = new URL(location.href);
-          if (voice === "gentle") url.searchParams.set("voice", "gentle");
+          if (voice !== "fish") url.searchParams.set("voice", voice);
           else url.searchParams.delete("voice");
           history.replaceState(history.state, "", url);
         }
@@ -245,7 +248,8 @@
       selector.addEventListener("change", event => {
         if (event.target.name === "voice" && event.target.checked) selectVoice(event.target.value, true);
       });
-      selectVoice(new URLSearchParams(location.search).get("voice") === "gentle" ? "gentle" : "bright", false);
+      const requestedVoice = new URLSearchParams(location.search).get("voice");
+      selectVoice(Object.hasOwn(versions, requestedVoice) ? requestedVoice : "fish", false);
       selector.hidden = false;
     </script>
   </body>
