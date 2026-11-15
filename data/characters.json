@@ -62,6 +62,76 @@
     "organization": "自由旅人"
   },
   {
+    "name": "优叶",
+    "stories": [
+      "storysets/职场热线/1005_老油条与新员工/sections/100502_第二话",
+      "storysets/职场热线/1005_老油条与新员工/sections/100503_第三话",
+      "storysets/荒野快讯/1014_跨越星声的对话/sections/101402_第二话",
+      "events/activity_10106_敬启，致珍重的你/sections/101060208_05_竟是魔物所为",
+      "events/activity_10106_敬启，致珍重的你/sections/101060209_06_玉米粒大作战",
+      "events/activity_10106_敬启，致珍重的你/sections/101060211_07_跨越时空的问候",
+      "storysets/职场热线/1016_此间日常/sections/101601_第一话",
+      "events/activity_10110_欢歌劲浪 · 闪耀假日惊涛探险！/sections/101100201_01_海风吹来的委托",
+      "events/activity_10110_欢歌劲浪 · 闪耀假日惊涛探险！/sections/101100202_02_梦想在甲板上摇晃",
+      "events/activity_10110_欢歌劲浪 · 闪耀假日惊涛探险！/sections/101100203_03_空白旅团漂流记",
+      "events/activity_10110_欢歌劲浪 · 闪耀假日惊涛探险！/sections/101100204_04_海上幻影",
+      "events/activity_10110_欢歌劲浪 · 闪耀假日惊涛探险！/sections/101100206_05_漩涡深处的收藏家",
+      "events/activity_10110_欢歌劲浪 · 闪耀假日惊涛探险！/sections/101100207_06_海螺壳争夺战",
+      "events/activity_10110_欢歌劲浪 · 闪耀假日惊涛探险！/sections/101100208_07_镜框里的海",
+      "events/activity_10110_欢歌劲浪 · 闪耀假日惊涛探险！/sections/101100210_08_裂痕与归处",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130201_01_出发，前往沉寂海",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130202_02_大家的地理志",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130204_03_岸上的突袭",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130205_04_被遗忘的委派",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130206_05_队长的责任",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130207_06_地图之外的东西",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130208_07_海山下的秘密",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130210_08_逃出生天",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130211_09_启航，向着未来",
+      "characters/161_优叶/sections/16101_梦想的一天 上",
+      "characters/161_优叶/sections/16102_梦想的一天 中",
+      "characters/161_优叶/sections/16103_梦想的一天 下",
+      "dispatch/solo/优叶 · 委托结算演出（其一）_16101",
+      "dispatch/solo/优叶 · 委托结算演出（其二）_16102",
+      "_chat/PM16101@01",
+      "anecdotes/char/161_优叶_地图脑袋@16101",
+      "mirror/CharacterArchiveContent/16101",
+      "mirror/DatingStartEndEvent/161101",
+      "mirror/DatingCharacterEvent/161301",
+      "_chat/PM16101@02",
+      "anecdotes/char/161_优叶_地图脑袋@16102",
+      "mirror/CharacterArchiveContent/16102",
+      "mirror/DatingStartEndEvent/161102",
+      "mirror/DatingCharacterEvent/161302",
+      "_chat/PM16101@03",
+      "anecdotes/char/161_优叶_地图脑袋@16103",
+      "mirror/CharacterArchiveContent/16103",
+      "_chat/PM16101@04",
+      "mirror/CharacterArchiveContent/16104",
+      "_chat/PM16101@05",
+      "mirror/CharacterArchiveContent/16105",
+      "_chat/PM16101@06",
+      "mirror/CharacterArchiveContent/16106",
+      "_chat/PM16101@07",
+      "mirror/CharacterArchiveContent/16107",
+      "_chat/PM16101@08",
+      "mirror/CharacterArchiveContent/16108",
+      "_chat/PM16101@09",
+      "mirror/CharacterArchiveContent/16109",
+      "_chat/PM16101@10",
+      "mirror/CharacterArchiveContent/16110",
+      "mirror/CharacterArchiveContent/16111",
+      "mirror/CharacterArchiveContent/16112",
+      "mirror/CharacterArchiveContent/16113",
+      "mirror/DiscIP/214069",
+      "discs/214068_帐幕下的酣梦"
+    ],
+    "first": [],
+    "firstIndexed": "storysets/职场热线/1005_老油条与新员工/sections/100502_第二话",
+    "forms": [],
+    "organization": "地理协会"
+  },
+  {
     "name": "冬香",
     "stories": [
       "main/chapter_03_我们的旅团/sections/309_04_失败的讨伐",
@@ -175,7 +245,8 @@
       "main/chapter_10_遥远的塔/sections/1012_01B_未卜先知",
       "main/chapter_10_遥远的塔/sections/1015_03B_沙漠中的雨",
       "main/chapter_10_遥远的塔/sections/1016_04B_胜利之后",
-      "main/chapter_10_遥远的塔/sections/1021_02C_魔王之塔"
+      "main/chapter_10_遥远的塔/sections/1021_02C_魔王之塔",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1123_尾声_过去之事正如未来之事"
     ],
     "first": [],
     "firstIndexed": "main/chapter_03_我们的旅团/sections/309_04_失败的讨伐",
@@ -274,6 +345,8 @@
       "main/chapter_10_遥远的塔/sections/1021_02C_魔王之塔",
       "main/chapter_10_遥远的塔/sections/1024_04C_不变之物",
       "main/chapter_10_遥远的塔/sections/1026_真·终局_窄门",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1118_16_奴隶",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1123_尾声_过去之事正如未来之事",
       "mirror/DiscIP/214031",
       "dispatch/multi/苍兰 ＋ 千都世 · 双人人委托结算演出_90119"
     ],
@@ -604,7 +677,9 @@
       "main/chapter_10_遥远的塔/sections/1021_02C_魔王之塔",
       "main/chapter_10_遥远的塔/sections/1022_03C_梦开始的地方",
       "main/chapter_10_遥远的塔/sections/1024_04C_不变之物",
-      "main/chapter_10_遥远的塔/sections/1026_真·终局_窄门"
+      "main/chapter_10_遥远的塔/sections/1026_真·终局_窄门",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1119_17_埋葬与新生",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1123_尾声_过去之事正如未来之事"
     ],
     "first": [],
     "firstIndexed": "main/chapter_03_我们的旅团/sections/309_04_失败的讨伐",
@@ -1114,6 +1189,12 @@
       "discs/214061_睡前童话",
       "main/chapter_11_完璧之庭·微尘破晓/sections/1101_01_昨日重现",
       "main/chapter_11_完璧之庭·微尘破晓/sections/1106_05_因苏拉",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1113_12_我的身体",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1115_14_短暂的日常",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1119_17_埋葬与新生",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1120_18_白虹贯日",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1121_19_一粒沙的愿望",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1123_尾声_过去之事正如未来之事",
       "soldier/sections/ST_sys_soldier_intro_尖兵陷阵 · 开场剧情",
       "characters/162_尘沙（源初）/sections/16201_那个人的名字 上",
       "events/activity_10104_烟火绚丽寻春意/sections/101040201_01_苍茫人海逢故人",
@@ -1161,6 +1242,10 @@
       "events/activity_10110_欢歌劲浪 · 闪耀假日惊涛探险！/sections/101100208_07_镜框里的海",
       "events/activity_10110_欢歌劲浪 · 闪耀假日惊涛探险！/sections/101100210_08_裂痕与归处",
       "events/activity_10110_欢歌劲浪 · 闪耀假日惊涛探险！/sections/101100211_09_夏天仍未结束",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130201_01_出发，前往沉寂海",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130204_03_岸上的突袭",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130206_05_队长的责任",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130210_08_逃出生天",
       "discs/214066_指引前路的启明星",
       "battles_unmounted/BBm_DormIndoor",
       "battles_unmounted/BBm_DormOutdoor"
@@ -1193,6 +1278,8 @@
       "_chat/PM16201@07",
       "_chat/PM16201@09",
       "_chat/PM16201@10",
+      "mirror/CharacterArchiveContent/16201@revision",
+      "mirror/CharacterArchiveContent/16210@revision",
       "mirror/CharacterArchiveContent/16201",
       "mirror/DatingStartEndEvent/162101",
       "mirror/DatingCharacterEvent/162301",
@@ -1207,8 +1294,6 @@
       "mirror/CharacterArchiveContent/16208",
       "mirror/CharacterArchiveContent/16209",
       "mirror/CharacterArchiveContent/16210",
-      "mirror/CharacterArchiveContent/16201@revision",
-      "mirror/CharacterArchiveContent/16210@revision",
       "mirror/DiscIP/214067"
     ],
     "first": [],
@@ -2154,6 +2239,9 @@
       "discs/214061_睡前童话",
       "main/chapter_11_完璧之庭·微尘破晓/sections/1101_01_昨日重现",
       "main/chapter_11_完璧之庭·微尘破晓/sections/1106_05_因苏拉",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1113_12_我的身体",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1115_14_短暂的日常",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1123_尾声_过去之事正如未来之事",
       "soldier/sections/ST_sys_soldier_intro_尖兵陷阵 · 开场剧情",
       "events/activity_10104_烟火绚丽寻春意/sections/101040201_01_苍茫人海逢故人",
       "events/activity_10104_烟火绚丽寻春意/sections/101040203_03_柳暗花明",
@@ -2199,6 +2287,11 @@
       "events/activity_10110_欢歌劲浪 · 闪耀假日惊涛探险！/sections/101100208_07_镜框里的海",
       "events/activity_10110_欢歌劲浪 · 闪耀假日惊涛探险！/sections/101100210_08_裂痕与归处",
       "events/activity_10110_欢歌劲浪 · 闪耀假日惊涛探险！/sections/101100211_09_夏天仍未结束",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130201_01_出发，前往沉寂海",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130204_03_岸上的突袭",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130206_05_队长的责任",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130208_07_海山下的秘密",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130210_08_逃出生天",
       "battles_unmounted/BBm_DormIndoor"
     ],
     "first": [
@@ -2359,7 +2452,12 @@
       "_chat/PM15902@04",
       "_chat/PM15902@05",
       "_chat/PM15902@06",
-      "events/activity_10107_穿透心壁的取景框/sections/101070201_01_再遇"
+      "events/activity_10107_穿透心壁的取景框/sections/101070201_01_再遇",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130202_02_大家的地理志",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130204_03_岸上的突袭",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130206_05_队长的责任",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130208_07_海山下的秘密",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130210_08_逃出生天"
     ],
     "first": [],
     "firstIndexed": "main/chapter_02_水道桥上的风/sections/211_05_仁义与刀",
@@ -2644,9 +2742,14 @@
       "main/chapter_09_往日残影/sections/905_04_自证陷阱",
       "main/chapter_09_往日残影/sections/906_05_同伴",
       "main/chapter_09_往日残影/sections/915_10_暂停",
+      "storysets/职场热线/1019_比“宝石”更耀眼的/sections/101901_第一话",
+      "storysets/职场热线/1019_比“宝石”更耀眼的/sections/101903_第三话",
       "main/chapter_10_遥远的塔/sections/1003_01A_风过林梢",
       "main/chapter_10_遥远的塔/sections/1006_03A_休战期",
-      "main/chapter_10_遥远的塔/sections/1018_终局_身旁的她"
+      "main/chapter_10_遥远的塔/sections/1018_终局_身旁的她",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1123_尾声_过去之事正如未来之事",
+      "characters/161_优叶/sections/16102_梦想的一天 中",
+      "characters/161_优叶/sections/16103_梦想的一天 下"
     ],
     "first": [],
     "firstIndexed": "main/chapter_04_梦的彼岸/sections/414_08_必有回响",
@@ -2718,7 +2821,8 @@
       "discs/214061_睡前童话",
       "_chat/PM13901@06",
       "_chat/PM13901@08",
-      "_chat/PM13901@10"
+      "_chat/PM13901@10",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1123_尾声_过去之事正如未来之事"
     ],
     "first": [],
     "firstIndexed": "main/chapter_09_往日残影/sections/914_09_小鬼当家",
@@ -3601,6 +3705,9 @@
       "discs/214061_睡前童话",
       "main/chapter_11_完璧之庭·微尘破晓/sections/1101_01_昨日重现",
       "main/chapter_11_完璧之庭·微尘破晓/sections/1106_05_因苏拉",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1113_12_我的身体",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1115_14_短暂的日常",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1123_尾声_过去之事正如未来之事",
       "soldier/sections/ST_sys_soldier_intro_尖兵陷阵 · 开场剧情",
       "events/activity_10104_烟火绚丽寻春意/sections/101040201_01_苍茫人海逢故人",
       "events/activity_10104_烟火绚丽寻春意/sections/101040203_03_柳暗花明",
@@ -3648,6 +3755,10 @@
       "events/activity_10110_欢歌劲浪 · 闪耀假日惊涛探险！/sections/101100208_07_镜框里的海",
       "events/activity_10110_欢歌劲浪 · 闪耀假日惊涛探险！/sections/101100210_08_裂痕与归处",
       "events/activity_10110_欢歌劲浪 · 闪耀假日惊涛探险！/sections/101100211_09_夏天仍未结束",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130201_01_出发，前往沉寂海",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130204_03_岸上的突袭",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130206_05_队长的责任",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130210_08_逃出生天",
       "battles_unmounted/BBm_DormIndoor",
       "battles_unmounted/BBm_DormOutdoor"
     ],
@@ -4088,6 +4199,15 @@
     "forms": []
   },
   {
+    "name": "严肃的公司代表",
+    "stories": [
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1123_尾声_过去之事正如未来之事"
+    ],
+    "first": [],
+    "firstIndexed": "main/chapter_11_完璧之庭·微尘破晓/sections/1123_尾声_过去之事正如未来之事",
+    "forms": []
+  },
+  {
     "name": "严肃的卫队骑士",
     "stories": [
       "main/chapter_08_星之竞拍/sections/813_终局_未竟之约"
@@ -4209,6 +4329,15 @@
     "forms": []
   },
   {
+    "name": "乖巧的女儿",
+    "stories": [
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1116_15_高塔之下"
+    ],
+    "first": [],
+    "firstIndexed": "main/chapter_11_完璧之庭·微尘破晓/sections/1116_15_高塔之下",
+    "forms": []
+  },
+  {
     "name": "乖巧的小孩",
     "stories": [
       "storysets/风情杂记/1003_夜放花千树/sections/100301_第一话"
@@ -4224,6 +4353,15 @@
     ],
     "first": [],
     "firstIndexed": "discs/214061_睡前童话",
+    "forms": []
+  },
+  {
+    "name": "买了地理杂志的旅人",
+    "stories": [
+      "characters/161_优叶/sections/16101_梦想的一天 上"
+    ],
+    "first": [],
+    "firstIndexed": "characters/161_优叶/sections/16101_梦想的一天 上",
     "forms": []
   },
   {
@@ -4275,6 +4413,15 @@
     ],
     "first": [],
     "firstIndexed": "main/chapter_07_谜影的序曲/sections/6507_05_围猎",
+    "forms": []
+  },
+  {
+    "name": "五人",
+    "stories": [
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130206_05_队长的责任"
+    ],
+    "first": [],
+    "firstIndexed": "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130206_05_队长的责任",
     "forms": []
   },
   {
@@ -4350,6 +4497,15 @@
     "forms": []
   },
   {
+    "name": "仓库守卫",
+    "stories": [
+      "storysets/职场热线/1019_比“宝石”更耀眼的/sections/101903_第三话"
+    ],
+    "first": [],
+    "firstIndexed": "storysets/职场热线/1019_比“宝石”更耀眼的/sections/101903_第三话",
+    "forms": []
+  },
+  {
     "name": "令人毛骨悚然的鸟",
     "stories": [
       "characters/157_花铃/sections/15701_二人三脚 上"
@@ -4405,27 +4561,21 @@
     "forms": []
   },
   {
-    "name": "优叶",
+    "name": "优叶、蜜柑、纳茨",
     "stories": [
-      "storysets/职场热线/1005_老油条与新员工/sections/100502_第二话",
-      "storysets/职场热线/1005_老油条与新员工/sections/100503_第三话",
-      "storysets/荒野快讯/1014_跨越星声的对话/sections/101402_第二话",
-      "events/activity_10106_敬启，致珍重的你/sections/101060208_05_竟是魔物所为",
-      "events/activity_10106_敬启，致珍重的你/sections/101060209_06_玉米粒大作战",
-      "events/activity_10106_敬启，致珍重的你/sections/101060211_07_跨越时空的问候",
-      "storysets/职场热线/1016_此间日常/sections/101601_第一话",
-      "events/activity_10110_欢歌劲浪 · 闪耀假日惊涛探险！/sections/101100201_01_海风吹来的委托",
-      "events/activity_10110_欢歌劲浪 · 闪耀假日惊涛探险！/sections/101100202_02_梦想在甲板上摇晃",
-      "events/activity_10110_欢歌劲浪 · 闪耀假日惊涛探险！/sections/101100203_03_空白旅团漂流记",
-      "events/activity_10110_欢歌劲浪 · 闪耀假日惊涛探险！/sections/101100204_04_海上幻影",
-      "events/activity_10110_欢歌劲浪 · 闪耀假日惊涛探险！/sections/101100206_05_漩涡深处的收藏家",
-      "events/activity_10110_欢歌劲浪 · 闪耀假日惊涛探险！/sections/101100207_06_海螺壳争夺战",
-      "events/activity_10110_欢歌劲浪 · 闪耀假日惊涛探险！/sections/101100208_07_镜框里的海",
-      "events/activity_10110_欢歌劲浪 · 闪耀假日惊涛探险！/sections/101100210_08_裂痕与归处",
-      "announced/event-5077"
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130201_01_出发，前往沉寂海"
     ],
     "first": [],
-    "firstIndexed": "storysets/职场热线/1005_老油条与新员工/sections/100502_第二话",
+    "firstIndexed": "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130201_01_出发，前往沉寂海",
+    "forms": []
+  },
+  {
+    "name": "优叶的粉丝",
+    "stories": [
+      "characters/161_优叶/sections/16101_梦想的一天 上"
+    ],
+    "first": [],
+    "firstIndexed": "characters/161_优叶/sections/16101_梦想的一天 上",
     "forms": []
   },
   {
@@ -4456,12 +4606,31 @@
     "forms": []
   },
   {
+    "name": "低沉的男声",
+    "stories": [
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130201_01_出发，前往沉寂海"
+    ],
+    "first": [],
+    "firstIndexed": "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130201_01_出发，前往沉寂海",
+    "forms": []
+  },
+  {
     "name": "余音",
     "stories": [
-      "main/chapter_11_完璧之庭·微尘破晓/sections/1110_09_角斗士"
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1110_09_角斗士",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1121_19_一粒沙的愿望"
     ],
     "first": [],
     "firstIndexed": "main/chapter_11_完璧之庭·微尘破晓/sections/1110_09_角斗士",
+    "forms": []
+  },
+  {
+    "name": "余音的灵魂残片",
+    "stories": [
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1121_19_一粒沙的愿望"
+    ],
+    "first": [],
+    "firstIndexed": "main/chapter_11_完璧之庭·微尘破晓/sections/1121_19_一粒沙的愿望",
     "forms": []
   },
   {
@@ -4679,6 +4848,16 @@
     "forms": []
   },
   {
+    "name": "公司代表们",
+    "stories": [
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130205_04_被遗忘的委派",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130210_08_逃出生天"
+    ],
+    "first": [],
+    "firstIndexed": "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130205_04_被遗忘的委派",
+    "forms": []
+  },
+  {
     "name": "公司元老",
     "stories": [
       "storysets/职场热线/1004_抹茶梦语/sections/100402_第二话"
@@ -4765,7 +4944,9 @@
     "stories": [
       "main/chapter_03_我们的旅团/sections/306_01_三大魔物",
       "events/activity_10108_心跳！柔光狂想曲/sections/101080202_02_天才工匠的下落",
-      "events/activity_10108_心跳！柔光狂想曲/sections/101080206_05_好戏开场"
+      "events/activity_10108_心跳！柔光狂想曲/sections/101080206_05_好戏开场",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130208_07_海山下的秘密",
+      "characters/161_优叶/sections/16101_梦想的一天 上"
     ],
     "first": [],
     "firstIndexed": "main/chapter_03_我们的旅团/sections/306_01_三大魔物",
@@ -4966,6 +5147,15 @@
     "forms": []
   },
   {
+    "name": "冷静的守夜人",
+    "stories": [
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1116_15_高塔之下"
+    ],
+    "first": [],
+    "firstIndexed": "main/chapter_11_完璧之庭·微尘破晓/sections/1116_15_高塔之下",
+    "forms": []
+  },
+  {
     "name": "冷静的新联合种业士兵",
     "stories": [
       "main/chapter_08_星之竞拍/sections/812_终局_自异世界"
@@ -5053,7 +5243,8 @@
   {
     "name": "凑热闹的旅人",
     "stories": [
-      "events/activity_10108_心跳！柔光狂想曲/sections/101080204_03_欢迎来到地下市场"
+      "events/activity_10108_心跳！柔光狂想曲/sections/101080204_03_欢迎来到地下市场",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130211_09_启航，向着未来"
     ],
     "first": [],
     "firstIndexed": "events/activity_10108_心跳！柔光狂想曲/sections/101080204_03_欢迎来到地下市场",
@@ -5139,7 +5330,9 @@
   {
     "name": "凶狠的菲兰尼斯人",
     "stories": [
-      "main/chapter_11_完璧之庭·微尘破晓/sections/1108_07_守夜人的日常"
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1108_07_守夜人的日常",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1113_12_我的身体",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1114_13_地下的真相"
     ],
     "first": [],
     "firstIndexed": "main/chapter_11_完璧之庭·微尘破晓/sections/1108_07_守夜人的日常",
@@ -5222,6 +5415,24 @@
     "forms": []
   },
   {
+    "name": "动作灵敏的人偶",
+    "stories": [
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1120_18_白虹贯日"
+    ],
+    "first": [],
+    "firstIndexed": "main/chapter_11_完璧之庭·微尘破晓/sections/1120_18_白虹贯日",
+    "forms": []
+  },
+  {
+    "name": "动作笨拙的人偶",
+    "stories": [
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1120_18_白虹贯日"
+    ],
+    "first": [],
+    "firstIndexed": "main/chapter_11_完璧之庭·微尘破晓/sections/1120_18_白虹贯日",
+    "forms": []
+  },
+  {
     "name": "助手智慧植物",
     "stories": [
       "main/chapter_06_微火的奇迹/sections/613_终局_天下静谧"
@@ -5268,6 +5479,15 @@
     "forms": []
   },
   {
+    "name": "勤劳的店主",
+    "stories": [
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1113_12_我的身体"
+    ],
+    "first": [],
+    "firstIndexed": "main/chapter_11_完璧之庭·微尘破晓/sections/1113_12_我的身体",
+    "forms": []
+  },
+  {
     "name": "勤奋的种业员工",
     "stories": [
       "main/chapter_08_星之竞拍/sections/823_14_技术调整"
@@ -5283,6 +5503,15 @@
     ],
     "first": [],
     "firstIndexed": "discs/214008_飞越青空",
+    "forms": []
+  },
+  {
+    "name": "匆忙的联合种业员工",
+    "stories": [
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130205_04_被遗忘的委派"
+    ],
+    "first": [],
+    "firstIndexed": "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130205_04_被遗忘的委派",
     "forms": []
   },
   {
@@ -5393,6 +5622,24 @@
     ],
     "first": [],
     "firstIndexed": "characters/133_夏花/sections/13301_风中密语 上",
+    "forms": []
+  },
+  {
+    "name": "南瓜摊婆婆",
+    "stories": [
+      "storysets/职场热线/1019_比“宝石”更耀眼的/sections/101902_第二话"
+    ],
+    "first": [],
+    "firstIndexed": "storysets/职场热线/1019_比“宝石”更耀眼的/sections/101902_第二话",
+    "forms": []
+  },
+  {
+    "name": "南瓜摊老板",
+    "stories": [
+      "storysets/职场热线/1019_比“宝石”更耀眼的/sections/101902_第二话"
+    ],
+    "first": [],
+    "firstIndexed": "storysets/职场热线/1019_比“宝石”更耀眼的/sections/101902_第二话",
     "forms": []
   },
   {
@@ -5612,6 +5859,15 @@
     "forms": []
   },
   {
+    "name": "可爱的黑猫",
+    "stories": [
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1116_15_高塔之下"
+    ],
+    "first": [],
+    "firstIndexed": "main/chapter_11_完璧之庭·微尘破晓/sections/1116_15_高塔之下",
+    "forms": []
+  },
+  {
     "name": "可疑的奴隶商人",
     "stories": [
       "characters/162_尘沙（源初）/sections/16201_那个人的名字 上",
@@ -5639,6 +5895,16 @@
     ],
     "first": [],
     "firstIndexed": "storysets/荒野快讯/1013_大小姐与俏女仆/sections/101301_第一话",
+    "forms": []
+  },
+  {
+    "name": "可疑的男人",
+    "stories": [
+      "storysets/职场热线/1019_比“宝石”更耀眼的/sections/101902_第二话",
+      "storysets/职场热线/1019_比“宝石”更耀眼的/sections/101903_第三话"
+    ],
+    "first": [],
+    "firstIndexed": "storysets/职场热线/1019_比“宝石”更耀眼的/sections/101902_第二话",
     "forms": []
   },
   {
@@ -5976,6 +6242,15 @@
     "forms": []
   },
   {
+    "name": "喇叭",
+    "stories": [
+      "storysets/职场热线/1019_比“宝石”更耀眼的/sections/101902_第二话"
+    ],
+    "first": [],
+    "firstIndexed": "storysets/职场热线/1019_比“宝石”更耀眼的/sections/101902_第二话",
+    "forms": []
+  },
+  {
     "name": "喊口号的员工",
     "stories": [
       "main/chapter_05_落于暗夜的荧光/sections/508_03B_新老员工"
@@ -6097,6 +6372,15 @@
     "forms": []
   },
   {
+    "name": "固执的村民",
+    "stories": [
+      "discs/214068_帐幕下的酣梦"
+    ],
+    "first": [],
+    "firstIndexed": "discs/214068_帐幕下的酣梦",
+    "forms": []
+  },
+  {
     "name": "圣女",
     "stories": [
       "main/chapter_11_完璧之庭·微尘破晓/sections/1105_04_浴场测试",
@@ -6109,10 +6393,23 @@
   {
     "name": "圣女莱塔",
     "stories": [
-      "main/chapter_11_完璧之庭·微尘破晓/sections/1106_05_因苏拉"
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1106_05_因苏拉",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1112_11_许愿与祭品",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1114_13_地下的真相",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1116_15_高塔之下",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1118_16_奴隶"
     ],
     "first": [],
     "firstIndexed": "main/chapter_11_完璧之庭·微尘破晓/sections/1106_05_因苏拉",
+    "forms": []
+  },
+  {
+    "name": "地理协会新人",
+    "stories": [
+      "discs/214068_帐幕下的酣梦"
+    ],
+    "first": [],
+    "firstIndexed": "discs/214068_帐幕下的酣梦",
     "forms": []
   },
   {
@@ -6273,7 +6570,12 @@
   {
     "name": "大司祭科佩里乌斯",
     "stories": [
-      "main/chapter_11_完璧之庭·微尘破晓/sections/1106_05_因苏拉"
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1106_05_因苏拉",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1112_11_许愿与祭品",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1114_13_地下的真相",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1116_15_高塔之下",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1118_16_奴隶",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1120_18_白虹贯日"
     ],
     "first": [],
     "firstIndexed": "main/chapter_11_完璧之庭·微尘破晓/sections/1106_05_因苏拉",
@@ -6316,7 +6618,17 @@
       "main/chapter_11_完璧之庭·微尘破晓/sections/1106_05_因苏拉",
       "main/chapter_11_完璧之庭·微尘破晓/sections/1107_06_圣女的意义",
       "main/chapter_11_完璧之庭·微尘破晓/sections/1108_07_守夜人的日常",
-      "main/chapter_11_完璧之庭·微尘破晓/sections/1109_08_禁忌的愿望"
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1109_08_禁忌的愿望",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1111_10_天真的守夜人",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1112_11_许愿与祭品",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1113_12_我的身体",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1114_13_地下的真相",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1115_14_短暂的日常",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1116_15_高塔之下",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1118_16_奴隶",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1119_17_埋葬与新生",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1120_18_白虹贯日",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1123_尾声_过去之事正如未来之事"
     ],
     "first": [],
     "firstIndexed": "main/chapter_11_完璧之庭·微尘破晓/sections/1101_01_昨日重现",
@@ -6365,6 +6677,28 @@
     ],
     "first": [],
     "firstIndexed": "main/chapter_08_星之竞拍/sections/821_11_谎言与希望",
+    "forms": []
+  },
+  {
+    "name": "天穹保险代表",
+    "stories": [
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130208_07_海山下的秘密"
+    ],
+    "first": [],
+    "firstIndexed": "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130208_07_海山下的秘密",
+    "forms": []
+  },
+  {
+    "name": "天穹保险公司代表",
+    "stories": [
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130204_03_岸上的突袭",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130205_04_被遗忘的委派",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130208_07_海山下的秘密",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130210_08_逃出生天",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130211_09_启航，向着未来"
+    ],
+    "first": [],
+    "firstIndexed": "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130204_03_岸上的突袭",
     "forms": []
   },
   {
@@ -6925,7 +7259,9 @@
     "name": "害怕的旅人",
     "stories": [
       "main/chapter_04_梦的彼岸/sections/414_08_必有回响",
-      "main/chapter_08_星之竞拍/sections/819_12_先易后难"
+      "main/chapter_08_星之竞拍/sections/819_12_先易后难",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130208_07_海山下的秘密",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130210_08_逃出生天"
     ],
     "first": [],
     "firstIndexed": "main/chapter_04_梦的彼岸/sections/414_08_必有回响",
@@ -6941,12 +7277,30 @@
     "forms": []
   },
   {
+    "name": "害怕的联合种业员工",
+    "stories": [
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130210_08_逃出生天"
+    ],
+    "first": [],
+    "firstIndexed": "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130210_08_逃出生天",
+    "forms": []
+  },
+  {
     "name": "害怕的观众",
     "stories": [
       "characters/126_紫槿/sections/12601_蝶说 上"
     ],
     "first": [],
     "firstIndexed": "characters/126_紫槿/sections/12601_蝶说 上",
+    "forms": []
+  },
+  {
+    "name": "害羞的声音",
+    "stories": [
+      "characters/161_优叶/sections/16101_梦想的一天 上"
+    ],
+    "first": [],
+    "firstIndexed": "characters/161_优叶/sections/16101_梦想的一天 上",
     "forms": []
   },
   {
@@ -7093,7 +7447,10 @@
   {
     "name": "尊者奥林匹娅",
     "stories": [
-      "main/chapter_11_完璧之庭·微尘破晓/sections/1106_05_因苏拉"
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1106_05_因苏拉",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1116_15_高塔之下",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1118_16_奴隶",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1120_18_白虹贯日"
     ],
     "first": [],
     "firstIndexed": "main/chapter_11_完璧之庭·微尘破晓/sections/1106_05_因苏拉",
@@ -7215,6 +7572,24 @@
     "forms": []
   },
   {
+    "name": "小松鼠",
+    "stories": [
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130206_05_队长的责任"
+    ],
+    "first": [],
+    "firstIndexed": "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130206_05_队长的责任",
+    "forms": []
+  },
+  {
+    "name": "小火蜥蜴",
+    "stories": [
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130211_09_启航，向着未来"
+    ],
+    "first": [],
+    "firstIndexed": "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130211_09_启航，向着未来",
+    "forms": []
+  },
+  {
     "name": "小男孩",
     "stories": [
       "events/activity_20101_闪耀的使者与圣夜的精灵/sections/201010202_02_送礼大作战",
@@ -7277,6 +7652,15 @@
     "forms": []
   },
   {
+    "name": "尘沙、鸢尾",
+    "stories": [
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130206_05_队长的责任"
+    ],
+    "first": [],
+    "firstIndexed": "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130206_05_队长的责任",
+    "forms": []
+  },
+  {
     "name": "尘沙、鸢尾、琥珀",
     "stories": [
       "main/chapter_09_往日残影/sections/928_终局_妈妈",
@@ -7308,6 +7692,15 @@
     "forms": []
   },
   {
+    "name": "岛外的住户",
+    "stories": [
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1120_18_白虹贯日"
+    ],
+    "first": [],
+    "firstIndexed": "main/chapter_11_完璧之庭·微尘破晓/sections/1120_18_白虹贯日",
+    "forms": []
+  },
+  {
     "name": "崩溃的克莱儿",
     "stories": [
       "main/chapter_04_梦的彼岸/sections/414_08_必有回响",
@@ -7324,6 +7717,15 @@
     ],
     "first": [],
     "firstIndexed": "characters/147_焦糖/sections/14703_星与心的回响 下",
+    "forms": []
+  },
+  {
+    "name": "崭新的人偶",
+    "stories": [
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1116_15_高塔之下"
+    ],
+    "first": [],
+    "firstIndexed": "main/chapter_11_完璧之庭·微尘破晓/sections/1116_15_高塔之下",
     "forms": []
   },
   {
@@ -7576,6 +7978,15 @@
     "forms": []
   },
   {
+    "name": "平静下来的男人",
+    "stories": [
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130204_03_岸上的突袭"
+    ],
+    "first": [],
+    "firstIndexed": "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130204_03_岸上的突袭",
+    "forms": []
+  },
+  {
     "name": "年幼的多娜",
     "stories": [
       "events/activity_10106_敬启，致珍重的你/sections/101060211_07_跨越时空的问候"
@@ -7647,6 +8058,15 @@
     ],
     "first": [],
     "firstIndexed": "discs/214016_春日纪事",
+    "forms": []
+  },
+  {
+    "name": "年轻的菲兰尼斯公民",
+    "stories": [
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1118_16_奴隶"
+    ],
+    "first": [],
+    "firstIndexed": "main/chapter_11_完璧之庭·微尘破晓/sections/1118_16_奴隶",
     "forms": []
   },
   {
@@ -7927,7 +8347,11 @@
   {
     "name": "彼岸",
     "stories": [
-      "events/activity_10110_欢歌劲浪 · 闪耀假日惊涛探险！/sections/101100201_01_海风吹来的委托"
+      "events/activity_10110_欢歌劲浪 · 闪耀假日惊涛探险！/sections/101100201_01_海风吹来的委托",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130201_01_出发，前往沉寂海",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130211_09_启航，向着未来",
+      "characters/161_优叶/sections/16101_梦想的一天 上",
+      "discs/214068_帐幕下的酣梦"
     ],
     "first": [],
     "firstIndexed": "events/activity_10110_欢歌劲浪 · 闪耀假日惊涛探险！/sections/101100201_01_海风吹来的委托",
@@ -8062,6 +8486,15 @@
     "forms": []
   },
   {
+    "name": "急匆匆的旅人",
+    "stories": [
+      "characters/161_优叶/sections/16101_梦想的一天 上"
+    ],
+    "first": [],
+    "firstIndexed": "characters/161_优叶/sections/16101_梦想的一天 上",
+    "forms": []
+  },
+  {
     "name": "急匆匆的组员",
     "stories": [
       "main/chapter_05_落于暗夜的荧光/sections/512_06_不同的理念"
@@ -8131,6 +8564,15 @@
     ],
     "first": [],
     "firstIndexed": "characters/107_缇莉娅/sections/10701_蒙面骑士缇莉娅 上",
+    "forms": []
+  },
+  {
+    "name": "悔过的守夜人",
+    "stories": [
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1120_18_白虹贯日"
+    ],
+    "first": [],
+    "firstIndexed": "main/chapter_11_完璧之庭·微尘破晓/sections/1120_18_白虹贯日",
     "forms": []
   },
   {
@@ -8536,6 +8978,15 @@
     "forms": []
   },
   {
+    "name": "慌张的男人",
+    "stories": [
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130204_03_岸上的突袭"
+    ],
+    "first": [],
+    "firstIndexed": "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130204_03_岸上的突袭",
+    "forms": []
+  },
+  {
     "name": "慌张的病人",
     "stories": [
       "characters/118_科洛妮丝/sections/11802_黑色的骨头 中"
@@ -8888,6 +9339,15 @@
     "forms": []
   },
   {
+    "name": "提心吊胆的员工",
+    "stories": [
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130208_07_海山下的秘密"
+    ],
+    "first": [],
+    "firstIndexed": "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130208_07_海山下的秘密",
+    "forms": []
+  },
+  {
     "name": "搬运工人",
     "stories": [
       "characters/119_花原/sections/11901_女仆的秘密任务 上"
@@ -9090,6 +9550,15 @@
     "forms": []
   },
   {
+    "name": "新来的圣女",
+    "stories": [
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1118_16_奴隶"
+    ],
+    "first": [],
+    "firstIndexed": "main/chapter_11_完璧之庭·微尘破晓/sections/1118_16_奴隶",
+    "forms": []
+  },
+  {
     "name": "新来的菈露",
     "stories": [
       "discs/214048_雪夜惊喜"
@@ -9147,7 +9616,8 @@
   {
     "name": "旅人们",
     "stories": [
-      "events/activity_10107_穿透心壁的取景框/sections/101070207_06_第一次的风景"
+      "events/activity_10107_穿透心壁的取景框/sections/101070207_06_第一次的风景",
+      "characters/161_优叶/sections/16101_梦想的一天 上"
     ],
     "first": [],
     "firstIndexed": "events/activity_10107_穿透心壁的取景框/sections/101070207_06_第一次的风景",
@@ -9228,6 +9698,15 @@
     "forms": []
   },
   {
+    "name": "无面的人偶",
+    "stories": [
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1113_12_我的身体"
+    ],
+    "first": [],
+    "firstIndexed": "main/chapter_11_完璧之庭·微尘破晓/sections/1113_12_我的身体",
+    "forms": []
+  },
+  {
     "name": "早熟的女孩",
     "stories": [
       "characters/139_艾蕾/sections/13901_结婚过家家 上"
@@ -9249,6 +9728,15 @@
     ],
     "first": [],
     "firstIndexed": "main/chapter_07_谜影的序曲/sections/6507_05_围猎",
+    "forms": []
+  },
+  {
+    "name": "昏迷的男人",
+    "stories": [
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130204_03_岸上的突袭"
+    ],
+    "first": [],
+    "firstIndexed": "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130204_03_岸上的突袭",
     "forms": []
   },
   {
@@ -9305,6 +9793,7 @@
       "main/chapter_08_星之竞拍/sections/825_尾声_死之权杖",
       "main/chapter_09_往日残影/sections/903_02_剑拔弩张",
       "main/chapter_09_往日残影/sections/904_03_我是谁",
+      "storysets/职场热线/1019_比“宝石”更耀眼的/sections/101903_第三话",
       "main/chapter_10_遥远的塔/sections/1003_01A_风过林梢"
     ],
     "first": [],
@@ -9656,6 +10145,7 @@
       "main/chapter_08_星之竞拍/sections/806_02_一场交易",
       "main/chapter_08_星之竞拍/sections/809_终局_生死不明",
       "main/chapter_09_往日残影/sections/906_05_同伴",
+      "storysets/职场热线/1019_比“宝石”更耀眼的/sections/101902_第二话",
       "main/chapter_10_遥远的塔/sections/1003_01A_风过林梢",
       "main/chapter_10_遥远的塔/sections/1005_02A_伤痕暂停",
       "main/chapter_10_遥远的塔/sections/1021_02C_魔王之塔"
@@ -9838,6 +10328,15 @@
     "forms": []
   },
   {
+    "name": "残破的声音",
+    "stories": [
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1121_19_一粒沙的愿望"
+    ],
+    "first": [],
+    "firstIndexed": "main/chapter_11_完璧之庭·微尘破晓/sections/1121_19_一粒沙的愿望",
+    "forms": []
+  },
+  {
     "name": "母亲",
     "stories": [
       "characters/114_猫眼/sections/11402_名为“魔王试炼”的委托 中"
@@ -9866,6 +10365,24 @@
     "forms": []
   },
   {
+    "name": "气势汹汹的男人",
+    "stories": [
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130204_03_岸上的突袭"
+    ],
+    "first": [],
+    "firstIndexed": "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130204_03_岸上的突袭",
+    "forms": []
+  },
+  {
+    "name": "气喘吁吁的员工",
+    "stories": [
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130208_07_海山下的秘密"
+    ],
+    "first": [],
+    "firstIndexed": "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130208_07_海山下的秘密",
+    "forms": []
+  },
+  {
     "name": "气喘吁吁的少女",
     "stories": [
       "characters/107_缇莉娅/sections/10701_蒙面骑士缇莉娅 上",
@@ -9873,6 +10390,15 @@
     ],
     "first": [],
     "firstIndexed": "characters/107_缇莉娅/sections/10701_蒙面骑士缇莉娅 上",
+    "forms": []
+  },
+  {
+    "name": "气喘吁吁的旅人",
+    "stories": [
+      "characters/161_优叶/sections/16101_梦想的一天 上"
+    ],
+    "first": [],
+    "firstIndexed": "characters/161_优叶/sections/16101_梦想的一天 上",
     "forms": []
   },
   {
@@ -10234,6 +10760,15 @@
     "forms": []
   },
   {
+    "name": "浴场里的人偶们",
+    "stories": [
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1120_18_白虹贯日"
+    ],
+    "first": [],
+    "firstIndexed": "main/chapter_11_完璧之庭·微尘破晓/sections/1120_18_白虹贯日",
+    "forms": []
+  },
+  {
     "name": "海伦阿姨",
     "stories": [
       "characters/125_苍兰/sections/12502_胜利者法则 中"
@@ -10463,7 +10998,8 @@
   {
     "name": "温柔的父亲",
     "stories": [
-      "main/chapter_06_微火的奇迹/sections/604_幕间_忠诚与背叛"
+      "main/chapter_06_微火的奇迹/sections/604_幕间_忠诚与背叛",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1116_15_高塔之下"
     ],
     "first": [],
     "firstIndexed": "main/chapter_06_微火的奇迹/sections/604_幕间_忠诚与背叛",
@@ -10587,6 +11123,15 @@
     "forms": []
   },
   {
+    "name": "激动的公民",
+    "stories": [
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1120_18_白虹贯日"
+    ],
+    "first": [],
+    "firstIndexed": "main/chapter_11_完璧之庭·微尘破晓/sections/1120_18_白虹贯日",
+    "forms": []
+  },
+  {
     "name": "激动的孩子",
     "stories": [
       "events/activity_10109_枪林弹雨覆黄沙/sections/101090203_03_千塔演出……黑暗之力的显现"
@@ -10636,7 +11181,9 @@
   {
     "name": "激动的菲兰尼斯人",
     "stories": [
-      "main/chapter_11_完璧之庭·微尘破晓/sections/1108_07_守夜人的日常"
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1108_07_守夜人的日常",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1113_12_我的身体",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1114_13_地下的真相"
     ],
     "first": [],
     "firstIndexed": "main/chapter_11_完璧之庭·微尘破晓/sections/1108_07_守夜人的日常",
@@ -10991,10 +11538,12 @@
   {
     "name": "熟悉的声音",
     "stories": [
-      "events/activity_10105_冬夜镇魂曲与破晓扳机/sections/101050201_01_前往北境之城"
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1121_19_一粒沙的愿望",
+      "events/activity_10105_冬夜镇魂曲与破晓扳机/sections/101050201_01_前往北境之城",
+      "characters/161_优叶/sections/16101_梦想的一天 上"
     ],
     "first": [],
-    "firstIndexed": "events/activity_10105_冬夜镇魂曲与破晓扳机/sections/101050201_01_前往北境之城",
+    "firstIndexed": "main/chapter_11_完璧之庭·微尘破晓/sections/1121_19_一粒沙的愿望",
     "forms": []
   },
   {
@@ -11043,6 +11592,15 @@
     "forms": []
   },
   {
+    "name": "爽朗的女声",
+    "stories": [
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130201_01_出发，前往沉寂海"
+    ],
+    "first": [],
+    "firstIndexed": "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130201_01_出发，前往沉寂海",
+    "forms": []
+  },
+  {
     "name": "狂妄的佣兵",
     "stories": [
       "main/chapter_08_星之竞拍/sections/817_08_杂鱼战术"
@@ -11077,6 +11635,24 @@
     ],
     "first": [],
     "firstIndexed": "main/chapter_03_我们的旅团/sections/312_06B_特训",
+    "forms": []
+  },
+  {
+    "name": "狡诈的公司代表",
+    "stories": [
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1123_尾声_过去之事正如未来之事"
+    ],
+    "first": [],
+    "firstIndexed": "main/chapter_11_完璧之庭·微尘破晓/sections/1123_尾声_过去之事正如未来之事",
+    "forms": []
+  },
+  {
+    "name": "狡诈的男声",
+    "stories": [
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130201_01_出发，前往沉寂海"
+    ],
+    "first": [],
+    "firstIndexed": "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130201_01_出发，前往沉寂海",
     "forms": []
   },
   {
@@ -11163,6 +11739,15 @@
     "forms": []
   },
   {
+    "name": "玻璃摊贩",
+    "stories": [
+      "storysets/职场热线/1019_比“宝石”更耀眼的/sections/101902_第二话"
+    ],
+    "first": [],
+    "firstIndexed": "storysets/职场热线/1019_比“宝石”更耀眼的/sections/101902_第二话",
+    "forms": []
+  },
+  {
     "name": "珀尔娜",
     "stories": [
       "npc_bonds/9173_珀尔娜/sections/917301_第一话",
@@ -11240,10 +11825,20 @@
       "main/chapter_09_往日残影/sections/928_终局_妈妈",
       "main/chapter_10_遥远的塔/sections/1011_终局_指尖的沙",
       "main/chapter_10_遥远的塔/sections/1018_终局_身旁的她",
-      "main/chapter_10_遥远的塔/sections/1025_终局_遥远的塔"
+      "main/chapter_10_遥远的塔/sections/1025_终局_遥远的塔",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1123_尾声_过去之事正如未来之事"
     ],
     "first": [],
     "firstIndexed": "npc_bonds/9173_珀尔娜/sections/917301_第一话",
+    "forms": []
+  },
+  {
+    "name": "琥珀、鸢尾",
+    "stories": [
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130206_05_队长的责任"
+    ],
+    "first": [],
+    "firstIndexed": "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130206_05_队长的责任",
     "forms": []
   },
   {
@@ -11553,6 +12148,15 @@
     "forms": []
   },
   {
+    "name": "痛苦的声音",
+    "stories": [
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1121_19_一粒沙的愿望"
+    ],
+    "first": [],
+    "firstIndexed": "main/chapter_11_完璧之庭·微尘破晓/sections/1121_19_一粒沙的愿望",
+    "forms": []
+  },
+  {
     "name": "痛苦的女性",
     "stories": [
       "storysets/荒野快讯/1012_眼眸中的彼此/sections/101204_第四话"
@@ -11757,6 +12361,15 @@
     "forms": []
   },
   {
+    "name": "眼尖的旅人",
+    "stories": [
+      "characters/161_优叶/sections/16101_梦想的一天 上"
+    ],
+    "first": [],
+    "firstIndexed": "characters/161_优叶/sections/16101_梦想的一天 上",
+    "forms": []
+  },
+  {
     "name": "睡眼惺忪的女孩",
     "stories": [
       "characters/139_艾蕾/sections/13903_结婚过家家 下"
@@ -11863,6 +12476,18 @@
       "discs/214028_白日花园"
     ],
     "firstIndexed": "main/chapter_07_谜影的序曲/sections/6506_04_故地重游",
+    "forms": []
+  },
+  {
+    "name": "科佩里乌斯",
+    "stories": [
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1116_15_高塔之下",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1120_18_白虹贯日",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1121_19_一粒沙的愿望",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1122_BT03_微尘破晓"
+    ],
+    "first": [],
+    "firstIndexed": "main/chapter_11_完璧之庭·微尘破晓/sections/1116_15_高塔之下",
     "forms": []
   },
   {
@@ -12032,6 +12657,15 @@
     ],
     "first": [],
     "firstIndexed": "main/chapter_06_微火的奇迹/sections/615_06_第三代智慧植物",
+    "forms": []
+  },
+  {
+    "name": "等候多时的旅人",
+    "stories": [
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130211_09_启航，向着未来"
+    ],
+    "first": [],
+    "firstIndexed": "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130211_09_启航，向着未来",
     "forms": []
   },
   {
@@ -12288,7 +12922,10 @@
       "main/chapter_08_星之竞拍/sections/819_12_先易后难",
       "main/chapter_08_星之竞拍/sections/822_13_各取所需",
       "main/chapter_08_星之竞拍/sections/823_14_技术调整",
-      "main/chapter_09_往日残影/sections/903_02_剑拔弩张"
+      "main/chapter_09_往日残影/sections/903_02_剑拔弩张",
+      "storysets/职场热线/1019_比“宝石”更耀眼的/sections/101901_第一话",
+      "storysets/职场热线/1019_比“宝石”更耀眼的/sections/101902_第二话",
+      "storysets/职场热线/1019_比“宝石”更耀眼的/sections/101903_第三话"
     ],
     "first": [],
     "firstIndexed": "main/chapter_05_落于暗夜的荧光/sections/509_03C_神奇的草",
@@ -12336,7 +12973,13 @@
     "stories": [
       "main/chapter_04_梦的彼岸/sections/415_09_梦想彼岸",
       "mirror/CharacterArchiveContent/15513",
-      "mirror/CharacterArchiveContent/15713"
+      "mirror/CharacterArchiveContent/15713",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130201_01_出发，前往沉寂海",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130202_02_大家的地理志",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130206_05_队长的责任",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130210_08_逃出生天",
+      "characters/161_优叶/sections/16101_梦想的一天 上",
+      "discs/214068_帐幕下的酣梦"
     ],
     "first": [],
     "firstIndexed": "main/chapter_04_梦的彼岸/sections/415_09_梦想彼岸",
@@ -12449,7 +13092,8 @@
       "main/chapter_09_往日残影/sections/928_终局_妈妈",
       "main/chapter_10_遥远的塔/sections/1011_终局_指尖的沙",
       "main/chapter_10_遥远的塔/sections/1018_终局_身旁的她",
-      "main/chapter_10_遥远的塔/sections/1025_终局_遥远的塔"
+      "main/chapter_10_遥远的塔/sections/1025_终局_遥远的塔",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1123_尾声_过去之事正如未来之事"
     ],
     "first": [],
     "firstIndexed": "npc_bonds/9174_维嘉尔/sections/917401_第一话",
@@ -12603,6 +13247,36 @@
     "forms": []
   },
   {
+    "name": "联合种业公司经理",
+    "stories": [
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130205_04_被遗忘的委派",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130208_07_海山下的秘密",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130210_08_逃出生天",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130211_09_启航，向着未来"
+    ],
+    "first": [],
+    "firstIndexed": "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130205_04_被遗忘的委派",
+    "forms": []
+  },
+  {
+    "name": "联合种业员工",
+    "stories": [
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130208_07_海山下的秘密"
+    ],
+    "first": [],
+    "firstIndexed": "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130208_07_海山下的秘密",
+    "forms": []
+  },
+  {
+    "name": "联合种业员工们",
+    "stories": [
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130205_04_被遗忘的委派"
+    ],
+    "first": [],
+    "firstIndexed": "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130205_04_被遗忘的委派",
+    "forms": []
+  },
+  {
     "name": "联合种业士兵",
     "stories": [
       "main/chapter_05_落于暗夜的荧光/sections/519_尾声_那位大人"
@@ -12627,6 +13301,25 @@
     ],
     "first": [],
     "firstIndexed": "main/chapter_09_往日残影/sections/927_15B_蝴蝶效应",
+    "forms": []
+  },
+  {
+    "name": "联合种业的员工们",
+    "stories": [
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130208_07_海山下的秘密"
+    ],
+    "first": [],
+    "firstIndexed": "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130208_07_海山下的秘密",
+    "forms": []
+  },
+  {
+    "name": "联合种业经理",
+    "stories": [
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130208_07_海山下的秘密",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130210_08_逃出生天"
+    ],
+    "first": [],
+    "firstIndexed": "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130208_07_海山下的秘密",
     "forms": []
   },
   {
@@ -12871,6 +13564,18 @@
       "main/chapter_11_完璧之庭·微尘破晓/sections/1108_07_守夜人的日常",
       "main/chapter_11_完璧之庭·微尘破晓/sections/1109_08_禁忌的愿望",
       "main/chapter_11_完璧之庭·微尘破晓/sections/1110_09_角斗士",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1111_10_天真的守夜人",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1112_11_许愿与祭品",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1113_12_我的身体",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1114_13_地下的真相",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1115_14_短暂的日常",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1116_15_高塔之下",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1117_BT02_决斗人偶",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1118_16_奴隶",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1119_17_埋葬与新生",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1120_18_白虹贯日",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1121_19_一粒沙的愿望",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1122_BT03_微尘破晓",
       "_chat/PM16201@01",
       "_chat/PM16201@08",
       "_chat/PM16201@02",
@@ -12972,6 +13677,18 @@
     ],
     "first": [],
     "firstIndexed": "discs/214054_微小的乐园",
+    "forms": []
+  },
+  {
+    "name": "莱塔",
+    "stories": [
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1112_11_许愿与祭品",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1118_16_奴隶",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1119_17_埋葬与新生",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1123_尾声_过去之事正如未来之事"
+    ],
+    "first": [],
+    "firstIndexed": "main/chapter_11_完璧之庭·微尘破晓/sections/1112_11_许愿与祭品",
     "forms": []
   },
   {
@@ -13081,7 +13798,10 @@
       "main/chapter_08_星之竞拍/sections/819_12_先易后难",
       "main/chapter_08_星之竞拍/sections/822_13_各取所需",
       "main/chapter_08_星之竞拍/sections/823_14_技术调整",
-      "main/chapter_09_往日残影/sections/903_02_剑拔弩张"
+      "main/chapter_09_往日残影/sections/903_02_剑拔弩张",
+      "storysets/职场热线/1019_比“宝石”更耀眼的/sections/101901_第一话",
+      "storysets/职场热线/1019_比“宝石”更耀眼的/sections/101902_第二话",
+      "storysets/职场热线/1019_比“宝石”更耀眼的/sections/101903_第三话"
     ],
     "first": [],
     "firstIndexed": "main/chapter_04_梦的彼岸/sections/412_06_外乡人",
@@ -13212,6 +13932,8 @@
       "_chat/PM16001@07",
       "_chat/PM16001@09",
       "_chat/PM16001@10",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130201_01_出发，前往沉寂海",
+      "discs/214068_帐幕下的酣梦",
       "dispatch/solo/薇洛（盛夏） · 委托结算演出（其一）_16001",
       "dispatch/solo/薇洛（盛夏） · 委托结算演出（其二）_16002"
     ],
@@ -13302,6 +14024,34 @@
     ],
     "first": [],
     "firstIndexed": "main/chapter_09_往日残影/sections/911_07_初见米拉什",
+    "forms": []
+  },
+  {
+    "name": "蜜柑",
+    "stories": [
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130201_01_出发，前往沉寂海",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130202_02_大家的地理志",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130204_03_岸上的突袭",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130205_04_被遗忘的委派",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130206_05_队长的责任",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130207_06_地图之外的东西",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130208_07_海山下的秘密",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130210_08_逃出生天",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130211_09_启航，向着未来",
+      "characters/161_优叶/sections/16101_梦想的一天 上",
+      "discs/214068_帐幕下的酣梦"
+    ],
+    "first": [],
+    "firstIndexed": "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130201_01_出发，前往沉寂海",
+    "forms": []
+  },
+  {
+    "name": "蜜柑、优叶",
+    "stories": [
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130208_07_海山下的秘密"
+    ],
+    "first": [],
+    "firstIndexed": "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130208_07_海山下的秘密",
     "forms": []
   },
   {
@@ -13404,6 +14154,24 @@
     ],
     "first": [],
     "firstIndexed": "characters/162_尘沙（源初）/sections/16201_那个人的名字 上",
+    "forms": []
+  },
+  {
+    "name": "被控制的莱塔",
+    "stories": [
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1116_15_高塔之下"
+    ],
+    "first": [],
+    "firstIndexed": "main/chapter_11_完璧之庭·微尘破晓/sections/1116_15_高塔之下",
+    "forms": []
+  },
+  {
+    "name": "被救的奴隶少女",
+    "stories": [
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1120_18_白虹贯日"
+    ],
+    "first": [],
+    "firstIndexed": "main/chapter_11_完璧之庭·微尘破晓/sections/1120_18_白虹贯日",
     "forms": []
   },
   {
@@ -13921,7 +14689,9 @@
       "discs/214016_春日纪事",
       "events/activity_10105_冬夜镇魂曲与破晓扳机/sections/101050212_10_告别风雪",
       "storysets/荒野快讯/1014_跨越星声的对话/sections/101403_第三话",
-      "events/activity_20103_晴风碧海 · 悠哉盛夏依然打卡~/sections/201030201_01_是时候休个假了！"
+      "events/activity_20103_晴风碧海 · 悠哉盛夏依然打卡~/sections/201030201_01_是时候休个假了！",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130205_04_被遗忘的委派",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130210_08_逃出生天"
     ],
     "first": [
       "main/chapter_01_没有记忆的生物/sections/102_02_过去的痕迹"
@@ -13994,7 +14764,8 @@
       "mirror/StarTowerEventAction/1289172",
       "mirror/StarTowerTalk/917228",
       "mirror/StarTowerTalk/917229",
-      "mirror/StarTowerTalk/917230"
+      "mirror/StarTowerTalk/917230",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1123_尾声_过去之事正如未来之事"
     ],
     "first": [
       "npc_bonds/9172_贝缇丽/sections/917201_第一话"
@@ -14326,7 +15097,8 @@
       "main/chapter_06_微火的奇迹/sections/622_13_未知的明天",
       "main/chapter_08_星之竞拍/sections/807_03_投标日",
       "main/chapter_08_星之竞拍/sections/810_05A_念念不忘",
-      "main/chapter_09_往日残影/sections/904_03_我是谁"
+      "main/chapter_09_往日残影/sections/904_03_我是谁",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1118_16_奴隶"
     ],
     "first": [],
     "firstIndexed": "main/chapter_04_梦的彼岸/sections/417_尾声_尘埃未定",
@@ -14533,6 +15305,15 @@
     "forms": []
   },
   {
+    "name": "问路的路人",
+    "stories": [
+      "storysets/职场热线/1019_比“宝石”更耀眼的/sections/101902_第二话"
+    ],
+    "first": [],
+    "firstIndexed": "storysets/职场热线/1019_比“宝石”更耀眼的/sections/101902_第二话",
+    "forms": []
+  },
+  {
     "name": "闲聊的店员",
     "stories": [
       "characters/150_菈露/sections/15001_闯祸的薯条 上"
@@ -14607,6 +15388,15 @@
     "forms": []
   },
   {
+    "name": "除优叶之外的其他人",
+    "stories": [
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130206_05_队长的责任"
+    ],
+    "first": [],
+    "firstIndexed": "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130206_05_队长的责任",
+    "forms": []
+  },
+  {
     "name": "陪伴智慧植物",
     "stories": [
       "main/chapter_06_微火的奇迹/sections/613_终局_天下静谧"
@@ -14674,7 +15464,13 @@
       "main/chapter_11_完璧之庭·微尘破晓/sections/1105_04_浴场测试",
       "main/chapter_11_完璧之庭·微尘破晓/sections/1107_06_圣女的意义",
       "main/chapter_11_完璧之庭·微尘破晓/sections/1108_07_守夜人的日常",
-      "main/chapter_11_完璧之庭·微尘破晓/sections/1109_08_禁忌的愿望"
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1109_08_禁忌的愿望",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1114_13_地下的真相",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1115_14_短暂的日常",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1116_15_高塔之下",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1118_16_奴隶",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1119_17_埋葬与新生",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1123_尾声_过去之事正如未来之事"
     ],
     "first": [],
     "firstIndexed": "main/chapter_11_完璧之庭·微尘破晓/sections/1104_03_浴场与奴隶",
@@ -15740,6 +16536,17 @@
       "main/chapter_11_完璧之庭·微尘破晓/sections/1107_06_圣女的意义",
       "main/chapter_11_完璧之庭·微尘破晓/sections/1108_07_守夜人的日常",
       "main/chapter_11_完璧之庭·微尘破晓/sections/1109_08_禁忌的愿望",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1111_10_天真的守夜人",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1112_11_许愿与祭品",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1113_12_我的身体",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1114_13_地下的真相",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1115_14_短暂的日常",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1116_15_高塔之下",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1118_16_奴隶",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1119_17_埋葬与新生",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1120_18_白虹贯日",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1121_19_一粒沙的愿望",
+      "main/chapter_11_完璧之庭·微尘破晓/sections/1123_尾声_过去之事正如未来之事",
       "_chat/PM16201@01",
       "_chat/PM16201@08",
       "_chat/PM16201@02",
@@ -16250,8 +17057,34 @@
       "_chat/PM16001@07",
       "_chat/PM16001@09",
       "_chat/PM16001@10",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130201_01_出发，前往沉寂海",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130202_02_大家的地理志",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130204_03_岸上的突袭",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130205_04_被遗忘的委派",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130206_05_队长的责任",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130207_06_地图之外的东西",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130208_07_海山下的秘密",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130210_08_逃出生天",
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130211_09_启航，向着未来",
+      "characters/161_优叶/sections/16101_梦想的一天 上",
+      "characters/161_优叶/sections/16102_梦想的一天 中",
+      "characters/161_优叶/sections/16103_梦想的一天 下",
+      "_chat/PM16101@01",
+      "mirror/DatingStartEndEvent/161101",
+      "mirror/DatingCharacterEvent/161301",
+      "_chat/PM16101@02",
+      "mirror/DatingStartEndEvent/161102",
+      "mirror/DatingCharacterEvent/161302",
+      "_chat/PM16101@03",
+      "_chat/PM16101@04",
+      "_chat/PM16101@05",
+      "_chat/PM16101@06",
+      "_chat/PM16101@07",
+      "_chat/PM16101@08",
+      "_chat/PM16101@09",
+      "_chat/PM16101@10",
+      "discs/214068_帐幕下的酣梦",
       "discs/214066_指引前路的启明星",
-      "announced/event-5077",
       "characters/123_杏子/sections/12301_睡不着的小守护者 上",
       "characters/123_杏子/sections/12302_睡不着的小守护者 中",
       "characters/123_杏子/sections/12303_睡不着的小守护者 下",
@@ -16498,6 +17331,15 @@
     "forms": []
   },
   {
+    "name": "鸢尾、蜜柑",
+    "stories": [
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130210_08_逃出生天"
+    ],
+    "first": [],
+    "firstIndexed": "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130210_08_逃出生天",
+    "forms": []
+  },
+  {
     "name": "麻木的佣兵",
     "stories": [
       "main/chapter_04_梦的彼岸/sections/414_08_必有回响"
@@ -16552,6 +17394,15 @@
     ],
     "first": [],
     "firstIndexed": "characters/162_尘沙（源初）/sections/16201_那个人的名字 上",
+    "forms": []
+  },
+  {
+    "name": "齐声",
+    "stories": [
+      "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130201_01_出发，前往沉寂海"
+    ],
+    "first": [],
+    "firstIndexed": "events/activity_10113_执笔展卷，勾勒未名之境/sections/101130201_01_出发，前往沉寂海",
     "forms": []
   }
 ]

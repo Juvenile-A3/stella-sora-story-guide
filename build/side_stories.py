@@ -12,7 +12,7 @@ RELEASES = {
     6:"2025-12-02 12:00", 7:"2025-12-30 12:00", 8:"2026-01-27 12:00",
     9:"2026-02-17 12:00", 10:"2026-02-17 12:00", 11:"2026-03-10 12:00",
     12:"2026-03-10 12:00", 13:"2026-03-31 12:00", 14:"2026-04-30 12:00",
-    15:"2026-05-26 12:00", 16:"2026-07-14 12:00", 17:"2026-09-01 12:00", 18:"2026-10-13 12:00",
+    15:"2026-05-26 12:00", 16:"2026-07-14 12:00", 17:"2026-09-01 12:00", 18:"2026-10-13 12:00", 19:"2026-11-27 12:00",
 }
 OFFICIAL_NOVA_19 = "https://stellasora.yostar.cn/news/5077"
 POSTER_NOVA_19 = "https://webusstatic.yo-star.com/web-cms-test/upload/content/2026/11/09/OvmfWJ_5.jpg"
@@ -106,6 +106,8 @@ def build(root):
             if idx==100802: loc="星塔"
             if idx==100803:
                 loc="黄昏裁判第七监狱／菲莱／埃摩灰城区地下诊所"; r["calendar"]=calendar(996,"雨月",2,"08:28")
+            if group_id==1019 and read(root/".upstream_sync_state.json")["last_synced_at"][:16] < "2026-11-27T12:00":
+                r.update(availability="正文已收录／游戏内待开放",released=False,optional=True)
             if group_id==1018:
                 r["calendar"]=calendar(996,"谷月",24,"10:00" if idx==101801 else "")
                 r["sources"].append({"label":"官方 · 第十八篇开放公告","url":"https://stellasora.yostar.cn/news/4757"})

@@ -142,6 +142,10 @@ def main_timing(ch,node,record,parents,children,nodes,page_data):
         if first!=last:
             e+="末处有时标的地点为"+last.get("place","未署名地点")+"。"
         return t,c,e,"分支终局" if node["is_branch"] else "现时","A"
+    if sid==1123:
+        return "特别篇尾声从过去转回鸢尾身边，醒来一幕没有独立年月日。",cal(),"官方概要和末段对白写明醒来与重逢。","跨期／尾声","B"
+    if sid==1118:
+        return "历史主线中插叙三年前的圣女仪式。",cal(-4),"两处旁白单列三年前的高塔场景。","现时／回忆","A"
     if cid==11:
         return "前星塔历4年，所在节没有独立的月日场记。",cal(-4),"章节标题注明前星塔历4年；本节承接"+("上文所述的旅程。" if not parents[sid] else "《"+nodes[parents[sid][0]]["title"]+"》的行动。"),"历史线","A"
     if sid in (507,508,509):
@@ -246,6 +250,8 @@ def collect_main(root,sec,chapters,tables,by_id,commit):
                            "https://stellasora.yostar.cn/news/5001"]
             if n["kind"]=="battle":
                 r["nodeKind"]="战斗"
+            if cc==11 and sid>=1111 and p and p.get("recap"):
+                r["summary"]=p["recap"]
             if sid in MAIN_NOTES:
                 r["summary"]=MAIN_NOTES[sid]
             results.append(r)
@@ -302,6 +308,8 @@ def collect_events(root,sec,tables,by_id,commit):
                 date=cal(997)
             t,date,mode=EVENT_MOMENTS.get(sid,(t,date,"战斗" if not p else "现时"))
             notes_for_stage=notes[rawpos] if rawpos<len(notes) else "此节点只从原始表取得篇内位置，待补正文交叉定位。"
+            if cid==10113:
+                notes_for_stage=(p.get("recap") if p else "承接考察队行动的战斗关卡。") or notes_for_stage
             pr=[event_ids[i] for i in n["parents"] if i in event_ids]
             r.update(route=pos+ordinal/100,optional=False,phase=period["time"] or "未知",
                      nodeId=sid,code=n["code"],groupId=cid,calendar=date,time=t,mode=mode,
@@ -355,6 +363,7 @@ def build(root):
     def links(start,field,items):
         index[start][field]=uniq(index[start].get(field,[])+items)
     # Narrative/review links are explicitly distinct from game unlock conditions.
+    links(eid[111000201],"readAfter",[mid[622]])
     links(eid[101070201],"requires",[eid[201010212]])
     links(eid[101060206],"requires",[eid[111000210]])
     links(eid[101060201],"readAfter",[eid[111000211]])
@@ -416,6 +425,9 @@ def build(root):
     index[eid[101110201]]["evidence"]+=" 埃莉诺亲述绑架时是前辈和谷风家政的花原相救，能具体对照异闻 #13。"
     index[eid[101090203]]["places"]=["千塔之城 · 灰城区"]
     index[eid[101090202]]["places"]=["苍梧","米拉什（回述框架）"]
+    if 101130201 in eid:
+        links(eid[101130201],"readAfter",[mid[1026],eid[101100210]])
+        return results
     # The notice announces a future activity; it does not provide a chapter list.
     announced=base_record("announced/event-5077","执笔展卷，勾勒未名之境","活动预告","已预告活动",1,"https://stellasora.yostar.cn/news/5077")
     announced.update(route=1195,phase="待开放",calendar=cal(),grade="U",risk="低",optional=False,

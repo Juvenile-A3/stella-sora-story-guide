@@ -1,5 +1,5 @@
 {
- "upstreamCommit": "a7ba98f95592b13c1290613b305a6b6a688f5fd0",
+ "upstreamCommit": "8ed2aaf2a453822bbaa8027527b362fe95cbfea5",
  "eventPeriods": {
   "20101": {
    "time": "星塔历996年 霜月",
@@ -66,6 +66,12 @@
    "title": "奋斗吧！大小姐的旅人修炼手册！",
    "key": "ActivityStoryChapter.1011102.2",
    "unlockChapterTableId": 4
+  },
+  "10113": {
+   "time": "星塔历997年 热月",
+   "title": "执笔展卷，勾勒未名之境",
+   "key": "ActivityStoryChapter.1011302.2",
+   "unlockChapterTableId": 10
   }
  },
  "eventNodes": [
@@ -1289,6 +1295,114 @@
    "script": true,
    "parents": [
     101110210
+   ]
+  },
+  {
+   "id": 101130201,
+   "group": 10113,
+   "code": "01",
+   "title": "出发，前往沉寂海",
+   "script": true,
+   "parents": []
+  },
+  {
+   "id": 101130202,
+   "group": 10113,
+   "code": "02",
+   "title": "大家的地理志",
+   "script": true,
+   "parents": [
+    101130201
+   ]
+  },
+  {
+   "id": 101130203,
+   "group": 10113,
+   "code": "BT01",
+   "title": "先下手为强",
+   "script": false,
+   "parents": [
+    101130202
+   ]
+  },
+  {
+   "id": 101130204,
+   "group": 10113,
+   "code": "03",
+   "title": "岸上的突袭",
+   "script": true,
+   "parents": [
+    101130203
+   ]
+  },
+  {
+   "id": 101130205,
+   "group": 10113,
+   "code": "04",
+   "title": "被遗忘的委派",
+   "script": true,
+   "parents": [
+    101130204
+   ]
+  },
+  {
+   "id": 101130206,
+   "group": 10113,
+   "code": "05",
+   "title": "队长的责任",
+   "script": true,
+   "parents": [
+    101130205
+   ]
+  },
+  {
+   "id": 101130207,
+   "group": 10113,
+   "code": "06",
+   "title": "地图之外的东西",
+   "script": true,
+   "parents": [
+    101130206
+   ]
+  },
+  {
+   "id": 101130208,
+   "group": 10113,
+   "code": "07",
+   "title": "海山下的秘密",
+   "script": true,
+   "parents": [
+    101130207
+   ]
+  },
+  {
+   "id": 101130209,
+   "group": 10113,
+   "code": "BT02",
+   "title": "极热调查",
+   "script": false,
+   "parents": [
+    101130208
+   ]
+  },
+  {
+   "id": 101130210,
+   "group": 10113,
+   "code": "08",
+   "title": "逃出生天",
+   "script": true,
+   "parents": [
+    101130209
+   ]
+  },
+  {
+   "id": 101130211,
+   "group": 10113,
+   "code": "09",
+   "title": "启航，向着未来",
+   "script": true,
+   "parents": [
+    101130210
    ]
   }
  ],
@@ -2653,15 +2767,9 @@
    ],
    "evidence": []
   },
-  "Cm10001_21": {
-   "parents": [
-    "STm10001_20"
-   ],
-   "evidence": []
-  },
   "Cm10001_ED": {
    "parents": [
-    "STm10001_21"
+    "STm10001_20"
    ],
    "evidence": []
   },

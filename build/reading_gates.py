@@ -39,7 +39,7 @@ MILESTONES = {
     "main:825": ["events:101080201"],
     "main:1026": ["storysets:101801", "characters:13901", "discs:214061", "mirror/DiscIP/214062"],
     "main:1110": ["characters:16201", "soldier:ST_sys_soldier_intro"],
-    "main:1124": ["discs:214066", "mirror/DiscIP/214067"],  # 资料已收录，推荐等到特别篇全篇结束
+    "main:1123": ["discs:214066", "mirror/DiscIP/214067"],  # 资料已收录，推荐等到特别篇全篇结束
     "events:201010214": ["storysets:100701", "discs:214048", "characters:12601", "events:101040201",
                          "mirror/DiscIP/214041"],
     "characters:12603": ["mirror/DiscIP/213016"],  # 贝法娜的公开身份

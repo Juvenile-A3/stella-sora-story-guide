@@ -215,7 +215,14 @@
     saved = {};
     saveMessage = "当前浏览器无法读取本地进度。可在阅读进度中导出备份。";
   }
-  const stableKey = (id) => stories.get(id)?.progressKey || id;
+  // The November archive replaced two previews and renumbered the special chapter ending.
+  const previousKeys = new Map([
+    ["announced/event-5077", "events:101130201"],
+    ["announced/nova-19", "storysets:101901"],
+    ["main:1124", "main:1123"],
+    ["main/STm10001_21", "main:1123"],
+  ]);
+  const stableKey = (id) => stories.get(id)?.progressKey || previousKeys.get(id) || id;
   const knownProgressKeys = new Set(all.map((s) => stableKey(s.id)));
   function applyProgress(records, target = Object.create(null)) {
     for (const [id, value] of Object.entries(records || {})) {
@@ -2312,7 +2319,7 @@
         throw new Error("备份包含无效状态，现有进度未改动。");
       const restore = $("#import-method")?.value === "restore";
       progress = applyProgress(json.progress, restore ? Object.create(null) : progress);
-      const known = entries.filter(([id]) => stories.has(id) || knownProgressKeys.has(id)).length;
+      const known = entries.filter(([id]) => knownProgressKeys.has(stableKey(id))).length;
       store();
       render();
       progressModal(

@@ -1,6 +1,6 @@
 # 诺瓦剧情手记
 
-《星塔旅人》中文互动阅读指南。第一次玩可以沿着主线读到角色初遇，通关后也能回来查两段故事是否发生在同一天。第一版核查于 2026 年 11 月 12 日，采用 11 月 11 日的 Stella Sora Archive 快照。
+《星塔旅人》中文互动阅读指南。第一次玩可以沿着主线读到角色初遇，通关后也能回来查两段故事是否发生在同一天。本版采用 2026 年 11 月 15 日的 Stella Sora Archive 快照，已收录特别篇后半、优叶活动与个人剧情。异闻 #19 的国服开放时间为 11 月 27 日 12:00。
 
 **[在线打开《诺瓦剧情手记》](https://juvenile-a3.github.io/stella-sora-story-guide/)** · [观看介绍短片](https://www.bilibili.com/video/BV1R7Wd6rE7A/) · [作者的 B 站主页](https://space.bilibili.com/100988586) · [研究摘要（含剧透）](research-notes.md)
 
@@ -10,7 +10,7 @@
 
 从离线版转到在线版时，在原来的页面打开“管理阅读进度”导出备份，再在新页面导入。两个地址分别保存阅读状态。
 
-1. 首页点“从序章开始”，再点“阅读本篇原文”。篇名上方标有剧情类型和所属章节、活动或合集。默认显示 559 个路线单元，勾选“显示可选补完”可查看心链、逸闻、履历、演出等内容。进度总数包含所有 2,710 项。
+1. 首页点“从序章开始”，再点“阅读本篇原文”。篇名上方标有剧情类型和所属章节、活动或合集。默认显示 572 个路线单元，勾选“显示可选补完”可查看心链、逸闻、履历、演出等内容。进度总数包含所有 2,758 项。
 2. “故事时间线”依诺瓦历和有依据的相对窗口分组。切换显示尺度、选择时期或人物即可缩小范围。有些篇目跨越多年，在详情里展开逐场时间与地点。标为分支未来的记录属于特定选择；只有同场或并行行动有证据时，才会明确并列。
 3. 点首页“查找剧情”或按 `/` 进入检索，可以搜 `#12`、篇名和关键词。手机可在搜索框下展开筛选；当前筛选可复制网址分享。首页的图文入口可打开异闻 #02、#12、#01。点「全部 41 位」可按中文名或英文名查找旅人及独立形态。剧透保护默认开启，允许查找公开归属的个人故事，并隐藏未读篇目的客串、关键标题和考据。可直接打开本篇原文，或单篇揭示考据。
 4. “人物关系”可从人物、组织、历史事件或剧情依赖进入，点击节点即可打开篇目。人物的“推荐路线首次出现”与“正文所见的初遇”各有标记。匿名身份和跨年代形态仅在有文本依据时关联。
@@ -47,8 +47,8 @@
 
 ```powershell
 git clone --depth 1 --filter=blob:none --sparse https://github.com/419bw/stellasora-archive.git source-archive
-git -C source-archive fetch --depth 1 origin f3209414ab301a552755781487b560a1bbcda72f
-git -C source-archive checkout --detach f3209414ab301a552755781487b560a1bbcda72f
+git -C source-archive fetch --depth 1 origin 582206ac8af4e5235cf06f139a7dc266ed3472d0
+git -C source-archive checkout --detach 582206ac8af4e5235cf06f139a7dc266ed3472d0
 git -C source-archive sparse-checkout set story_docs
 python -B -X utf8 build/build_guide.py source-archive --cache source-cache
 python -B -X utf8 build/validate.py source-archive

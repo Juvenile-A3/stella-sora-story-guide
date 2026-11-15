@@ -1,5 +1,7 @@
 # 主线、特别篇与活动考据
 
+**11 月 15 日更新。** 本版已收录特别篇后半 13 个正文节点与优叶活动全部 11 关。活动回顾把优叶篇接在第九章后；开篇提到优叶此前提交的海中星塔报告，可先读《欢歌劲浪》。异闻 #19 三话已收入档案，国服计划 11 月 27 日开放。下文保留首版核查时的统计。[本版数据](../data/metadata.json)
+
 2026-11-12 核查，正文基线为档案库 11 月 11 日快照。先清点 `_data/sections.json` 全部原文页和 `chapters.json` 所有关卡，再把 11 部活动的原始关卡表、回顾时间表和解锁表按 ID 交叉匹配。主线另外逐镜读取了 490 条场景牌。网页的“原文”通往具体节点，生成数据的 `textSource` 保留固定版本；以下笔记包含剧透。[档案快照](https://github.com/419bw/stellasora-archive/tree/f3209414ab301a552755781487b560a1bbcda72f/story_docs) · [上游版本记录](https://github.com/419bw/stellasora-archive/blob/f3209414ab301a552755781487b560a1bbcda72f/.upstream_sync_state.json)
 
 ## 数量与开放状态
