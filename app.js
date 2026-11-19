@@ -432,7 +432,12 @@
   }
   function stat() {
     const counts = { read: 0, unread: 0 };
-    all.forEach((s) => counts[status(s)]++);
+    // Reading scope excludes persistent owner hides and disabled optional material,
+    // not temporary search/type/page/readability or hide-read view filters.
+    all.forEach((s) => {
+      if ((includeOptional || !s.optional) &&
+          !storyOwners.get(s.id)?.some(key => hiddenOwners.has(key))) counts[status(s)]++;
+    });
     return counts;
   }
   function routePosition(s) {
@@ -856,7 +861,8 @@
   }
   function side() {
     const stats = stat(),
-      pct = all.length ? Math.round((stats.read / all.length) * 100) : 0,
+      total = stats.read + stats.unread,
+      pct = total ? Math.round((stats.read / total) * 100) : 0,
       menu = sideOptions(),
       params = menu.allText
         ? [["*", menu.allText, menu.entries.reduce((total, row) => total + Number(row[2]), 0)], ...menu.entries]
@@ -867,7 +873,7 @@
       '<div class="progress-stat"><strong>' +
       fmt(stats.read) +
       "</strong><small>/ " +
-      fmt(all.length) +
+      fmt(total) +
       ' 篇已读</small></div><div class="track"><i style="width:' +
       pct +
       '%"></i></div><div class="progress-tail"><span>' +
@@ -2155,7 +2161,9 @@
       addressPeriod = periodFromToken(params.get("phase"));
     view = next;
     if (view !== "route") {
-      const savedOwners = loadRoutePrefs().hiddenOwners;
+      const prefs = loadRoutePrefs();
+      if (initial) includeOptional = prefs.includeOptional === true;
+      const savedOwners = prefs.hiddenOwners;
       hiddenOwners = new Set(Array.isArray(savedOwners) ? savedOwners.filter(key => routeOwners.has(key)) : []);
     }
     pageNo = /^[1-9]\d{0,5}$/.test(params.get("page") || "") ? Number(params.get("page")) : 1;
